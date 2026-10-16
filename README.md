@@ -1,2 +1,76 @@
-# AlliansGlobal-project repository
-AlliansGlobal-project repository| The project provides information and offers services for emigrants.
+# Alliance Global
+
+Многостраничная концепция сайта международного консалтинга. Next.js 16, React 19, TypeScript, GSAP ScrollTrigger. Шрифты и изображения хранятся локально.
+
+## Запуск
+
+```sh
+npm install
+npm run dev
+```
+
+Открыть http://localhost:3000. Для собранной версии: `npm run build`, затем `npm start`.
+
+## Проверки
+
+```sh
+npm run lint
+npm run typecheck
+npm run build
+npm test -- http://localhost:3000
+```
+
+Последняя команда проверяет запущенный сайт: маршруты, заголовки, язык, noindex, ресурсы, передачу страны в консультацию и настоящие HTTP 404.
+
+## Содержание
+
+- Главная с архитектурным hero, услугами, интерактивными сценариями, вращающимся глобусом и этапами по скроллу.
+- Пять услуг и страницы каждой. Визы дополнены отдельной анимированной сценой Travel Dossier.
+- Семь направлений: региональные фильтры, поиск, страницы стран и передача выбранной страны в форму.
+- Программы, компания, подход, журнал и четыре статьи, консультация, контакты, конфиденциальность, 404.
+- Мобильное меню с нативным диалогом, FAQ, форма из трёх шагов с генерацией TXT-файла.
+- Уменьшенное движение, статические версии сцен, очистка GSAP при навигации и смене ширины. Глобус останавливается вне экрана и в фоновой вкладке.
+
+Тексты и данные — `lib/content.ts`, дизайн — `app/globals.css`, графика — `components/Globe.tsx` и `components/TravelDossier.tsx`. Источники фото и описание генерации hero — `public/images/sources.json`. Материалы заказчика сохранены в `agents/` и корне проекта. Концепция Superdesign — `.superdesign/`.
+
+## Перед рабочим запуском
+
+Форма сейчас **не отправляет заявки**: данные остаются в памяти страницы, пользователь может скачать локальный черновик. Никакие CRM, почта, аналитика или внешние формы не подключены.
+
+Нужно получить реальные контакты и реквизиты, подтвердить перечень стран и услуг, согласовать юридические тексты, условия консультации и обработку обращений. Команда, партнёры, отзывы и кейсы намеренно не выдуманы. Статьи о подготовке не содержат утверждений об актуальных условиях иммиграционных программ.
+
+Прототип закрыт от индексации через metadata и robots.txt. Перед публикацией задать `NEXT_PUBLIC_SITE_URL`, подготовить окончательную политику конфиденциальности, подключить отправку и согласовать индексацию.
+
+## Репозиторий и ветки
+
+GitHub: [luckytrofim99-create/AlliansGlobal-project_repository](https://github.com/luckytrofim99-create/AlliansGlobal-project_repository).
+
+Remote origin: `git@github.com:luckytrofim99-create/AlliansGlobal-project_repository.git`.
+
+Рабочий процесс: `feature/*` → Pull Request в `dev` → Pull Request из `dev` в `main`. Новые задачи начинаются от актуальной `dev`; прямые изменения защищённых веток после первоначального переноса не используются.
+
+```sh
+git switch dev
+git pull --ff-only
+git switch -c feature/task-name
+```
+
+## Структура проекта
+
+```text
+app/                        страницы, маршруты, общий layout и стили
+components/                 компоненты, форма, глобус и анимации
+lib/content.ts              тексты и данные сайта
+public/images/              изображения и sources.json
+scripts/smoke.mjs            HTTP-проверка запущенного сайта
+.github/workflows/ci.yml     CI для PR в main и dev
+docs/github-setup.md         защита веток и будущие CI/CD secrets
+```
+
+Материалы `agents/`, `.superdesign/`, `artifacts/`, локальные env и конфиги с секретами исключены из Git. Локальные файлы для работы агента не требуются для запуска сайта.
+
+## CI
+
+Workflow `CI`, job/check **`ci`** запускается на Pull Request в `main` и `dev`: checkout → Node.js 22 → `npm ci` → lint → build. Отсутствующие lint/build пропускаются через `--if-present`; ошибки существующих скриптов завершают CI с ошибкой. Развёртывания на хостинг нет.
+
+Сейчас CI не требует пользовательских secrets. Правила защиты и перечень необязательных секретов для будущего CI/CD описаны в [docs/github-setup.md](docs/github-setup.md).

@@ -1,0 +1,89 @@
+[
+  {
+    "file": "new-zealand-queenstown.jpg",
+    "source": "https://images.unsplash.com/photo-1669123565088-2c71f61ef6a3",
+    "page": "https://unsplash.com/photos/a-lake-surrounded-by-mountains-v6xkhMC4-gE",
+    "photographer": "Sarah Precious",
+    "location": "Queenstown, New Zealand",
+    "license": "Unsplash License",
+    "bytes": 314686
+  },
+  {
+    "file": "hero-rome.jpg",
+    "source": "https://images.unsplash.com/photo-1552832230-c0197dd311b5",
+    "width": 2200,
+    "height": 1604,
+    "bytes": 564435
+  },
+  {
+    "file": "canada-toronto.jpg",
+    "source": "https://images.unsplash.com/photo-1517935706615-2717063c2225",
+    "width": 1400,
+    "height": 1750,
+    "bytes": 596631
+  },
+  {
+    "file": "usa-new-york.jpg",
+    "source": "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee",
+    "width": 1400,
+    "height": 933,
+    "bytes": 336689
+  },
+  {
+    "file": "uk-london.jpg",
+    "source": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad",
+    "width": 1400,
+    "height": 933,
+    "bytes": 392720
+  },
+  {
+    "file": "europe-paris.jpg",
+    "source": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a",
+    "width": 1400,
+    "height": 990,
+    "bytes": 313006
+  },
+  {
+    "file": "australia-sydney.jpg",
+    "source": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9",
+    "width": 1400,
+    "height": 933,
+    "bytes": 364156
+  },
+  {
+    "file": "korea-seoul.jpg",
+    "source": "https://images.unsplash.com/photo-1517154421773-0529f29ea451",
+    "width": 1400,
+    "height": 933,
+    "bytes": 326653
+  },
+  {
+    "file": "education-campus.jpg",
+    "source": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
+    "width": 1600,
+    "height": 1067,
+    "bytes": 331842
+  },
+  {
+    "file": "office-interior.jpg",
+    "source": "https://images.unsplash.com/photo-1497366811353-6870744d04b2",
+    "width": 1600,
+    "height": 1068,
+    "bytes": 274842
+  },
+  {
+    "file": "university-campus.jpg",
+    "source": "https://images.unsplash.com/photo-1562774053-701939374585",
+    "width": 1600,
+    "height": 1048,
+    "bytes": 470223
+  },
+  {
+    "file": "hero-arch.jpg",
+    "source": "OpenAI built-in image_gen, newly generated illustrative architectural scene",
+    "width": 1086,
+    "height": 1448,
+    "bytes": 415940,
+    "prompt": "Photorealistic 3:4 portrait editorial architectural photograph: warm Italian Renaissance travertine arch and terrace framing Rome, the Tiber and distant St Peters dome; warm golden afternoon daylight, carved columns, balustrade, potted olive trees; no people, text, logo or UI."
+  }
+]

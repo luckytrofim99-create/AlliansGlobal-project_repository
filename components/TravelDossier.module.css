@@ -1,0 +1,771 @@
+.section {
+  position: relative;
+  height: 180vh;
+  background: #eeeee7;
+  color: var(--navy);
+  isolation: isolate;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 100svh;
+  min-height: 720px;
+  padding: 92px 0 52px;
+  overflow: clip;
+}
+
+.inner {
+  width: 88%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.84fr 1.16fr;
+  align-items: center;
+  gap: 4%;
+}
+
+.copy {
+  position: relative;
+  z-index: 2;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font: 600 8px/1.5 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 27px;
+}
+.eyebrow > span {
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+}
+.copy h2 {
+  font-family: var(--serif);
+  font-size: clamp(48px, 4.65vw, 76px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+.copy h2 em {
+  font-weight: 400;
+  color: var(--gold);
+}
+.description {
+  max-width: 350px;
+  font: 400 12px/1.95 var(--sans);
+  color: #768184;
+  margin-top: 28px;
+}
+.principles {
+  display: grid;
+  gap: 15px;
+  margin-top: 30px;
+}
+.principles > div {
+  display: flex;
+  align-items: baseline;
+  gap: 17px;
+}
+.principles > div > span {
+  font: 500 8px/1 var(--sans);
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+.principles p {
+  font: 400 10px/1.6 var(--sans);
+  color: var(--navy);
+}
+.progress {
+  max-width: 350px;
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 13px;
+  color: #768184;
+  font: 400 7px/1.5 var(--sans);
+  letter-spacing: 0.04em;
+}
+.progress > span:last-child {
+  color: var(--gold);
+  font-size: 6px;
+  letter-spacing: 0.1em;
+}
+.progressTrack {
+  height: 1px;
+  background: #a88a5c30;
+  width: 100%;
+}
+.progressTrack > span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform-origin: left center;
+}
+
+.visual {
+  min-width: 0;
+}
+.stage {
+  width: 100%;
+  max-width: 690px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  margin-left: auto;
+  perspective: 1400px;
+}
+.mapSurface {
+  position: absolute;
+  inset: 3% -2% 1%;
+  color: #a88a5c;
+  opacity: 0.16;
+  mask-image: radial-gradient(
+    ellipse at center,
+    #000 25%,
+    #0008 63%,
+    transparent 74%
+  );
+}
+.mapSurface svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-width: 0.75;
+}
+.surfaceShadow {
+  position: absolute;
+  width: 73%;
+  height: 12%;
+  top: 81%;
+  left: 15%;
+  background: #09233027;
+  filter: blur(25px);
+  border-radius: 50%;
+  transform: rotate(-9deg);
+}
+.routeDrawing {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.routeGhost {
+  stroke: #a88a5c22;
+  stroke-width: 1;
+}
+.routePath {
+  stroke: var(--gold);
+  stroke-width: 1.2;
+}
+.routeDot {
+  fill: var(--gold);
+  stroke: #eeeee7;
+  stroke-width: 3;
+}
+.routeHalo {
+  stroke: var(--gold);
+  stroke-width: 0.7;
+  opacity: 0.35;
+}
+.routeArrow {
+  stroke: var(--gold);
+  stroke-width: 1;
+}
+.originLabel,
+.destinationLabel {
+  position: absolute;
+  font: 500 6px/1.5 var(--sans);
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+}
+.originLabel {
+  top: 80%;
+  left: 3%;
+  transform: rotate(-90deg);
+  transform-origin: left top;
+}
+.destinationLabel {
+  top: 11%;
+  right: 10%;
+}
+
+.book {
+  position: absolute;
+  top: 22%;
+  left: 16%;
+  width: 40%;
+  aspect-ratio: 0.69;
+  z-index: 3;
+  transform: translate3d(-17%, 4%, 0) rotate(-17deg);
+  transform-origin: 50% 65%;
+}
+.bookBody {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: rotateY(-10deg) rotateX(5deg);
+  transform-style: preserve-3d;
+}
+.bookSpine {
+  position: absolute;
+  top: 1%;
+  bottom: 0;
+  left: -5.4%;
+  width: 8%;
+  border-radius: 5px 0 0 5px;
+  background: linear-gradient(90deg, #071e2c, #173a49 42%, #0a2533);
+  transform: skewY(-13deg);
+  box-shadow: -9px 12px 12px #102f3e16;
+}
+.bookPages {
+  position: absolute;
+  top: 3%;
+  bottom: -0.8%;
+  right: -3%;
+  width: 11%;
+  border-radius: 0 6px 5px 0;
+  background: repeating-linear-gradient(
+    90deg,
+    #d5cbb6 0 1px,
+    #f3ecdd 1px 2px,
+    #dfd4c0 2px 3px
+  );
+  transform: skewY(10deg);
+  box-shadow: 3px 4px 0 #102f3e;
+}
+.bookCover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse at 75% 5%, #41606b4d, transparent 65%),
+    repeating-linear-gradient(32deg, #ffffff02 0 1px, transparent 1px 3px),
+    #102f3e;
+  color: #cfb581;
+  border-radius: 3px 8px 8px 3px;
+  box-shadow:
+    inset 2px 0 1px #ffffff0a,
+    inset -1px -1px 0 #0a2533,
+    17px 24px 36px #0a25332c;
+  padding: 19% 10% 10%;
+}
+.bookCover::after {
+  content: "";
+  position: absolute;
+  inset: 4.5% 6%;
+  border: 1px solid #c5ab7538;
+  border-radius: 1px 3px 3px 1px;
+  pointer-events: none;
+}
+.bookCover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 7px;
+  width: 1px;
+  background: #bca47720;
+  box-shadow: 2px 0 2px #00000030;
+}
+.bookBrand {
+  font: 400 clamp(18px, 2vw, 30px)/0.9 var(--serif);
+  letter-spacing: 0.075em;
+  text-align: center;
+  text-shadow:
+    0 1px 0 #00000070,
+    0 -1px 0 #ffffff18;
+}
+.bookBrand > span {
+  display: block;
+  font: 500 8px/1 var(--sans);
+  letter-spacing: 0.54em;
+  margin-top: 12px;
+  padding-left: 0.54em;
+}
+.bookEmblem {
+  width: 49%;
+  margin-top: 19%;
+}
+.bookEmblem svg {
+  width: 100%;
+  display: block;
+  stroke: currentColor;
+  stroke-width: 0.8;
+  filter: drop-shadow(0 1px 0 #00000050);
+}
+.bookChapter {
+  margin-top: 13%;
+  font: 400 clamp(14px, 1.6vw, 23px)/1.1 var(--serif);
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 0 #00000070;
+}
+.coverRule {
+  width: 20%;
+  height: 1px;
+  background: #c4a56f70;
+  margin-top: 10%;
+}
+.bookFoot {
+  font: 500 5px/1.5 var(--sans);
+  letter-spacing: 0.13em;
+  margin-top: auto;
+  white-space: nowrap;
+}
+.coverCornerTop,
+.coverCornerBottom {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-color: #bfa67885;
+}
+.coverCornerTop {
+  left: 12%;
+  top: 9%;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+.coverCornerBottom {
+  right: 12%;
+  bottom: 9%;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.routeCard,
+.documentCard {
+  position: absolute;
+  width: 52%;
+  color: var(--navy);
+  border: 1px solid #ddd8ca;
+  background: linear-gradient(130deg, #fffefa 20%, #f6f2e7);
+  box-shadow:
+    0 12px 25px #102f3e0c,
+    0 2px 3px #102f3e07;
+  padding: 6% 5%;
+}
+.routeCard {
+  left: 43%;
+  top: 12%;
+  z-index: 1;
+  transform: translate3d(7%, -7%, 0) rotate(7deg);
+}
+.routeCard::after {
+  content: "";
+  position: absolute;
+  inset: 11px;
+  border: 1px solid #a88a5c20;
+  pointer-events: none;
+}
+.documentCard {
+  left: 43%;
+  top: 53%;
+  z-index: 2;
+  transform: translate3d(5%, 3%, 0) rotate(4deg);
+}
+.documentCard::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 8%;
+  width: 38%;
+  height: 9px;
+  background: #f5f0e4;
+  border: 1px solid #ddd8ca;
+  border-bottom: 0;
+  border-radius: 3px 3px 0 0;
+}
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font: 500 5.5px/1.4 var(--sans);
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  padding-bottom: 13px;
+  border-bottom: 1px solid #a88a5c38;
+  position: relative;
+}
+.cardHeader > span:last-child {
+  font: 400 18px/1 var(--serif);
+}
+.cardTitle {
+  font: 400 clamp(22px, 2.4vw, 35px)/1.05 var(--serif);
+  letter-spacing: -0.025em;
+  margin-top: 15px;
+}
+.cardSubheading {
+  font: 400 9px/1.7 var(--sans);
+  color: #89908c;
+  margin-top: 10px;
+}
+.miniRoute {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 18px;
+  color: var(--gold);
+}
+.miniRoute > span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 3px #a88a5c12;
+}
+.miniRoute i {
+  flex: 1;
+  border-top: 1px dashed #a88a5c66;
+}
+.miniRoute svg {
+  width: 19px;
+  height: 19px;
+  stroke: currentColor;
+  stroke-width: 0.8;
+}
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font: 500 5px/1.5 var(--sans);
+  letter-spacing: 0.09em;
+  color: var(--gold);
+  margin-top: 9px;
+}
+.checklist {
+  margin-top: 17px;
+  display: grid;
+  gap: 10px;
+}
+.checklist > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font: 400 8px/1.5 var(--sans);
+  color: #768184;
+}
+.checklist svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--gold);
+  stroke-width: 0.8;
+}
+.documentBottom {
+  border-top: 1px solid #a88a5c38;
+  margin-top: 20px;
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.documentBottom > span:first-child {
+  font: 500 5px/1.5 var(--sans);
+  color: var(--gold);
+  letter-spacing: 0.09em;
+}
+.signature {
+  font: italic 400 22px/0.8 var(--serif);
+  color: var(--gold);
+  transform: rotate(-8deg);
+}
+.visualFooter {
+  position: absolute;
+  left: 8%;
+  right: 0;
+  bottom: -5%;
+  border-top: 1px solid #a88a5c33;
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #768184;
+}
+.visualFooter > span {
+  font: 400 6px/1.5 var(--sans);
+}
+.visualFooter > span:first-child,
+.visualFooter > span:last-child {
+  font-size: 5px;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+}
+
+@media (min-width: 1600px) {
+  .description {
+    font-size: 13px;
+    max-width: 390px;
+  }
+  .principles p {
+    font-size: 11px;
+  }
+  .cardHeader {
+    font-size: 6.5px;
+  }
+  .cardSubheading {
+    font-size: 10px;
+  }
+  .checklist > div {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .inner {
+    gap: 2%;
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+  .copy h2 {
+    font-size: 58px;
+  }
+  .description {
+    font-size: 11px;
+    max-width: 320px;
+  }
+  .cardSubheading {
+    font-size: 8px;
+  }
+  .checklist > div {
+    font-size: 7px;
+    gap: 5px;
+  }
+  .cardHeader {
+    font-size: 4.5px;
+    padding-bottom: 9px;
+  }
+  .cardTitle {
+    margin-top: 12px;
+  }
+  .cardFooter {
+    font-size: 4px;
+  }
+  .documentBottom {
+    margin-top: 14px;
+  }
+  .documentBottom > span:first-child {
+    font-size: 4px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    height: auto;
+  }
+  .sticky {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+    padding: 76px 0 75px;
+  }
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    max-width: 680px;
+  }
+  .copy h2 {
+    font-size: clamp(48px, 8vw, 68px);
+  }
+  .copy h2 > br:first-child {
+    display: none;
+  }
+  .desktopBreak {
+    display: none;
+  }
+  .description {
+    max-width: 440px;
+    font-size: 12px;
+  }
+  .principles {
+    margin-top: 25px;
+    gap: 12px;
+  }
+  .progress {
+    margin-top: 25px;
+    max-width: 440px;
+  }
+  .stage {
+    width: min(100%, 570px);
+    margin: 0 auto 35px;
+  }
+  .bookBrand {
+    font-size: 27px;
+  }
+  .bookChapter {
+    font-size: 22px;
+  }
+  .cardTitle {
+    font-size: 30px;
+  }
+  .visualFooter {
+    bottom: -5%;
+  }
+}
+
+@media (max-width: 500px) {
+  .sticky {
+    padding: 65px 0 60px;
+  }
+  .inner {
+    width: 88%;
+    gap: 18px;
+  }
+  .eyebrow {
+    font-size: 7px;
+    margin-bottom: 24px;
+  }
+  .copy h2 {
+    font-size: 47px;
+  }
+  .description {
+    margin-top: 24px;
+    font-size: 11px;
+    max-width: 100%;
+  }
+  .principles p {
+    font-size: 9px;
+  }
+  .stage {
+    margin-bottom: 35px;
+  }
+  .book {
+    width: 40%;
+  }
+  .bookBrand {
+    font-size: 20px;
+  }
+  .bookBrand > span {
+    font-size: 5px;
+    margin-top: 8px;
+  }
+  .bookChapter {
+    font-size: 15px;
+  }
+  .bookFoot {
+    font-size: 3px;
+  }
+  .coverCornerTop,
+  .coverCornerBottom {
+    width: 8px;
+    height: 8px;
+  }
+  .cardHeader {
+    font-size: 3.5px;
+    padding-bottom: 8px;
+    gap: 6px;
+  }
+  .cardHeader > span:last-child {
+    font-size: 12px;
+  }
+  .cardTitle {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+  .cardSubheading {
+    font-size: 6px;
+    margin-top: 7px;
+  }
+  .miniRoute {
+    margin-top: 13px;
+    gap: 5px;
+  }
+  .miniRoute svg {
+    width: 13px;
+    height: 13px;
+  }
+  .miniRoute > span {
+    width: 3px;
+    height: 3px;
+  }
+  .cardFooter {
+    font-size: 3.3px;
+    margin-top: 6px;
+  }
+  .checklist {
+    gap: 7px;
+    margin-top: 11px;
+  }
+  .checklist > div {
+    font-size: 5.4px;
+    gap: 4px;
+  }
+  .checklist svg {
+    width: 9px;
+    height: 9px;
+  }
+  .documentBottom {
+    margin-top: 12px;
+    padding-top: 8px;
+    gap: 5px;
+  }
+  .documentBottom > span:first-child {
+    font-size: 3px;
+  }
+  .signature {
+    font-size: 17px;
+  }
+  .originLabel,
+  .destinationLabel {
+    font-size: 4px;
+  }
+  .visualFooter {
+    left: 3%;
+    padding-top: 12px;
+    bottom: -7%;
+  }
+  .visualFooter > span {
+    font-size: 5px;
+  }
+  .visualFooter > span:first-child {
+    font-size: 4px;
+  }
+  .visualFooter > span:last-child {
+    display: none;
+  }
+  .surfaceShadow {
+    filter: blur(18px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section {
+    height: auto;
+  }
+  .sticky {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+    padding-block: 95px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 900px) {
+  .sticky {
+    padding-block: 65px;
+  }
+}
+
+.section:not([data-animated]) {
+  height: auto;
+}
+.section:not([data-animated]) .sticky {
+  position: relative;
+  height: auto;
+  min-height: 0;
+}
