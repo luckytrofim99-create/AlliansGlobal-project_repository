@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Idadu Work Sans";
+  src: url("/fonts/idadu/work-sans-latin-variable.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Idadu Anton";
+  src: url("/fonts/idadu/anton-latin-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Idadu Mono";
+  src: url("/fonts/idadu/ibm-plex-mono-latin-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0000-024F;
+}
+@font-face {
+  font-family: "Idadu Mono";
+  src: url("/fonts/idadu/ibm-plex-mono-cyrillic-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0400-052F;
+}
+:global(body):has(.surface) {
+  --home-bg: #f1ebdd;
+  --home-ink: #171717;
+  --home-muted: #68645d;
+  --home-accent: #23533c;
+  --home-sans: "Idadu Work Sans", "Manrope", system-ui, sans-serif;
+  --home-display: "Idadu Work Sans", "Manrope", system-ui, sans-serif;
+  background: var(--home-bg);
+}
+.surface {
+  position: relative;
+  isolation: isolate;
+  font-family: var(--home-sans);
+  color: var(--home-ink);
+  background-color: var(--home-bg);
+  background-image: radial-gradient(circle, #1717171a 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+.surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.42;
+  mix-blend-mode: multiply;
+  background-image: url("/images/idadu/paper-grain.svg");
+}
+.surface ::selection {
+  color: #fff;
+  background: #23533c;
+}
+.surface :focus-visible {
+  outline: 3px solid #23533c;
+  outline-offset: 5px;
+}
+.surface input,
+.surface textarea {
+  caret-color: #23533c;
+}
+.surface * {
+  scrollbar-color: #a9a293 #eee8dc;
+  scrollbar-width: thin;
+}
+@media (prefers-contrast: more) {
+  .surface {
+    --home-muted: #38352f;
+  }
+}

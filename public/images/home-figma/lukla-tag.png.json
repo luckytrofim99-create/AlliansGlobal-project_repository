@@ -1,0 +1,26 @@
+{
+  "prompt": "User-supplied edited Figma design asset. Downloaded original bytes from Figma MCP source; no AI image generation or redrawing.",
+  "kind": "Figma design asset provenance",
+  "file": "lukla-tag.png",
+  "publicPath": "/images/home-figma/lukla-tag.png",
+  "label": "Lukla luggage label",
+  "sourceUrl": "https://www.figma.com/api/mcp/asset/fec558b5-d536-4661-b20e-334cbe2cfe5c.png",
+  "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+  "sourceNodeId": "309:603",
+  "bytes": 86919,
+  "sha256": "2ad0587aec3ebbf6340d52f6b54039ba0f2b6e5f43aee4896e4c7a547bf017fc",
+  "format": "png",
+  "intrinsicWidth": 384,
+  "intrinsicHeight": 360,
+  "hasAlpha": true,
+  "designSlot": {
+    "left": 147.28,
+    "top": 89.28,
+    "width": 113.45,
+    "height": 106.36,
+    "rotation": -1.27,
+    "rotatedWrapperWidth": 115.783,
+    "rotatedWrapperHeight": 108.852
+  },
+  "originalBytesUnchanged": true
+}

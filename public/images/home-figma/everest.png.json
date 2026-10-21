@@ -1,0 +1,31 @@
+{
+  "prompt": "User-supplied edited Figma design asset. Downloaded original bytes from Figma MCP source; no AI image generation or redrawing.",
+  "kind": "Figma design asset provenance",
+  "file": "everest.png",
+  "publicPath": "/images/home-figma/everest.png",
+  "label": "Everest landscape",
+  "sourceUrl": "https://www.figma.com/api/mcp/asset/f89491ce-bb0b-4171-8f7e-dcbc9b00e60c.png",
+  "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+  "sourceNodeId": "309:1043",
+  "bytes": 766849,
+  "sha256": "550c4b90a4058ba3b6d5de8a4c080dc1b995dc08570a8cded978cccf30802544",
+  "format": "png",
+  "intrinsicWidth": 750,
+  "intrinsicHeight": 444,
+  "hasAlpha": true,
+  "designSlot": {
+    "groupNodeId": "309:1041",
+    "groupLeft": 4.71,
+    "groupTop": 98.01,
+    "groupRotatedWrapperWidth": 243.294,
+    "groupRotatedWrapperHeight": 193.886,
+    "groupRotation": -7.73,
+    "imageInset": {
+      "top": "-9.99%",
+      "right": "0",
+      "bottom": "30.15%",
+      "left": "0.01px"
+    }
+  },
+  "originalBytesUnchanged": true
+}

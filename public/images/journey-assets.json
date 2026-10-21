@@ -1,0 +1,20 @@
+{
+  "assets": [
+    {
+      "file": "journey-aircraft.webp",
+      "type": "ai-generated",
+      "purpose": "Decorative aircraft metaphor for the guided-scroll homepage; not an actual company aircraft or airline fleet.",
+      "generator": "Built-in image_gen",
+      "generatedOn": "2026-10-19",
+      "width": 1400,
+      "height": 933,
+      "bytes": 141916,
+      "hasAlpha": true,
+      "source": "Generated with built-in image_gen; optimized asset is stored alongside this metadata.",
+      "prompt": "Use case: product-mockup. Asset type: premium editorial website aircraft cutout for an interactive immigration/travel guided journey. Primary request: a photorealistic unbranded modern white and silver passenger aircraft, viewed from above at a three-quarter angle, nose pointing diagonally toward upper-right. Entire aircraft fully visible including both wings, engines and tail, generously framed with a little transparent margin. Realistic aerodynamics and proportions, beautiful subtle polished metal details, no airline markings, no logos, no letters, no numbers. Scene/backdrop: ACTUAL transparent alpha background, clean cutout; no ground, sky, clouds, or backdrop and no baked checkerboard. Lighting: soft diffuse studio-like daylight from upper left, calm premium white/silver palette, gently shaded blue-gray underside, refined realistic photographic quality. Constraints: single complete aircraft only, crisp refined edge, no contrail, no detached shadow, no border, no decorative graphics, no text, no watermark. The transparent canvas should be landscape, with aircraft centered and enough room around all extremities.",
+      "refinementPrompt": "Make one precise composition change to the provided aircraft cutout: rotate the aircraft within the image so its NOSE points toward the UPPER RIGHT at approximately 2 o'clock, and tail toward the lower left. Keep the same realistic unbranded white/silver airliner, overhead three-quarter camera view, complete wings/tail/engines, premium soft photographic lighting and details. Aircraft must fit fully within the canvas with some margin. Preserve a GENUINELY TRANSPARENT background / alpha channel, no clouds, sky, ground or colored background and no cast shadow. No text, no logo, no watermark. Final canvas should be square or landscape. All the aircraft detail and silhouette remain crisp; do not add any object. This is a clean realistic object cutout for an animated travel website.",
+      "optimization": "Sharp resize inside 1400×1400 without enlargement; WebP quality 90, alphaQuality 100, effort 6. Generated alpha retained.",
+      "validation": "Visually inspected final WebP. Complete plane visible, nose toward upper-right; actual alpha range 0–255 with 873586 fully transparent pixels out of 1306200."
+    }
+  ]
+}

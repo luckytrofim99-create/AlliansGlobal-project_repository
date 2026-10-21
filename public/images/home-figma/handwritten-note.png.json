@@ -1,0 +1,26 @@
+{
+  "prompt": "User-supplied edited Figma design asset. Downloaded original bytes from Figma MCP source; no AI image generation or redrawing.",
+  "kind": "Figma design asset provenance",
+  "file": "handwritten-note.png",
+  "publicPath": "/images/home-figma/handwritten-note.png",
+  "label": "Handwritten travel note",
+  "sourceUrl": "https://www.figma.com/api/mcp/asset/1e3acbe6-7662-4da5-9e96-1ca92e6430da.png",
+  "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+  "sourceNodeId": "309:1046",
+  "bytes": 25295,
+  "sha256": "34fc5ddeb1ac9933f5cc04f93fc26cd4683e0348e95d03706bdece91ce498286",
+  "format": "png",
+  "intrinsicWidth": 256,
+  "intrinsicHeight": 134,
+  "hasAlpha": true,
+  "designSlot": {
+    "relativeTo": "309:1041",
+    "inset": {
+      "top": "65%",
+      "right": "26%",
+      "bottom": "12.41%",
+      "left": "42.01%"
+    }
+  },
+  "originalBytesUnchanged": true
+}

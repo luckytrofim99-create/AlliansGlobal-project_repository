@@ -1,0 +1,27 @@
+{
+  "prompt": "User-supplied edited Figma design asset. Downloaded original bytes from Figma MCP source; no AI image generation or redrawing.",
+  "kind": "Figma design asset provenance",
+  "file": "kathmandu-tag.png",
+  "publicPath": "/images/home-figma/kathmandu-tag.png",
+  "label": "Kathmandu luggage label",
+  "sourceUrl": "https://www.figma.com/api/mcp/asset/dd901f29-0aa2-44b0-a7c5-7227f7128c0b.png",
+  "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+  "sourceNodeId": "309:604",
+  "bytes": 52729,
+  "sha256": "d0511957251295259f7f84498c2782cd4ba19c8c6614a41759ed32b3b8ccdc80",
+  "format": "png",
+  "intrinsicWidth": 384,
+  "intrinsicHeight": 154,
+  "hasAlpha": true,
+  "designSlot": {
+    "relativeTo": "310:1053",
+    "left": 32,
+    "top": 25,
+    "width": 113.45,
+    "height": 45.48,
+    "rotation": -3,
+    "rotatedWrapperWidth": 115.675,
+    "rotatedWrapperHeight": 51.355
+  },
+  "originalBytesUnchanged": true
+}

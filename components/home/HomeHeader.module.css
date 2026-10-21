@@ -1,0 +1,141 @@
+.header {
+  position: sticky;
+  top: 0;
+  height: 84px;
+  z-index: 70;
+  padding: 10px 4vw 0;
+  background: transparent;
+}
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1380px;
+  height: 66px;
+  margin-inline: auto;
+  border-radius: 999px;
+  padding: 8px 20px;
+  transition:
+    background 180ms,
+    box-shadow 180ms;
+}
+.scrolled .inner {
+  background: #faf8f1e8;
+  box-shadow:
+    0 5px 25px #514b3910,
+    inset 0 1px 0 #ffffffb0;
+  backdrop-filter: blur(20px) saturate(1.15);
+}
+.inner :global(.logo) {
+  gap: 9px;
+  color: #233d30;
+}
+.inner :global(.logo-symbol) {
+  width: 33px;
+  height: 42px;
+}
+.inner :global(.wordmark) {
+  font-size: 23px;
+}
+.inner :global(.wordmark > span) {
+  font-size: 8px;
+}
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 11px 20px;
+  background: #23533c;
+  color: #fff;
+  border-radius: 999px;
+  font-family: "Idadu Work Sans", "Manrope", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: nowrap;
+  transition:
+    background 180ms,
+    transform 140ms;
+}
+.action:active {
+  transform: scale(0.97);
+  transition-duration: 80ms;
+}
+@media (hover: hover) and (pointer: fine) {
+  .action:hover {
+    background: #326b4e;
+  }
+}
+@media (max-width: 760px) {
+  .header {
+    height: 72px;
+    padding: 7px 10px 0;
+  }
+  .inner {
+    height: 60px;
+    gap: 12px;
+    padding: 7px 12px;
+  }
+  .inner :global(.logo-symbol) {
+    width: 27px;
+    height: 36px;
+  }
+  .inner :global(.wordmark) {
+    font-size: 18px;
+  }
+  .inner :global(.wordmark > span) {
+    font-size: 6px;
+    letter-spacing: 0.22em;
+  }
+  .inner :global(.logo) {
+    gap: 6px;
+  }
+  .action {
+    font-size: 12px;
+    padding: 11px 14px;
+    min-height: 44px;
+  }
+}
+@media (max-width: 360px) {
+  .inner {
+    padding-inline: 10px;
+    gap: 8px;
+  }
+  .inner :global(.wordmark) {
+    font-size: 16px;
+  }
+  .action {
+    font-size: 12px;
+    padding-inline: 12px;
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .scrolled .inner {
+    background: #faf8f1;
+    backdrop-filter: none;
+  }
+}
+@media (prefers-contrast: more) {
+  .inner {
+    background: #fffdf6;
+    outline: 1px solid #3d493e;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .action,
+  .inner {
+    transition: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .inner :global(.wordmark) {
+    display: none;
+  }
+  .inner :global(.logo-symbol) {
+    width: 32px;
+    height: 39px;
+  }
+}

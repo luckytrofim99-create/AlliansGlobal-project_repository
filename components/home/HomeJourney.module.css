@@ -1,0 +1,875 @@
+.journey {
+  overflow: clip;
+  --pad: clamp(22px, 5vw, 88px);
+}
+.journey h1,
+.journey h2,
+.journey h3 {
+  font-family: var(--home-display);
+  color: var(--home-ink);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.journey h1 {
+  font-size: clamp(54px, 6.5vw, 96px);
+  line-height: 1.07;
+  font-weight: 700;
+}
+.journey h2 {
+  font-size: clamp(36px, 4.7vw, 68px);
+  line-height: 1.09;
+}
+.journey h3 {
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.15;
+}
+.journey p {
+  color: var(--home-muted);
+}
+.pill {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  min-height: 54px;
+  padding: 15px 25px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--home-accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 180ms,
+    transform 160ms cubic-bezier(0.2, 0.72, 0.22, 1),
+    box-shadow 180ms;
+}
+.pill:active {
+  transform: scale(0.97);
+  transition-duration: 80ms;
+}
+.pill.secondary {
+  background: #e5e9df;
+  color: #1b4932;
+}
+.quietLink {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 2px;
+  border: 0;
+  color: var(--home-accent);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: #23533c55;
+  text-underline-offset: 5px;
+  transition:
+    text-decoration-color 160ms,
+    opacity 160ms;
+}
+.hero {
+  position: relative;
+  padding: 32px var(--pad) 20px;
+}
+.heroCopy {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 1180px;
+  margin-inline: auto;
+}
+.heroCopy .titleMuted {
+  color: #626354;
+}
+.lead {
+  max-width: 650px;
+  margin: 28px auto 0;
+  font-size: 17px;
+  line-height: 1.65;
+}
+.heroActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 27px;
+  margin-top: 28px;
+}
+.heroHelper {
+  max-width: 430px;
+  margin: 16px auto 0;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.sectionIntro {
+  text-align: center;
+  max-width: 960px;
+  margin-inline: auto;
+}
+.sectionIntro > p {
+  margin-top: 17px;
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 600px;
+  margin-inline: auto;
+}
+.services {
+  position: relative;
+  height: 210svh;
+  padding-inline: var(--pad);
+  scroll-margin-top: 90px;
+}
+.servicesSticky {
+  position: sticky;
+  top: 76px;
+  display: flex;
+  min-height: calc(100svh - 76px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 30px;
+}
+.services .sectionIntro h2 {
+  font-size: clamp(36px, 4.4vw, 62px);
+}
+.segmented {
+  display: flex;
+  gap: 3px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 25px auto 28px;
+  padding: 5px;
+  border-radius: 999px;
+  background: #e4dece;
+}
+.segmented button {
+  display: grid;
+  place-items: center;
+  position: relative;
+  isolation: isolate;
+  min-height: 44px;
+  min-width: 108px;
+  border-radius: 999px;
+  padding: 10px 20px;
+  background: none;
+  border: 0;
+  color: #605b52;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: color 140ms;
+}
+.segmented button > span:last-child {
+  position: relative;
+  z-index: 1;
+}
+.segmented button[aria-pressed="true"] {
+  color: #1d251d;
+}
+.segmentThumb {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: #fffdf8;
+  box-shadow: 0 2px 8px #524a3520;
+}
+.serviceCarrier {
+  width: min(100%, 1160px);
+  touch-action: pan-y;
+}
+.serviceSurface {
+  position: relative;
+  min-height: min(450px, calc(100svh - 330px));
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  border-radius: 36px;
+  background: #fcfaf5;
+  box-shadow: 0 20px 60px #584b3212;
+  isolation: isolate;
+  overflow: hidden;
+}
+.servicePhoto {
+  position: absolute;
+  inset: 0 48% 0 0;
+  overflow: hidden;
+  border-radius: 0 30px 30px 0;
+  z-index: 1;
+}
+.servicePhoto img {
+  object-fit: cover;
+}
+.serviceContent {
+  grid-column: 2;
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  padding: clamp(30px, 4vw, 60px);
+}
+
+.serviceContent h3 {
+  font-size: clamp(27px, 3.2vw, 45px);
+  line-height: 1.13;
+}
+.serviceContent > p {
+  max-width: 370px;
+  margin-top: 17px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.serviceContent .pill {
+  margin-top: 28px;
+  font-size: 14px;
+  min-height: 48px;
+}
+
+.servicesSticky > .quietLink {
+  margin-top: 12px;
+  font-size: 14px;
+}
+.staticScene {
+  height: auto;
+  padding-block: 80px;
+}
+.staticScene .servicesSticky {
+  position: relative;
+  top: 0;
+  min-height: auto;
+}
+.destinations {
+  padding: 110px var(--pad) 60px;
+  max-width: 1600px;
+  margin-inline: auto;
+  scroll-margin-top: 90px;
+}
+.countryChoices {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  overflow-x: auto;
+  width: fit-content;
+  max-width: 100%;
+  margin: 35px auto 30px;
+  padding: 6px;
+  border-radius: 999px;
+  background: #e5dfd0;
+  scrollbar-width: none;
+  scroll-padding-inline: 10px;
+}
+.countryChoices::-webkit-scrollbar {
+  display: none;
+}
+.countryChoices > button {
+  position: relative;
+  min-height: 44px;
+  flex-shrink: 0;
+  padding: 10px 17px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: #625d53;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.countryChoices button > span:last-child {
+  position: relative;
+  z-index: 1;
+}
+.countryChoices > button[aria-pressed="true"] {
+  color: #fff;
+}
+.countryThumb {
+  position: absolute;
+  inset: 0;
+  background: #23533c;
+  border-radius: inherit;
+}
+.countrySurface {
+  margin-inline: auto;
+  max-width: 1280px;
+  background: #faf8f0;
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px #584b3210;
+}
+.countryView {
+  position: relative;
+  height: clamp(340px, 37vw, 550px);
+  overflow: hidden;
+}
+.countryImage {
+  position: absolute;
+  inset: 0;
+}
+.countryImage img {
+  object-fit: cover;
+}
+.countryInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 32px 38px;
+}
+.countryInfo h3 {
+  font-size: 37px;
+}
+.countryInfo p {
+  margin-top: 11px;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 580px;
+}
+.countryInfo .pill {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+.countryQuestion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+  font-size: 14px;
+}
+.countryQuestion > .quietLink {
+  font-size: 14px;
+}
+.purpose {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: clamp(40px, 8vw, 135px);
+  padding: 100px var(--pad);
+  width: min(100%, 1480px);
+  margin-inline: auto;
+  align-items: center;
+}
+.purposeIntro h2 {
+  font-size: clamp(38px, 4.4vw, 62px);
+}
+.purposeIntro > p {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-top: 22px;
+}
+.goalChoices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 30px;
+}
+.goalChoices > button {
+  position: relative;
+  background: #faf7ef;
+  min-height: 46px;
+  padding: 11px 17px;
+  border: 0;
+  border-radius: 999px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #535d4f;
+}
+.goalChoices > button > span:last-child {
+  position: relative;
+  z-index: 1;
+}
+.goalChoices > button[aria-pressed="true"] {
+  color: #fff;
+}
+.goalThumb {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--home-accent);
+}
+.goalDetail {
+  min-width: 0;
+  position: relative;
+}
+.goalPhoto {
+  position: relative;
+  height: clamp(250px, 26vw, 420px);
+  border-radius: 32px;
+  overflow: hidden;
+  background: #d4d9cc;
+  transform: rotate(2deg);
+}
+.goalImage {
+  position: absolute;
+  inset: 0;
+}
+.goalImage img {
+  object-fit: cover;
+}
+.goalCopy {
+  padding-top: 30px;
+}
+.goalCopy h3 {
+  font-size: clamp(25px, 2.5vw, 36px);
+}
+.goalCopy p {
+  font-size: 15px;
+  line-height: 1.75;
+  margin-top: 14px;
+  max-width: 420px;
+}
+.goalCopy .pill {
+  margin-top: 23px;
+  font-size: 14px;
+}
+.process {
+  width: min(100%, 1360px);
+  margin-inline: auto;
+  padding: 85px var(--pad) 70px;
+}
+.process h2 {
+  font-size: clamp(37px, 4.5vw, 62px);
+}
+.processBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 50px;
+  align-items: center;
+}
+.processSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+.processSteps article {
+  padding: 0;
+  position: relative;
+}
+
+.processSteps h3 {
+  font-size: clamp(23px, 2.4vw, 31px);
+}
+.processSteps p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 10px;
+}
+.processAside {
+  padding: 35px;
+  background: #e7e9dc;
+  border-radius: 30px;
+}
+.processAside p {
+  color: #344c36;
+  font-size: 22px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
+.processAside .pill {
+  margin-top: 25px;
+  background: #fbfaf2;
+}
+.processAside .quietLink {
+  display: flex;
+  width: fit-content;
+  margin-top: 14px;
+  text-align: left;
+  font-size: 13px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .pill:hover {
+    background: #326b4e;
+  }
+  .pill.secondary:hover {
+    background: #d7e0cf;
+  }
+  .quietLink:hover {
+    text-decoration-color: currentColor;
+  }
+  .segmented button:hover,
+  .countryChoices button:not([aria-pressed="true"]):hover {
+    color: #171717;
+  }
+  .goalChoices button:not([aria-pressed="true"]):hover {
+    background: #e7e8dc;
+  }
+}
+@media (max-width: 1100px) {
+  .journey {
+    --pad: 5vw;
+  }
+  .hero {
+    padding-top: 42px;
+  }
+  .countryChoices {
+    justify-content: start;
+  }
+  .serviceContent {
+    padding: 28px;
+  }
+  .serviceContent h3 {
+    font-size: 31px;
+  }
+  .serviceContent p {
+    font-size: 14px;
+  }
+
+  .countryInfo {
+    align-items: start;
+    gap: 25px;
+  }
+  .countryInfo p {
+    font-size: 14px;
+  }
+  .countryInfo .pill {
+    font-size: 12px;
+  }
+  .purpose {
+    gap: 5vw;
+  }
+}
+@media (max-height: 760px) and (min-width: 761px) {
+  .services {
+    height: auto;
+    padding-block: 60px;
+  }
+  .servicesSticky {
+    position: relative;
+    top: 0;
+    min-height: auto;
+  }
+  .serviceSurface {
+    min-height: 380px;
+  }
+}
+@media (max-width: 760px) {
+  .journey {
+    --pad: 22px;
+  }
+  .hero {
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+  .journey h1 {
+    font-size: clamp(36px, 9.6vw, 58px);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+  .journey h2 {
+    font-size: clamp(32px, 8vw, 45px);
+    line-height: 1.12;
+  }
+  .heroCopy h1 {
+    max-width: 600px;
+    margin-inline: auto;
+  }
+  .lead {
+    margin-top: 23px;
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 450px;
+  }
+  .heroActions {
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 23px;
+  }
+  .heroActions .pill {
+    min-height: 54px;
+    padding-inline: 23px;
+    font-size: 14px;
+  }
+  .heroActions .quietLink {
+    font-size: 14px;
+  }
+  .heroHelper {
+    font-size: 11px;
+    max-width: 320px;
+    margin-top: 5px;
+    line-height: 1.7;
+  }
+  .services {
+    height: 185svh;
+    padding-inline: 16px;
+  }
+  .servicesSticky {
+    top: 72px;
+    min-height: calc(100svh - 72px);
+    padding-block: 24px 16px;
+    justify-content: start;
+  }
+  .services .sectionIntro h2 {
+    font-size: clamp(30px, 7.7vw, 44px);
+  }
+  .sectionIntro p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 12px;
+  }
+  .segmented {
+    margin-block: 20px;
+    padding: 4px;
+    width: fit-content;
+    gap: 1px;
+  }
+  .segmented button {
+    min-width: 0;
+    min-height: 44px;
+    padding: 9px 16px;
+    font-size: 12px;
+  }
+  .serviceSurface {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border-radius: 28px;
+  }
+  .servicePhoto {
+    position: relative;
+    flex-shrink: 0;
+    inset: auto;
+    height: clamp(155px, 25svh, 280px);
+    border-radius: 28px 28px 20px 20px;
+  }
+  .servicePhoto:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .serviceContent {
+    padding: 23px 25px 25px;
+    align-self: stretch;
+    min-height: 250px;
+  }
+
+  .serviceContent h3 {
+    font-size: clamp(25px, 6.8vw, 34px);
+    max-width: 400px;
+  }
+  .serviceContent p {
+    font-size: 13px;
+    line-height: 1.65;
+    margin-top: 12px;
+    max-width: 420px;
+  }
+  .serviceContent .pill {
+    margin-top: 18px;
+    min-height: 44px;
+    font-size: 12px;
+    padding: 11px 18px;
+  }
+
+  .servicesSticky > .quietLink {
+    font-size: 12px;
+    margin-top: 7px;
+  }
+  .destinations {
+    padding: 70px var(--pad) 35px;
+  }
+  .countryChoices {
+    max-width: calc(100% + 10px);
+    margin: 24px -5px 24px;
+    width: auto;
+    padding: 5px;
+  }
+  .countryChoices > button {
+    font-size: 13px;
+    padding-inline: 17px;
+  }
+  .countrySurface {
+    border-radius: 28px;
+  }
+  .countryView {
+    height: 310px;
+  }
+  .countryInfo {
+    flex-direction: column;
+    align-items: start;
+    padding: 25px;
+    gap: 23px;
+  }
+  .countryInfo h3 {
+    font-size: 32px;
+  }
+  .countryInfo p {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .countryInfo .pill {
+    min-height: 46px;
+    font-size: 12px;
+  }
+  .countryQuestion {
+    flex-direction: column;
+    gap: 0;
+    margin-top: 25px;
+    font-size: 13px;
+  }
+  .countryQuestion .quietLink {
+    font-size: 13px;
+  }
+  .purpose {
+    grid-template-columns: 1fr;
+    padding: 60px var(--pad);
+    gap: 36px;
+  }
+  .purposeIntro {
+    text-align: center;
+  }
+  .purposeIntro h2 {
+    font-size: clamp(33px, 8.4vw, 46px);
+  }
+  .purposeIntro p {
+    font-size: 14px;
+    margin-top: 17px;
+  }
+  .goalChoices {
+    justify-content: center;
+    gap: 8px;
+    margin-top: 23px;
+  }
+  .goalChoices > button {
+    min-height: 44px;
+    font-size: 12px;
+    padding-inline: 15px;
+  }
+  .goalPhoto {
+    height: 285px;
+    border-radius: 25px;
+  }
+  .goalCopy {
+    padding-top: 25px;
+  }
+  .goalCopy h3 {
+    font-size: 29px;
+  }
+  .goalCopy p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 12px;
+  }
+  .goalCopy .pill {
+    min-height: 48px;
+    font-size: 12px;
+    margin-top: 20px;
+  }
+  .process {
+    padding: 55px var(--pad) 40px;
+  }
+  .process h2 {
+    font-size: clamp(32px, 8vw, 44px);
+  }
+  .processBody {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 35px;
+  }
+  .processSteps {
+    gap: 28px;
+  }
+  .processSteps h3 {
+    font-size: 24px;
+  }
+  .processSteps p {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  .processAside {
+    padding: 27px;
+    border-radius: 26px;
+  }
+  .processAside p {
+    font-size: 20px;
+  }
+  .processAside .quietLink {
+    line-height: 1.6;
+  }
+  .staticScene {
+    height: auto;
+    padding-block: 45px;
+  }
+  .staticScene .servicesSticky {
+    min-height: auto;
+    padding-block: 0;
+  }
+}
+@media (max-height: 720px) and (max-width: 760px) {
+  .services {
+    height: auto;
+    padding-block: 50px;
+  }
+  .servicesSticky {
+    position: relative;
+    top: 0;
+    min-height: auto;
+  }
+  .servicePhoto {
+    height: 180px;
+  }
+}
+@media (max-width: 360px) {
+  .journey {
+    --pad: 18px;
+  }
+  .journey h1 {
+    font-size: 34px;
+  }
+  .lead {
+    font-size: 14px;
+  }
+  .heroHelper {
+    font-size: 10px;
+  }
+  .serviceContent {
+    padding: 21px;
+  }
+  .countryInfo {
+    padding: 23px;
+  }
+  .countryView {
+    height: 260px;
+  }
+  .segmented button {
+    padding-inline: 13px;
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey *,
+  .journey *::before,
+  .journey *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+@media (prefers-contrast: more) {
+  .pill.secondary,
+  .goalChoices > button {
+    background: #fffdf7;
+    color: #143a25;
+    outline: 1px solid currentColor;
+  }
+  .quietLink {
+    text-decoration-color: currentColor;
+  }
+  .countryChoices button {
+    color: #322f29;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services {
+    height: auto;
+    padding-block: 65px;
+  }
+  .servicesSticky {
+    position: relative;
+    top: 0;
+    min-height: auto;
+  }
+}
+
+.photoReveal { position: absolute; inset: 0; overflow: hidden; }

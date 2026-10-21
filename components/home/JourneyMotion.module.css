@@ -1,0 +1,30 @@
+.wordMask {
+  display: inline-block;
+  vertical-align: top;
+  overflow: clip;
+  padding-bottom: .13em;
+  margin-bottom: -.13em;
+  color: inherit;
+}
+.wordMask > span { display: inline-block; color: inherit; }
+.accent {
+  display: block;
+  width: min(75%, 261.609px);
+  margin: -2px auto 5px;
+  line-height: 0;
+  pointer-events: none;
+}
+.accent img { display: block; width: 100%; height: auto; }
+.wide { width: min(100%, 321px); margin: -2px 0 5px; }
+@media (prefers-reduced-motion: reduce) {
+  .wordMask > span, .accent { transform: none !important; clip-path: none !important; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .changingCopy:not(.instant) {
+    transition: opacity 280ms cubic-bezier(.2,.72,.22,1), transform 280ms cubic-bezier(.2,.72,.22,1);
+  }
+  @starting-style {
+    .changingCopy:not(.instant) { opacity: 0; transform: translate3d(0, 9px, 0); }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "source": "https://www.idadu.dev/",
+  "accessed": "2026-10-20",
+  "asset": "paper-grain.svg",
+  "method": "Decoded procedural SVG from .paper-grain:after in public 43lzxvkaao202.css; no photographic background asset exists",
+  "css": {
+    "background": "#f1ebdd",
+    "ink": "#171717",
+    "dotColor": "#1717171a",
+    "dotRadius": "1px",
+    "dotSpacing": "26px",
+    "grainOpacity": 0.42,
+    "grainBlend": "multiply"
+  },
+  "license": "No separate website asset license found; limited to user-requested local prototype reference."
+}

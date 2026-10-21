@@ -1,7 +1,12 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import HomeFooter from "./home/HomeFooter";
 import { ArrowUpRight } from "lucide-react";
 import { Logo } from "./ui";
 export default function SiteFooter() {
+  const pathname = usePathname();
+  if (pathname === "/") return <HomeFooter />;
   return (
     <footer className="site-footer">
       <div className="container">

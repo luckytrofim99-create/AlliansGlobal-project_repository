@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Logo } from "./ui";
+import homeStyles from "./home/HomeHeader.module.css";
 
 const links = [
   { href: "/about", label: "Компания" },
@@ -25,6 +26,20 @@ export default function SiteHeader() {
   useEffect(() => {
     dialog.current?.close();
   }, [pathname]);
+  if (pathname === "/") {
+    return (
+      <header
+        className={`${homeStyles.header}${scrolled ? ` ${homeStyles.scrolled}` : ""}`}
+      >
+        <div className={homeStyles.inner}>
+          <Logo />
+          <a href="#consultation" className={homeStyles.action}>
+            Запросить консультацию
+          </a>
+        </div>
+      </header>
+    );
+  }
   return (
     <>
       <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>

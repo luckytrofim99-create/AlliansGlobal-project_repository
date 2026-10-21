@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "source": "https://www.figma.com/design/DddkQBLCzqQjNA94AqbsFQ/Untitled?node-id=309-821",
+  "sectionNodeId": "309:1038",
+  "frameNodeId": "309:821",
+  "heroNodeId": "309:828",
+  "downloadedAt": "2026-10-21",
+  "method": "High-fidelity Figma get_design_context with figma-design-to-code; original public asset bytes downloaded with curl -f -L. No design screenshot used as implementation image.",
+  "assets": [
+    {
+      "file": "travel-circle.png",
+      "publicPath": "/images/home-figma/travel-circle.png",
+      "label": "Travel circle cutout",
+      "sourceUrl": "https://www.figma.com/api/mcp/asset/81bef5c1-75e0-45df-9e3f-be2064e044bb.png",
+      "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+      "sourceNodeId": "310:1053",
+      "bytes": 729493,
+      "sha256": "e2792440f0b625806993441e2466831013d2e6c33fe1ca300a9db36c1b3bff19",
+      "format": "png",
+      "intrinsicWidth": 640,
+      "intrinsicHeight": 625,
+      "hasAlpha": true,
+      "designSlot": {
+        "left": 23,
+        "top": 6.42,
+        "width": 179.16,
+        "height": 174.95
+      },
+      "originalBytesUnchanged": true
+    },
+    {
+      "file": "kathmandu-tag.png",
+      "publicPath": "/images/home-figma/kathmandu-tag.png",
+      "label": "Kathmandu luggage label",
+      "sourceUrl": "https://www.figma.com/api/mcp/asset/dd901f29-0aa2-44b0-a7c5-7227f7128c0b.png",
+      "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+      "sourceNodeId": "309:604",
+      "bytes": 52729,
+      "sha256": "d0511957251295259f7f84498c2782cd4ba19c8c6614a41759ed32b3b8ccdc80",
+      "format": "png",
+      "intrinsicWidth": 384,
+      "intrinsicHeight": 154,
+      "hasAlpha": true,
+      "designSlot": {
+        "relativeTo": "310:1053",
+        "left": 32,
+        "top": 25,
+        "width": 113.45,
+        "height": 45.48,
+        "rotation": -3,
+        "rotatedWrapperWidth": 115.675,
+        "rotatedWrapperHeight": 51.355
+      },
+      "originalBytesUnchanged": true
+    },
+    {
+      "file": "travelers.jpg",
+      "publicPath": "/images/home-figma/travelers.jpg",
+      "label": "Black and white travelers photograph",
+      "sourceUrl": "https://www.figma.com/api/mcp/asset/978645a3-0392-4166-8b65-9d624181c766.png",
+      "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+      "sourceNodeId": "309:828",
+      "bytes": 44213,
+      "sha256": "93b0fed37f35170bca7609f0230d16ebce3ae670b3a487aa100487503261dd0a",
+      "format": "jpeg",
+      "intrinsicWidth": 612,
+      "intrinsicHeight": 608,
+      "hasAlpha": false,
+      "designSlot": {
+        "width": 128.903,
+        "height": 128.06,
+        "rotation": 4.3
+      },
+      "originalBytesUnchanged": true,
+      "extensionNote": "Temporary Figma URL ends in .png but HTTP asset bytes are JPEG; saved as .jpg without transformation."
+    },
+    {
+      "file": "approved-stamp.png",
+      "publicPath": "/images/home-figma/approved-stamp.png",
+      "label": "Approved stamp",
+      "sourceUrl": "https://www.figma.com/api/mcp/asset/541a05cb-5202-4b7d-a547-4ef4609967eb.png",
+      "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+      "sourceNodeId": "309:828",
+      "bytes": 68198,
+      "sha256": "e47873576944264202e0df7f20c84263182840796c5e916d62dee5fb5aad64cd",
+      "format": "png",
+      "intrinsicWidth": 256,
+      "intrinsicHeight": 234,
+      "hasAlpha": true,
+      "designSlot": {
+        "width": 59.72,
+        "height": 54.58
+      },
+      "originalBytesUnchanged": true
+    },
+    {
+      "file": "everest.png",
+      "publicPath": "/images/home-figma/everest.png",
+      "label": "Everest landscape",
+      "sourceUrl": "https://www.figma.com/api/mcp/asset/f89491ce-bb0b-4171-8f7e-dcbc9b00e60c.png",
+      "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+      "sourceNodeId": "309:1043",
+      "bytes": 766849,
+      "sha256": "550c4b90a4058ba3b6d5de8a4c080dc1b995dc08570a8cded978cccf30802544",
+      "format": "png",
+      "intrinsicWidth": 750,
+      "intrinsicHeight": 444,
+      "hasAlpha": true,
+      "designSlot": {
+        "groupNodeId": "309:1041",
+        "groupLeft": 4.71,
+        "groupTop": 98.01,
+        "groupRotatedWrapperWidth": 243.294,
+        "groupRotatedWrapperHeight": 193.886,
+        "groupRotation": -7.73,
+        "imageInset": {
+          "top": "-9.99%",
+          "right": "0",
+          "bottom": "30.15%",
+          "left": "0.01px"
+        }
+      },
+      "originalBytesUnchanged": true
+    },
+    {
+      "file": "tape.png",
+      "publicPath": "/images/home-figma/tape.png",
+      "label": "Adhesive tape",
+      "sourceUrl": "https://www.figma.com/api/mcp/asset/393b32e1-4fed-4316-9526-01f383265e50.png",
+      "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+      "sourceNodeId": "309:1044",
+      "bytes": 7114,
+      "sha256": "b36d7f6e33b2c2f682eb3e05214e69349be7ea2707f851ef9a81b5e89eef667b",
+      "format": "png",
+      "intrinsicWidth": 128,
+      "intrinsicHeight": 46,
+      "hasAlpha": true,
+      "designSlot": {
+        "relativeTo": "309:1041",
+        "inset": {
+          "top": "-10.69%",
+          "right": "12.53%",
+          "bottom": "99.6%",
+          "left": "67.12%"
+        },
+        "rotation": -3
+      },
+      "originalBytesUnchanged": true
+    },
+    {
+      "file": "handwritten-note.png",
+      "publicPath": "/images/home-figma/handwritten-note.png",
+      "label": "Handwritten travel note",
+      "sourceUrl": "https://www.figma.com/api/mcp/asset/1e3acbe6-7662-4da5-9e96-1ca92e6430da.png",
+      "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+      "sourceNodeId": "309:1046",
+      "bytes": 25295,
+      "sha256": "34fc5ddeb1ac9933f5cc04f93fc26cd4683e0348e95d03706bdece91ce498286",
+      "format": "png",
+      "intrinsicWidth": 256,
+      "intrinsicHeight": 134,
+      "hasAlpha": true,
+      "designSlot": {
+        "relativeTo": "309:1041",
+        "inset": {
+          "top": "65%",
+          "right": "26%",
+          "bottom": "12.41%",
+          "left": "42.01%"
+        }
+      },
+      "originalBytesUnchanged": true
+    },
+    {
+      "file": "lukla-tag.png",
+      "publicPath": "/images/home-figma/lukla-tag.png",
+      "label": "Lukla luggage label",
+      "sourceUrl": "https://www.figma.com/api/mcp/asset/fec558b5-d536-4661-b20e-334cbe2cfe5c.png",
+      "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+      "sourceNodeId": "309:603",
+      "bytes": 86919,
+      "sha256": "2ad0587aec3ebbf6340d52f6b54039ba0f2b6e5f43aee4896e4c7a547bf017fc",
+      "format": "png",
+      "intrinsicWidth": 384,
+      "intrinsicHeight": 360,
+      "hasAlpha": true,
+      "designSlot": {
+        "left": 147.28,
+        "top": 89.28,
+        "width": 113.45,
+        "height": 106.36,
+        "rotation": -1.27,
+        "rotatedWrapperWidth": 115.783,
+        "rotatedWrapperHeight": 108.852
+      },
+      "originalBytesUnchanged": true
+    },
+    {
+      "file": "aircraft.png",
+      "publicPath": "/images/home-figma/aircraft.png",
+      "label": "Aircraft cutout",
+      "sourceUrl": "https://www.figma.com/api/mcp/asset/1d61dbe7-57c9-4483-bb84-92c3a9f77754.png",
+      "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+      "sourceNodeId": "309:828",
+      "bytes": 193848,
+      "sha256": "a396919540189820aa590825e3ccf90b74ce1a102dcbe01b2cd9387b5d810127",
+      "format": "png",
+      "intrinsicWidth": 640,
+      "intrinsicHeight": 427,
+      "hasAlpha": true,
+      "designSlot": {
+        "width": 198.89,
+        "height": 132.59
+      },
+      "originalBytesUnchanged": true
+    },
+    {
+      "file": "handdrawn-underline.svg",
+      "publicPath": "/images/home-figma/handdrawn-underline.svg",
+      "label": "Lime handdrawn heading underline",
+      "sourceUrl": "https://www.figma.com/api/mcp/asset/5eef8620-2d4c-4a46-957e-52864da6d0c0.svg",
+      "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+      "sourceNodeId": "331:87",
+      "bytes": 547,
+      "sha256": "a59ec24cd06a7db9f02d357792412419fea160c932a32421ffb028b488e9cfeb",
+      "format": "svg",
+      "intrinsicWidth": 256.261,
+      "intrinsicHeight": 16.6431,
+      "hasAlpha": true,
+      "designSlot": {
+        "frameWidth": 261.609,
+        "frameHeight": 22,
+        "vectorWidth": 253.7607,
+        "vectorHeight": 14.1429,
+        "vectorLeft": 3.2701,
+        "vectorTop": 4.0857
+      },
+      "originalBytesUnchanged": true,
+      "svgRoot": {
+        "width": "256.261",
+        "height": "16.6431",
+        "viewBox": "0 0 256.261 16.6431",
+        "preserveAspectRatio": "none"
+      }
+    }
+  ],
+  "underlineReuse": {
+    "confirmedNode": "331:87",
+    "sameProportionalGeometryNodes": [
+      "330:81",
+      "331:84",
+      "330:78"
+    ],
+    "formNode": {
+      "nodeId": "330:75",
+      "frameWidth": 321,
+      "frameHeight": 27,
+      "vectorWidth": 311.37,
+      "vectorHeight": 17.357,
+      "vectorLeft": 4.0125,
+      "vectorTop": 5.0143
+    },
+    "verification": "The downloaded SVG shape is confirmed for 331:87. Remaining four layers use the same proportional vector/frame geometry from parent metadata; reuse is proportional rather than independently source-byte verified.",
+    "slots": [
+      {
+        "nodeId": "331:87",
+        "section": "services",
+        "top": 863,
+        "frameWidth": 261.609,
+        "frameHeight": 22,
+        "sourceShape": "directly confirmed"
+      },
+      {
+        "nodeId": "331:84",
+        "section": "countries",
+        "top": 1673,
+        "frameWidth": 261.609,
+        "frameHeight": 22,
+        "sourceShape": "proportional reuse"
+      },
+      {
+        "nodeId": "330:81",
+        "section": "purpose",
+        "top": 2624,
+        "frameWidth": 261.609,
+        "frameHeight": 22,
+        "sourceShape": "proportional reuse"
+      },
+      {
+        "nodeId": "330:78",
+        "section": "process",
+        "top": 3568,
+        "frameWidth": 261.609,
+        "frameHeight": 22,
+        "sourceShape": "proportional reuse"
+      },
+      {
+        "nodeId": "330:75",
+        "section": "consultation",
+        "top": 173,
+        "positionRelativeTo": "consultation",
+        "frameWidth": 321,
+        "frameHeight": 27,
+        "sourceShape": "proportional reuse"
+      }
+    ]
+  },
+  "unverifiedPhotoNodes": [
+    "309:868",
+    "309:901",
+    "309:931"
+  ],
+  "limitations": [
+    "Starter-plan Figma MCP call limit prevented fetching the form underline and the three photo nodes. Existing project photographs retained by parent until a replacement can be confirmed."
+  ],
+  "heroTextLabels": [
+    {
+      "nodeId": "310:1049",
+      "text": "TRAVEL",
+      "left": 63,
+      "top": 81.862,
+      "rotatedWrapperWidth": 50.561,
+      "rotatedWrapperHeight": 29.949,
+      "rotation": -12.75
+    },
+    {
+      "nodeId": "310:1048",
+      "kind": "label dot",
+      "left": 60.28,
+      "top": 98.49,
+      "rotatedWrapperWidth": 6.208,
+      "rotatedWrapperHeight": 6.208,
+      "rotation": -12.75
+    }
+  ]
+}

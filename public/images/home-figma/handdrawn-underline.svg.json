@@ -1,0 +1,31 @@
+{
+  "prompt": "User-supplied edited Figma design asset. Downloaded original bytes from Figma MCP source; no AI image generation or redrawing.",
+  "kind": "Figma design asset provenance",
+  "file": "handdrawn-underline.svg",
+  "publicPath": "/images/home-figma/handdrawn-underline.svg",
+  "label": "Lime handdrawn heading underline",
+  "sourceUrl": "https://www.figma.com/api/mcp/asset/5eef8620-2d4c-4a46-957e-52864da6d0c0.svg",
+  "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+  "sourceNodeId": "331:87",
+  "bytes": 547,
+  "sha256": "a59ec24cd06a7db9f02d357792412419fea160c932a32421ffb028b488e9cfeb",
+  "format": "svg",
+  "intrinsicWidth": 256.261,
+  "intrinsicHeight": 16.6431,
+  "hasAlpha": true,
+  "designSlot": {
+    "frameWidth": 261.609,
+    "frameHeight": 22,
+    "vectorWidth": 253.7607,
+    "vectorHeight": 14.1429,
+    "vectorLeft": 3.2701,
+    "vectorTop": 4.0857
+  },
+  "originalBytesUnchanged": true,
+  "svgRoot": {
+    "width": "256.261",
+    "height": "16.6431",
+    "viewBox": "0 0 256.261 16.6431",
+    "preserveAspectRatio": "none"
+  }
+}

@@ -7,6 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default function MotionScene() {
   const pathname = usePathname();
   useEffect(() => {
+    // The homepage owns its scoped scroll scenes and their cleanup.
+    if (pathname === "/") return;
     gsap.registerPlugin(ScrollTrigger);
     const media = gsap.matchMedia();
     media.add("(prefers-reduced-motion: no-preference)", () => {
