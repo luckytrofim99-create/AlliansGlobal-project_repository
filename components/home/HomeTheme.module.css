@@ -27,9 +27,12 @@
 }
 :global(body):has(.surface) {
   --home-bg: #f1ebdd;
-  --home-ink: #171717;
-  --home-muted: #68645d;
-  --home-accent: #23533c;
+  --home-ink: #0d2734;
+  --home-muted: #59656a;
+  --home-accent: #0d2734;
+  --home-accent-hover: #174353;
+  --home-gold: #b19365;
+  --home-soft: #e9ddc9;
   --home-sans: "Idadu Work Sans", "Manrope", system-ui, sans-serif;
   --home-display: "Idadu Work Sans", "Manrope", system-ui, sans-serif;
   background: var(--home-bg);
@@ -40,7 +43,7 @@
   font-family: var(--home-sans);
   color: var(--home-ink);
   background-color: var(--home-bg);
-  background-image: radial-gradient(circle, #1717171a 1px, transparent 1px);
+  background-image: radial-gradient(circle, #0d27341a 1px, transparent 1px);
   background-size: 26px 26px;
 }
 .surface::before {
@@ -55,15 +58,15 @@
 }
 .surface ::selection {
   color: #fff;
-  background: #23533c;
+  background: #0d2734;
 }
 .surface :focus-visible {
-  outline: 3px solid #23533c;
+  outline: 3px solid #0d2734;
   outline-offset: 5px;
 }
 .surface input,
 .surface textarea {
-  caret-color: #23533c;
+  caret-color: #0d2734;
 }
 .surface * {
   scrollbar-color: #a9a293 #eee8dc;

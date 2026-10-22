@@ -29,7 +29,7 @@
 }
 .inner :global(.logo) {
   gap: 9px;
-  color: #233d30;
+  color: #0d2734;
 }
 .inner :global(.logo-symbol) {
   width: 33px;
@@ -47,7 +47,7 @@
   justify-content: center;
   min-height: 44px;
   padding: 11px 20px;
-  background: #23533c;
+  background: var(--home-accent, #0d2734);
   color: #fff;
   border-radius: 999px;
   font-family: "Idadu Work Sans", "Manrope", system-ui, sans-serif;
@@ -65,7 +65,7 @@
 }
 @media (hover: hover) and (pointer: fine) {
   .action:hover {
-    background: #326b4e;
+    background: var(--home-accent-hover, #174353);
   }
 }
 @media (max-width: 760px) {
@@ -120,7 +120,7 @@
 @media (prefers-contrast: more) {
   .inner {
     background: #fffdf6;
-    outline: 1px solid #3d493e;
+    outline: 1px solid #0d2734;
   }
 }
 @media (prefers-reduced-motion: reduce) {

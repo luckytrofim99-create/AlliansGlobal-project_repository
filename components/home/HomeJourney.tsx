@@ -6,7 +6,7 @@ DESIGN_VARIANCE 7 / MOTION_INTENSITY 6 / VISUAL_DENSITY 3.
 FIRST VIEWPORT: plain-language Figma offer; one primary pill; a travel print, tickets and stamps assemble into a collage. No slogans, section counters or diagonal arrows.
 SIGNATURE: independent printed objects assemble with distinct physical entrances; the mobile
 composition is authored separately. Native scrolling remains in charge.
-MOTION: Motion owns this homepage; GSAP remains isolated on inner routes.
+MOTION: Motion owns the homepage; inner routes reuse its visible-first entrance vocabulary.
 FINISH: verify desktop/mobile behavior and record the built system in DESIGN.md.
 */
 import Image from "next/image";
@@ -24,7 +24,6 @@ import {
   animate,
   motion,
   useMotionValue,
-  useReducedMotion,
   useScroll,
   useSpring,
   useTransform,
@@ -189,9 +188,20 @@ function subscribeNarrow(callback: () => void) {
 function narrowSnapshot() {
   return window.matchMedia("(max-width: 1023px)").matches;
 }
+function subscribeReduced(callback: () => void) {
+  const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+  media.addEventListener("change", callback);
+  return () => media.removeEventListener("change", callback);
+}
+function reducedSnapshot() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+function useStableReducedMotion() {
+  return useSyncExternalStore(subscribeReduced, reducedSnapshot, () => false);
+}
 function Hero() {
   const ref = useRef<HTMLElement>(null);
-  const reduce = useReducedMotion();
+  const reduce = useStableReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -235,7 +245,7 @@ function ServiceScene() {
   const [manual, setManual] = useState(false);
   const [keyboard, setKeyboard] = useState(false);
   const root = useRef<HTMLElement>(null);
-  const reduce = useReducedMotion();
+  const reduce = useStableReducedMotion();
   const x = useMotionValue(0);
   const carrier = useRef<HTMLDivElement>(null);
   const [dragDistance, setDragDistance] = useState(220);
@@ -382,7 +392,7 @@ function Destinations() {
   const [selected, setSelected] = useState(0);
   const [keyboard, setKeyboard] = useState(false);
   const scroller = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
+  const reduce = useStableReducedMotion();
   const item = countries[selected];
   return (
     <section
@@ -487,7 +497,7 @@ function Destinations() {
 function Purpose() {
   const [selected, setSelected] = useState(1);
   const [keyboard, setKeyboard] = useState(false);
-  const reduce = useReducedMotion();
+  const reduce = useStableReducedMotion();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,

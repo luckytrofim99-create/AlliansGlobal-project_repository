@@ -5,6 +5,8 @@ import "@fontsource/manrope/cyrillic-500.css";
 import "@fontsource/manrope/latin-500.css";
 import "@fontsource/manrope/cyrillic-600.css";
 import "@fontsource/manrope/latin-600.css";
+import "@fontsource/manrope/cyrillic-700.css";
+import "@fontsource/manrope/latin-700.css";
 import "@fontsource/cormorant-garamond/cyrillic-400.css";
 import "@fontsource/cormorant-garamond/latin-400.css";
 import "@fontsource/cormorant-garamond/cyrillic-500.css";
@@ -14,7 +16,6 @@ import "@fontsource/cormorant-garamond/latin-400-italic.css";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import MotionScene from "@/components/MotionScene";
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
@@ -35,13 +36,9 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body>
-        <a className="skip-link" href="#main">
-          К содержанию
-        </a>
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />
-        <MotionScene />
       </body>
     </html>
   );

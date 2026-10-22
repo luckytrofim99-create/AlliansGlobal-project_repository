@@ -1,22 +1,37 @@
 "use client";
-import { Plus } from "lucide-react";
+
+import { useId } from "react";
+import styles from "./FAQ.module.css";
+
 export default function FAQ({
   items,
 }: {
   items: { question: string; answer: string }[];
 }) {
+  const id = useId();
   return (
-    <div className="faq-list">
-      {items.map((item, i) => (
-        <details key={item.question} className="faq-item" name="faq">
+    <div className={styles.list}>
+      {items.map((item) => (
+        <details
+          key={item.question}
+          className={styles.item}
+          name={`faq-${id}`}
+          onToggle={(event) => {
+            if (
+              !event.currentTarget.open ||
+              window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ) return;
+            event.currentTarget.querySelector("p")?.animate(
+              [{ opacity: 0.65 }, { opacity: 1 }],
+              { duration: 160, easing: "cubic-bezier(0.23, 1, 0.32, 1)" },
+            );
+          }}
+        >
           <summary>
-            <span className="faq-number">0{i + 1}</span>
             <span>{item.question}</span>
-            <Plus size={20} strokeWidth={1.3} />
+            <span className={styles.indicator} aria-hidden="true" />
           </summary>
-          <div className="faq-answer">
-            <p>{item.answer}</p>
-          </div>
+          <div className={styles.answer}><p>{item.answer}</p></div>
         </details>
       ))}
     </div>

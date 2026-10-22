@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { CTA, PageHero } from "@/components/ui";
+import { PageCard, PageClosing, PageHero, PageLink, PageSection, PageShell } from "@/components/pages/PageKit";
 import { articles } from "@/lib/content";
+import styles from "@/components/pages/EditorialLayouts.module.css";
 
 export const metadata: Metadata = {
   title: "Полезное",
@@ -13,60 +11,35 @@ export const metadata: Metadata = {
 
 export default function JournalPage() {
   return (
-    <>
+    <PageShell>
       <PageHero
-        eyebrow="Полезное"
-        title="Больше понимания."
-        accent="До следующего шага."
-        description="Мысли, вопросы и ориентиры, которые помогут подготовиться к разговору о ваших международных планах. Начните с того, что важно сейчас."
-      />
-
-      <section
-        className="journal-page section container"
-        id="explore"
-        aria-label="Материалы о подготовке к переезду"
+        title="Больше понимания. До следующего шага."
+        intro="Мысли, вопросы и ориентиры, которые помогут подготовиться к разговору о ваших международных планах. Начните с того, что важно сейчас."
+        compact
       >
-        <div className="journal-grid">
+        <PageLink href="#explore" secondary>Выбрать материал</PageLink>
+      </PageHero>
+
+      <PageSection id="explore">
+        <div className={styles.pair} aria-label="Материалы о подготовке к переезду">
           {articles.map((article) => (
-            <Link
-              href={`/journal/${article.slug}`}
-              className="article-card"
+            <PageCard
               key={article.slug}
-              data-reveal
-            >
-              <div className="article-image image-frame">
-                <Image
-                  src={article.image}
-                  alt=""
-                  fill
-                  sizes="(max-width: 760px) 88vw, 44vw"
-                />
-              </div>
-              <div className="article-meta">
-                <span>{article.category}</span>
-                <span>{article.readTime} чтения</span>
-              </div>
-              <h3>{article.title}</h3>
-              <p className="article-excerpt">{article.excerpt}</p>
-              <div className="article-read">
-                <span>Читать материал</span>
-                <ArrowUpRight size={18} strokeWidth={1.3} aria-hidden="true" />
-              </div>
-            </Link>
+              title={article.title}
+              body={article.excerpt}
+              image={article.image}
+              label={`${article.category} · ${article.readTime} чтения`}
+              href={`/journal/${article.slug}`}
+              action="Читать материал"
+            />
           ))}
         </div>
-      </section>
+      </PageSection>
 
-      <CTA
-        title={
-          <>
-            Ваш вопрос заслуживает
-            <br />
-            <em>отдельного разговора.</em>
-          </>
-        }
+      <PageClosing
+        title="Ваш вопрос заслуживает отдельного разговора."
         text="Материалы помогают сориентироваться. Ваши обстоятельства подскажут, с чего стоит начать дальше."
       />
-    </>
+    </PageShell>
   );
 }

@@ -90,7 +90,7 @@
   font-family: inherit;
   font-size: 16px;
   line-height: 1.5;
-  caret-color: var(--home-accent, #3a4a3c);
+  caret-color: var(--home-accent, #0d2734);
   transition:
     background 180ms ease,
     border-color 180ms ease;
@@ -117,7 +117,7 @@
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: #6d6c69;
+  color: #59656a;
   opacity: 1;
 }
 
@@ -286,7 +286,7 @@
   border: 0;
   border-radius: 999px;
   padding: 15px 24px;
-  background: var(--home-accent, #23533c);
+  background: var(--home-accent, #0d2734);
   color: #fff;
   font-family: inherit;
   font-size: 15px;
@@ -378,7 +378,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .submit:hover {
-    background: #326b4e;
+    background: var(--home-accent-hover, #174353);
   }
   .download:hover {
     background: #ded7c9;

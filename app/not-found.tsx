@@ -1,15 +1,15 @@
-import { ButtonLink } from "@/components/ui";
+import { PageHero, PageLink, PageShell } from "@/components/pages/PageKit";
+import styles from "@/components/pages/EditorialLayouts.module.css";
+
 export default function NotFound() {
   return (
-    <section className="not-found">
-      <span>404</span>
-      <h1>
-        Этот маршрут
-        <br />
-        <em>ещё не открыт.</em>
-      </h1>
-      <p>Вернёмся туда, где начинаются новые возможности.</p>
-      <ButtonLink href="/">На главную</ButtonLink>
-    </section>
+    <PageShell>
+      <div className={styles.empty}>
+        <PageHero title="Этот маршрут ещё не открыт." intro="Ошибка 404. Вернёмся туда, где начинаются новые возможности." compact>
+          <PageLink href="/">На главную</PageLink>
+          <PageLink href="/countries" secondary>Изучить направления</PageLink>
+        </PageHero>
+      </div>
+    </PageShell>
   );
 }

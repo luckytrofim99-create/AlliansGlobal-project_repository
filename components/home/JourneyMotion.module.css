@@ -13,8 +13,12 @@
   margin: -2px auto 5px;
   line-height: 0;
   pointer-events: none;
+  background: var(--home-gold, #b19365);
+  mask-image: url("/images/home-figma/handdrawn-underline.svg");
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
 }
-.accent img { display: block; width: 100%; height: auto; }
+.accent img { display: block; width: 100%; height: auto; opacity: 0; }
 .wide { width: min(100%, 321px); margin: -2px 0 5px; }
 @media (prefers-reduced-motion: reduce) {
   .wordMask > span, .accent { transform: none !important; clip-path: none !important; }

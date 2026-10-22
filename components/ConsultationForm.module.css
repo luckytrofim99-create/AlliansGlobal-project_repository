@@ -1,0 +1,9 @@
+.surface {
+  width: 100%;
+  min-width: 0;
+}
+
+.surface > section {
+  padding-top: clamp(24px, 5vw, 72px);
+  background: transparent;
+}
