@@ -40,6 +40,9 @@
 @media (max-width: 760px) {
   .stage { width: calc(100% + 44px); margin: 18px -22px 0; }
 }
+@media (max-width: 1023px) {
+  .stage { overflow-x: clip; }
+}
 @media (max-width: 360px) {
   .stage { width: calc(100% + 36px); margin-inline: -18px; }
 }
