@@ -227,7 +227,7 @@ The site uses normal document scrolling, centered introductions and wide photogr
 
 Desktop homepage service, purpose, process and consultation content use two columns. Internal photographic heroes split copy and image; plain heroes center the copy. Internal card collections use three columns, two at 1000px and one at 760px. At 760px internal heroes stack, and their copy, section introductions and actions align left. At 760px the homepage scenes stack; consultation becomes one column at 900px and its paired fields stack at 560px. Country choices scroll horizontally without a visible scrollbar; goals wrap. The mobile hero has independently positioned and scaled objects rather than a shrunken desktop arrangement.
 
-The header occupies 84px on desktop and 72px on mobile. Its inner pill is capped at 1380px. Internal desktop navigation changes to a native dialog below 1150px. Sections provide anchor offsets so the header does not obscure headings. Footer links are three groups on desktop, two columns on mobile.
+The header occupies 84px on desktop and 72px on mobile. The homepage pill is 1000px maximum at the top, then narrows to 680px and 56px high after 40px of scroll; on mobile it changes from 56px to 52px. That compact transition takes 600ms with a soft ease-out. Internal desktop navigation changes to a native dialog below 1150px. Sections provide anchor offsets so the header does not obscure headings. Footer links are three groups on desktop, two columns on mobile.
 
 The service scene uses sticky content during native scrolling: 210svh on desktop and 185svh on mobile. Compact viewports remove the sticky runway (desktop height at most 760px, mobile height at most 720px). Reduced motion also makes the scene ordinary flow. Manual selection or drag takes precedence over automatic scroll selection.
 
@@ -239,7 +239,7 @@ Depth comes from tonal layers, soft local shadows and the overlap of photographs
 
 The ground uses 1px navy dots on a 26px grid and `paper-grain.svg` at 0.42 opacity with multiply blending. The consultation section deliberately returns to a plain paper-color ground.
 
-The header is transparent at the top. After 30px of scroll its inner pill gains a translucent cream fill, blur (20px), saturation (1.15), a diffuse shadow and an inset highlight. Reduced transparency replaces that treatment with opaque cream; the mobile menu backdrop also loses its blur.
+The header is transparent at the top. After 40px of scroll its inner pill gains a translucent cream fill, blur (20px), saturation (1.15), a diffuse shadow and an inset highlight. The homepage also compresses to a smaller pill; internal navigation keeps enough width for its links. Reduced transparency replaces the cream fill with an opaque surface; the mobile menu backdrop also loses its blur.
 
 ### Shadow Vocabulary
 

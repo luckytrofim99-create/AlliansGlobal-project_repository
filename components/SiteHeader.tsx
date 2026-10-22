@@ -26,7 +26,7 @@ export default function SiteHeader() {
   const trigger = useRef<HTMLButtonElement>(null);
   const outsideDown = useRef(false);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -40,7 +40,7 @@ export default function SiteHeader() {
   }, []);
   const close = () => dialog.current?.close();
   return <>
-    <header className={`${home.header}${scrolled ? ` ${home.scrolled}` : ""}`}>
+    <header className={`${home.header}${isHome ? ` ${home.homeHeader}` : ""}${scrolled ? ` ${home.scrolled}` : ""}`}>
       <div className={`${home.inner} ${isHome ? "" : styles.inner}`}>
         <Logo />
         {!isHome && <nav className={styles.desktop} aria-label="Основная навигация">{links.map((link) => <Link href={link.href} key={link.href} aria-current={pathname === link.href ? "page" : pathname.startsWith(`${link.href}/`) ? "location" : undefined}>{link.label}</Link>)}</nav>}
