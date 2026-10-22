@@ -33,8 +33,26 @@
     border-color 400ms ease,
     backdrop-filter 400ms ease;
 }
+.innerHeader .inner {
+  height: 64px;
+  border: 1px solid transparent;
+  transition:
+    max-width 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    padding 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 400ms ease,
+    box-shadow 400ms ease,
+    border-color 400ms ease,
+    backdrop-filter 400ms ease;
+}
 .homeHeader.scrolled .inner {
   max-width: 680px;
+  height: 56px;
+  padding: 6px 16px;
+  border-color: #b1936530;
+}
+.innerHeader.scrolled .inner {
+  max-width: 1000px;
   height: 56px;
   padding: 6px 16px;
   border-color: #b1936530;
@@ -57,6 +75,19 @@
   font-size: 7px;
 }
 .homeHeader.scrolled .inner .action {
+  padding-inline: 16px;
+}
+.innerHeader.scrolled .inner :global(.logo-symbol) {
+  width: 30px;
+  height: 39px;
+}
+.innerHeader.scrolled .inner :global(.wordmark) {
+  font-size: 20px;
+}
+.innerHeader.scrolled .inner :global(.wordmark > span) {
+  font-size: 7px;
+}
+.innerHeader.scrolled .inner .action {
   padding-inline: 16px;
 }
 .inner :global(.logo) {
@@ -120,6 +151,16 @@
     height: 52px;
     padding: 4px 6px 4px 14px;
   }
+  .innerHeader .inner {
+    max-width: calc(100vw - 20px);
+    height: 56px;
+    padding: 6px 10px;
+  }
+  .innerHeader.scrolled .inner {
+    max-width: calc(100vw - 32px);
+    height: 52px;
+    padding: 4px 6px 4px 14px;
+  }
   .inner :global(.logo-symbol) {
     width: 27px;
     height: 36px;
@@ -165,6 +206,19 @@
     font-size: 6px;
   }
   .homeHeader.scrolled .inner .action {
+    padding-inline: 12px;
+  }
+  .innerHeader.scrolled .inner :global(.logo-symbol) {
+    width: 25px;
+    height: 34px;
+  }
+  .innerHeader.scrolled .inner :global(.wordmark) {
+    font-size: 17px;
+  }
+  .innerHeader.scrolled .inner :global(.wordmark > span) {
+    font-size: 6px;
+  }
+  .innerHeader.scrolled .inner .action {
     padding-inline: 12px;
   }
 }
