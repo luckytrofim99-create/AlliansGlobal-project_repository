@@ -4,6 +4,7 @@ import { useId, useState, type FormEvent } from "react";
 import { countries } from "@/lib/content";
 import styles from "./QuickConsultation.module.css";
 import { AccentLine, RevealWords } from "./JourneyMotion";
+import { LocalizedTree, useAllianceLocale, tx } from "@/components/alliance/AllianceLocale";
 
 const goals = [
   { value: "visa", label: "Виза" },
@@ -24,6 +25,7 @@ export default function QuickConsultation({
   initialGoal = "",
   initialCountry = "",
 }: QuickConsultationProps) {
+  const { locale } = useAllianceLocale();
   const id = useId();
   const [goal, setGoal] = useState(
     goals.some((item) => item.value === initialGoal) ? initialGoal : "",
@@ -44,14 +46,14 @@ export default function QuickConsultation({
   const contact = contacts[method];
 
   function validateContact(value: string) {
-    if (!value.trim()) return "Укажите контакт для ответа.";
+    if (!value.trim()) return tx(locale, "Укажите контакт для ответа.");
     if (
       method === "telegram" &&
       !/^(?:@|(?:https?:\/\/)?t\.me\/)?[a-zA-Z0-9_]{5,32}\/?$/.test(
         value.trim(),
       )
     ) {
-      return "Укажите имя пользователя Telegram, например @username.";
+      return tx(locale, "Укажите имя пользователя Telegram, например @username.");
     }
     if (method === "phone") {
       const digits = value.replace(/\D/g, "");
@@ -60,7 +62,7 @@ export default function QuickConsultation({
         digits.length < 8 ||
         digits.length > 15
       ) {
-        return "Укажите телефон с кодом страны, например +7 999 123-45-67.";
+        return tx(locale, "Укажите телефон с кодом страны, например +7 999 123-45-67.");
       }
     }
     return "";
@@ -74,14 +76,14 @@ export default function QuickConsultation({
     const contactError = validateContact(contact);
     contactInput.setCustomValidity(contactError);
     consentInput.setCustomValidity(
-      consent ? "" : "Нужно ваше согласие на обработку данных для ответа.",
+      consent ? "" : tx(locale, "Нужно ваше согласие на обработку данных для ответа."),
     );
     if (!form.checkValidity()) {
       setErrors({
         contact: contactError || undefined,
         consent: consent
           ? undefined
-          : "Нужно ваше согласие на обработку данных для ответа.",
+          : tx(locale, "Нужно ваше согласие на обработку данных для ответа."),
       });
       form.querySelector<HTMLElement>(":invalid")?.focus();
       return;
@@ -94,26 +96,28 @@ export default function QuickConsultation({
   }
 
   function downloadDraft() {
-    const task =
-      goals.find((item) => item.value === goal)?.label ?? "Пока не определена";
-    const destination =
-      countries.find((item) => item.slug === country)?.name ?? "Ещё не выбрана";
+    const task = tx(locale,
+      goals.find((item) => item.value === goal)?.label ?? "Пока не определена",
+    );
+    const destination = tx(locale,
+      countries.find((item) => item.slug === country)?.name ?? "Ещё не выбрана",
+    );
     const text = [
       "ALLIANCE GLOBAL — черновик обращения",
       "",
-      `Задача: ${task}`,
-      `Страна: ${destination}`,
-      `${method === "telegram" ? "Telegram" : "Телефон"}: ${contact.trim()}`,
-      `Комментарий: ${comment.trim() || "Не добавлен"}`,
+      `${locale === "ru" ? "Задача" : "Goal"}: ${task}`,
+      `${locale === "ru" ? "Страна" : "Destination"}: ${destination}`,
+      `${method === "telegram" ? "Telegram" : tx(locale, "Телефон")}: ${contact.trim()}`,
+      `${locale === "ru" ? "Комментарий" : "Note"}: ${comment.trim() || tx(locale, "Не добавлен")}`,
       "",
-      "Это локальный черновик. Обращение не отправлено компании.",
+      locale === "ru" ? "Это локальный черновик. Обращение не отправлено компании." : "This is a local draft. Nothing has been sent to the company.",
     ].join("\n");
     const url = URL.createObjectURL(
       new Blob(["\uFEFF", text], { type: "text/plain;charset=utf-8" }),
     );
     const link = document.createElement("a");
     link.href = url;
-    link.download = "Alliance-Global-черновик.txt";
+    link.download = locale === "ru" ? "Alliance-Global-черновик.txt" : "Alliance-Global-draft.txt";
     document.body.appendChild(link);
     link.click();
     link.remove();
@@ -122,7 +126,7 @@ export default function QuickConsultation({
   }
 
   return (
-    <section
+    <LocalizedTree><section
       className={styles.section}
       id="consultation"
       aria-labelledby={`${id}-title`}
@@ -350,6 +354,6 @@ export default function QuickConsultation({
           </div>
         </form>
       </div>
-    </section>
+    </section></LocalizedTree>
   );
 }

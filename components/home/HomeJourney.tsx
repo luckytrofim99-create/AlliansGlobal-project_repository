@@ -34,6 +34,7 @@ import HeroCollage from "./HeroCollage";
 import { AccentLine, ChangingCopy, RevealWords, useJourneyMotion } from "./JourneyMotion";
 import styles from "./HomeJourney.module.css";
 import theme from "./HomeTheme.module.css";
+import { LocalizedTree } from "@/components/alliance/AllianceLocale";
 
 const spring = {
   type: "spring" as const,
@@ -213,7 +214,7 @@ function Hero() {
     () => false,
   );
   return (
-    <section className={styles.hero} ref={ref} aria-labelledby="home-title">
+    <LocalizedTree><section className={styles.hero} ref={ref} aria-labelledby="home-title">
       <div className={styles.heroCopy}>
         <h1 id="home-title" data-reveal="title">
           <RevealWords>Визы и переезд</RevealWords>
@@ -236,7 +237,7 @@ function Hero() {
         </p>
       </div>
       <HeroCollage progress={smooth} reduced={!!reduce} narrow={narrow} />
-    </section>
+    </section></LocalizedTree>
   );
 }
 
@@ -291,7 +292,7 @@ function ServiceScene() {
     void animate(x, 0, { ...spring, velocity: info.velocity.x });
   }
   return (
-    <section
+    <LocalizedTree><section
       id="services"
       ref={root}
       className={`${styles.services}${reduce ? ` ${styles.staticScene}` : ""}`}
@@ -384,7 +385,7 @@ function ServiceScene() {
           Все услуги
         </Link>
       </div>
-    </section>
+    </section></LocalizedTree>
   );
 }
 
@@ -395,7 +396,7 @@ function Destinations() {
   const reduce = useStableReducedMotion();
   const item = countries[selected];
   return (
-    <section
+    <LocalizedTree><section
       className={styles.destinations}
       id="destinations"
       aria-labelledby="destinations-title"
@@ -490,7 +491,7 @@ function Destinations() {
           Поможем разобраться
         </Link>
       </div>
-    </section>
+    </section></LocalizedTree>
   );
 }
 
@@ -506,7 +507,7 @@ function Purpose() {
   const photoY = useTransform(scrollYProgress, [0, 1], [24, -24]);
   const item = goals[selected];
   return (
-    <section
+    <LocalizedTree><section
       className={styles.purpose}
       ref={ref}
       aria-labelledby="purpose-title"
@@ -576,13 +577,13 @@ function Purpose() {
           </PillLink>
         </ChangingCopy>
       </div>
-    </section>
+    </section></LocalizedTree>
   );
 }
 
 function Process() {
   return (
-    <section className={styles.process} aria-labelledby="process-title">
+    <LocalizedTree><section className={styles.process} aria-labelledby="process-title">
       <div className={styles.sectionIntro}>
         <h2 id="process-title" data-reveal="heading"><RevealWords>Рядом на каждом этапе.</RevealWords></h2>
         <AccentLine />
@@ -616,7 +617,7 @@ function Process() {
           </Link>
         </div>
       </div>
-    </section>
+    </section></LocalizedTree>
   );
 }
 

@@ -5,11 +5,12 @@ import theme from "@/components/home/HomeTheme.module.css";
 import { RevealWords } from "@/components/home/JourneyMotion";
 import { PageMotion, PagePhotoMotion } from "./PageMotion";
 import styles from "./PageKit.module.css";
+import { LocalizedTree } from "@/components/alliance/AllianceLocale";
 
 type Children = { children: ReactNode; className?: string };
 
 export function PageShell({ children, className = "" }: Children) {
-  return <div className={`${theme.surface} ${styles.page} ${className}`} data-paper-page><PageMotion>{children}</PageMotion></div>;
+  return <div className={`${theme.surface} ${styles.page} ${className}`} data-paper-page><PageMotion><LocalizedTree>{children}</LocalizedTree></PageMotion></div>;
 }
 
 export function PageHero({ title, intro, image, imageAlt = "", compact = false, children }: {

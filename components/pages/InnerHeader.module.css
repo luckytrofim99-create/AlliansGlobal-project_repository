@@ -3,6 +3,9 @@
 .desktop a { display: inline-flex; align-items: center; min-height: 44px; color: #59656a; font-size: 12px; white-space: nowrap; text-underline-offset: 7px; }
 .desktop a[aria-current] { color: #0d2734; text-decoration: underline; text-decoration-color: #b19365; }
 .actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.homeLanguage, .navLanguage { display: flex; align-items: center; }
+.dialogLanguage { display: none; justify-content: flex-end; margin: -8px 0 18px; }
+.homeCtaShort { display: none; }
 .menuButton, .close { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; color: #0d2734; background: #e9ddc9; }
 .menuButton { display: none; }
 .dialog { width: min(560px, calc(100vw - 32px)); max-width: none; max-height: calc(100svh - 32px); margin: auto; padding: 30px; border: 0; border-radius: 32px; background: #faf7ef; color: #0d2734; font-family: var(--home-sans, "Manrope", sans-serif); box-shadow: 0 24px 90px #0d27343d; overflow-y: auto; }
@@ -16,8 +19,8 @@
 .mobile a[aria-current] { font-weight: 600; text-decoration: underline; text-decoration-color: #b19365; text-underline-offset: 7px; }
 .menuCta { width: 100%; margin-top: 28px; }
 .dialog :focus-visible, .menuButton:focus-visible { outline: 3px solid #0d2734; outline-offset: 4px; }
-@media (max-width: 1149px) { .desktop { display: none; } .menuButton { display: grid; } }
-@media (max-width: 760px) { .actions { gap: 8px; } .dialog { padding: 25px; border-radius: 28px; } }
+@media (max-width: 1149px) { .desktop { display: none; } .navLanguage { display: none; } .dialogLanguage { display: flex; } .menuButton { display: grid; } }
+@media (max-width: 760px) { .actions { gap: 8px; } .dialog { padding: 25px; border-radius: 28px; } .homeCtaFull { display: none; } .homeCtaShort { display: inline; } }
 @media (hover: hover) and (pointer: fine) { .desktop a:hover { color: #0d2734; text-decoration: underline; } .menuButton:hover, .close:hover { background: #dfcba8; } }
 @media (prefers-reduced-transparency: reduce) { .dialog::backdrop { backdrop-filter: none; background: #0d2734cc; } }
 @media (prefers-reduced-motion: reduce) { .dialog[open] { animation: none; } }

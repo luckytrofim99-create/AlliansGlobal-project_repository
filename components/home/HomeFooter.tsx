@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/ui";
 import styles from "./HomeFooter.module.css";
+import { LocalizedTree } from "@/components/alliance/AllianceLocale";
 
 const groups = [
   {
@@ -31,6 +32,7 @@ const groups = [
 
 export default function HomeFooter() {
   return (
+    <LocalizedTree>
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.brand}>
@@ -56,5 +58,6 @@ export default function HomeFooter() {
         <Link href="/privacy">Информация о конфиденциальности</Link>
       </div>
     </footer>
+    </LocalizedTree>
   );
 }

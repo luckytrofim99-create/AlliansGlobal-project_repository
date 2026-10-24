@@ -16,6 +16,7 @@ import "@fontsource/cormorant-garamond/latin-400-italic.css";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import { AllianceLocaleProvider } from "@/components/alliance/AllianceLocale";
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
@@ -36,9 +37,11 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body>
-        <SiteHeader />
-        <main id="main">{children}</main>
-        <SiteFooter />
+        <AllianceLocaleProvider>
+          <SiteHeader />
+          <main id="main">{children}</main>
+          <SiteFooter />
+        </AllianceLocaleProvider>
       </body>
     </html>
   );

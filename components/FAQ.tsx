@@ -2,6 +2,7 @@
 
 import { useId } from "react";
 import styles from "./FAQ.module.css";
+import { useAllianceLocale, tx } from "./alliance/AllianceLocale";
 
 export default function FAQ({
   items,
@@ -9,6 +10,7 @@ export default function FAQ({
   items: { question: string; answer: string }[];
 }) {
   const id = useId();
+  const { locale } = useAllianceLocale();
   return (
     <div className={styles.list}>
       {items.map((item) => (
@@ -28,10 +30,10 @@ export default function FAQ({
           }}
         >
           <summary>
-            <span>{item.question}</span>
+            <span>{tx(locale, item.question)}</span>
             <span className={styles.indicator} aria-hidden="true" />
           </summary>
-          <div className={styles.answer}><p>{item.answer}</p></div>
+          <div className={styles.answer}><p>{tx(locale, item.answer)}</p></div>
         </details>
       ))}
     </div>
