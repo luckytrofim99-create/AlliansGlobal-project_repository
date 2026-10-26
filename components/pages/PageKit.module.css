@@ -18,7 +18,7 @@
 .hero, .section, .closing { width: min(1300px, calc(100% - 2 * clamp(22px, 5vw, 88px))); margin-inline: auto; }
 .hero { padding-block: clamp(40px, 6vw, 88px) clamp(55px, 8vw, 110px); }
 .heroCopy { max-width: 970px; margin-inline: auto; text-align: center; }
-.back { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 24px; color: var(--home-muted); font-size: 11px; letter-spacing: .06em; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: #a88a5c70; }
+.back { margin-bottom: 24px; }
 .lead { max-width: 650px; margin: 27px auto 0; }
 .hero .lead { font-size: 17px; line-height: 1.7; }
 .actions { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 28px; }
@@ -42,12 +42,9 @@
 .cardImage img { object-fit: cover; transition: transform 500ms var(--ease-out); }
 .cardBody { display: flex; flex: 1; align-items: flex-start; flex-direction: column; gap: 17px; padding: clamp(25px, 2.8vw, 36px); }
 .cardBody h3 { font-size: clamp(30px, 2.8vw, 40px); }
-.cardBody > .quiet { margin-top: auto; padding-top: 12px; }
+.cardBody > .quiet { margin-top: auto; }
 .cardBody .context { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #78613f; }
-.action { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 15px 25px; border: 1px solid transparent; background: var(--home-accent); color: #fff; font-size: 12px; letter-spacing: .035em; font-weight: 500; line-height: 1.5; text-align: center; transition: background-color 180ms ease, transform 160ms var(--ease-out); }
-.action:active { transform: scale(.97); }
-.secondary { border-color: var(--home-line, #dcded7); background: transparent; color: var(--home-ink); }
-.quiet { display: inline-flex; align-items: center; min-height: 44px; color: var(--home-accent); font-size: 12px; font-weight: 500; letter-spacing: .025em; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: #a88a5c80; }
+.action, .quiet { max-width: 100%; }
 .list { list-style: disc; margin: 20px 0 0; padding-left: 19px; color: var(--home-muted); font-size: 15px; line-height: 1.8; }
 .list li { padding-left: 4px; margin-bottom: 14px; }
 .list li::marker { color: var(--home-gold); }
@@ -55,8 +52,7 @@
 .closing > div { max-width: 730px; }
 .closing h2 { color: #fffefa; font-size: clamp(40px, 4.4vw, 64px); }
 .closing p { color: #d7dedc; max-width: 570px; margin-top: 20px; }
-.closing .action { background: var(--home-bg, #f8f6f0); color: #102f3e; flex-shrink: 0; }
-.closing .action:focus-visible { outline-color: var(--home-gold); }
+.closing .action { flex-shrink: 0; }
 .reading { width: min(760px, 100%); margin-inline: auto; }
 .reading h2 { font-size: clamp(36px, 3.5vw, 50px); margin: 48px 0 22px; }
 .reading h3 { font-size: 33px; margin: 32px 0 18px; }
@@ -66,11 +62,7 @@
 .reading a { color: var(--home-accent); text-decoration: underline; text-decoration-color: #a88a5c80; text-underline-offset: 5px; }
 .reading blockquote { margin: 32px 0; padding: 20px 28px; border-left: 1px solid var(--home-gold); background: var(--home-surface, #fffefa); }
 @media (hover: hover) and (pointer: fine) {
-  .action:hover { background: #1d4656; }
-  .secondary:hover { background: #e8e4db; }
-  .closing .action:hover { background: #e8e4db; }
   .card:hover .cardImage img { transform: scale(1.04); }
-  .quiet:hover, .back:hover { text-decoration-color: var(--home-accent); }
 }
 @media (max-width: 1000px) { .columns { grid-template-columns: repeat(2, minmax(0, 1fr)); } .closing { align-items: flex-start; flex-direction: column; gap: 28px; } }
 @media (max-width: 760px) {
@@ -91,4 +83,4 @@
   .closing .action { max-width: 100%; }
   .reading p { font-size: 16px; }
 }
-@media (prefers-reduced-motion: reduce) { .photoInner { transform: none !important; } .action, .cardImage img { transition: none; } .card:hover .cardImage img, .action:active { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .photoInner { transform: none !important; } .cardImage img { transition: none; } .card:hover .cardImage img { transform: none; } }

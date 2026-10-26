@@ -5,7 +5,7 @@ The feature branch owns the content, section order and interactive journeys.
 Dev2 applies dev's ivory, serif and architectural visual language to that flow.
 */
 import Image from "next/image";
-import Link from "next/link";
+import { ActionLink, type ActionVariant } from "@/components/actions/Action";
 import {
   useEffect,
   useRef,
@@ -157,23 +157,13 @@ const goals = [
   },
 ];
 
-function PillLink({
-  href,
-  children,
-  secondary = false,
-}: {
+function PillLink({ href, children, secondary = false, variant }: {
   href: string;
   children: ReactNode;
   secondary?: boolean;
+  variant?: ActionVariant;
 }) {
-  return (
-    <Link
-      href={href}
-      className={`${styles.pill}${secondary ? ` ${styles.secondary}` : ""}`}
-    >
-      {children}
-    </Link>
-  );
+  return <ActionLink href={href} variant={variant ?? (secondary ? "secondary" : "primary")} className={styles.pill}>{children}</ActionLink>;
 }
 
 function subscribeNarrow(callback: () => void) {
@@ -222,9 +212,9 @@ function Hero() {
         </p>
         <div className={styles.heroActions} data-reveal="copy" data-motion-delay="140">
           <PillLink href="#consultation">Запросить консультацию</PillLink>
-          <a href="#services" className={styles.quietLink}>
+          <ActionLink href="#services" variant="quiet" className={styles.quietLink}>
             Посмотреть услуги
-          </a>
+          </ActionLink>
         </div>
         <p className={styles.heroHelper} data-reveal="copy" data-motion-delay="240">
           Укажите страну и задачу. Свяжемся с вами, чтобы уточнить детали и
@@ -376,9 +366,9 @@ function ServiceScene() {
             </ChangingCopy>
           </div>
         </motion.div>
-        <Link href="/services" className={styles.quietLink}>
+        <ActionLink href="/services" variant="quiet" className={styles.quietLink}>
           Все услуги
-        </Link>
+        </ActionLink>
       </div>
     </section></LocalizedTree>
   );
@@ -475,16 +465,16 @@ function Destinations() {
             <h3>{item.name}</h3>
             <p>{item.text}</p>
           </div>
-          <PillLink secondary href={`/countries/${item.slug}`}>
+          <PillLink variant="light" href={`/countries/${item.slug}`}>
             Подробнее о направлении
           </PillLink>
         </div>
       </div>
       <div className={styles.countryQuestion}>
         <p>Страна ещё не выбрана?</p>
-        <Link className={styles.quietLink} href="/services/consulting">
+        <ActionLink variant="quiet" tone="inverse" className={styles.quietLink} href="/services/consulting">
           Поможем разобраться
-        </Link>
+        </ActionLink>
       </div>
     </section></LocalizedTree>
   );
@@ -604,12 +594,12 @@ function Process() {
             <br />
             Даже если всё кажется сложным.
           </p>
-          <PillLink secondary href="/approach">
+          <PillLink variant="light" href="/approach">
             Как мы работаем
           </PillLink>
-          <Link href="/services/complex-cases" className={styles.quietLink}>
+          <ActionLink href="/services/complex-cases" variant="quiet" tone="inverse" className={styles.quietLink}>
             Был отказ или нужна смена статуса?
-          </Link>
+          </ActionLink>
         </div>
       </div>
     </section></LocalizedTree>

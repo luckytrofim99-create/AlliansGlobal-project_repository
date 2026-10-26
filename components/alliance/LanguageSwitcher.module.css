@@ -6,7 +6,8 @@
   min-height: 44px;
   padding: 0;
   border: 1px solid var(--line, #dcded7);
-  background: var(--paper, #fffefa);
+  border-radius: 999px;
+  background: #eee9df;
 }
 
 .option {
@@ -16,13 +17,14 @@
   min-height: 44px;
   padding: 0 8px;
   border: 0;
-  border-radius: 0;
+  border-radius: 999px;
   color: #617176;
   background: transparent;
   font: 600 10px/1 var(--home-sans, "Manrope", sans-serif);
   letter-spacing: .04em;
   cursor: pointer;
-  transition: color 180ms ease, background 180ms ease;
+  touch-action: manipulation;
+  transition: transform 140ms var(--ease-out);
 }
 
 .option[aria-pressed="true"] {
@@ -31,7 +33,8 @@
 }
 
 .option:focus-visible { outline: 2px solid var(--gold, #a88a5c); outline-offset: 2px; }
-.option:active { background: rgb(168 138 92 / 12%); }
+.option:active { background: rgb(168 138 92 / 12%); transform: scale(.97); }
+.option:focus-visible:active { transform: none; }
 .option[aria-pressed="true"]:active { background: #174353; }
 
 @media (hover: hover) and (pointer: fine) {
@@ -40,4 +43,5 @@
 
 @media (prefers-reduced-motion: reduce) {
   .option { transition: none; }
+  .option:active { transform: none; }
 }

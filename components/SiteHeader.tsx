@@ -8,6 +8,7 @@ import home from "./home/HomeHeader.module.css";
 import styles from "./pages/InnerHeader.module.css";
 import { useAllianceLocale, tx } from "./alliance/AllianceLocale";
 import { LanguageSwitcher } from "./alliance/LanguageSwitcher";
+import { ActionLink } from "./actions/Action";
 
 const links = [
   { href: "/countries", label: "Страны" },
@@ -49,7 +50,7 @@ export default function SiteHeader() {
         {!isHome && <nav className={styles.desktop} aria-label={tx(locale, "Основная навигация")} lang={locale}>{links.map((link) => <Link href={link.href} key={link.href} aria-current={pathname === link.href ? "page" : pathname.startsWith(`${link.href}/`) ? "location" : undefined}>{tx(locale, link.label)}</Link>)}</nav>}
         <div className={styles.actions}>
           <div className={isHome ? styles.homeLanguage : styles.navLanguage}><LanguageSwitcher /></div>
-          {isHome ? <a href="#consultation" className={home.action}><span className={styles.homeCtaFull}>{tx(locale, "Запросить консультацию")}</span><span className={styles.homeCtaShort}>{tx(locale, "Консультация")}</span></a> : <Link href="/consultation" className={home.action}>{tx(locale, "Консультация")}</Link>}
+          {isHome ? <ActionLink href="#consultation" size="compact" className={home.action}><span className={styles.homeCtaFull}>{tx(locale, "Запросить консультацию")}</span><span className={styles.homeCtaShort}>{tx(locale, "Консультация")}</span></ActionLink> : <ActionLink href="/consultation" size="compact" className={home.action}>{tx(locale, "Консультация")}</ActionLink>}
           {!isHome && <button ref={trigger} type="button" className={styles.menuButton} aria-label="Открыть меню" aria-haspopup="dialog" aria-controls="site-menu" aria-expanded={open} onClick={(event) => { setInstant(event.detail === 0); dialog.current?.showModal(); setOpen(true); }}><Menu size={21} strokeWidth={1.5} aria-hidden="true" /></button>}
         </div>
       </div>
@@ -58,7 +59,7 @@ export default function SiteHeader() {
       <div className={styles.menuTop}><h2 id="site-menu-title">{tx(locale, "Куда дальше?")}</h2><button type="button" className={styles.close} onClick={close} aria-label={tx(locale, "Закрыть меню")} autoFocus><X size={22} strokeWidth={1.5} aria-hidden="true" /></button></div>
       <div className={styles.dialogLanguage}><LanguageSwitcher /></div>
       <nav className={styles.mobile} aria-label={tx(locale, "Разделы сайта")} lang={locale}>{[{ href: "/", label: "Главная" }, ...links, { href: "/contacts", label: "Контакты" }].map((link) => <Link key={link.href} href={link.href} onClick={close} aria-current={pathname === link.href ? "page" : undefined}>{tx(locale, link.label)}</Link>)}</nav>
-      <Link href="/consultation" className={`${home.action} ${styles.menuCta}`} onClick={close}>{tx(locale, "Запросить консультацию")}</Link>
+      <ActionLink href="/consultation" className={styles.menuCta} onClick={close}>{tx(locale, "Запросить консультацию")}</ActionLink>
     </dialog>}
   </>;
 }

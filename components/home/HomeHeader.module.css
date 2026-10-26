@@ -73,9 +73,6 @@
 .homeHeader.scrolled .inner :global(.wordmark > span) {
   font-size: 7px;
 }
-.homeHeader.scrolled .inner .action {
-  padding-inline: 16px;
-}
 .innerHeader.scrolled .inner :global(.logo-symbol) {
   width: 30px;
   height: 39px;
@@ -85,9 +82,6 @@
 }
 .innerHeader.scrolled .inner :global(.wordmark > span) {
   font-size: 7px;
-}
-.innerHeader.scrolled .inner .action {
-  padding-inline: 16px;
 }
 .inner :global(.logo) {
   gap: 9px;
@@ -104,35 +98,7 @@
   font-size: 8px;
 }
 .action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 11px 20px;
-  background: var(--home-accent, #102f3e);
-  color: #fff;
-  border-radius: 0;
-  font-family: var(--home-sans, "Manrope", sans-serif);
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.5;
-  white-space: nowrap;
-  transition:
-    background 180ms,
-    transform 140ms;
-}
-.header a:focus-visible {
-  outline: 2px solid var(--gold, #a88a5c);
-  outline-offset: 5px;
-}
-.action:active {
-  transform: scale(0.97);
-  transition-duration: 80ms;
-}
-@media (hover: hover) and (pointer: fine) {
-  .action:hover {
-    background: var(--home-accent-hover, #174353);
-  }
+  flex-shrink: 0;
 }
 @media (max-width: 760px) {
   .header {
@@ -178,11 +144,6 @@
   .inner :global(.logo) {
     gap: 6px;
   }
-  .action {
-    font-size: 12px;
-    padding: 11px 14px;
-    min-height: 44px;
-  }
 }
 @media (max-width: 360px) {
   .inner {
@@ -191,10 +152,6 @@
   }
   .inner :global(.wordmark) {
     font-size: 16px;
-  }
-  .action {
-    font-size: 12px;
-    padding-inline: 12px;
   }
 }
 @media (max-width: 760px) {
@@ -208,9 +165,6 @@
   .homeHeader.scrolled .inner :global(.wordmark > span) {
     font-size: 6px;
   }
-  .homeHeader.scrolled .inner .action {
-    padding-inline: 12px;
-  }
   .innerHeader.scrolled .inner :global(.logo-symbol) {
     width: 25px;
     height: 34px;
@@ -220,9 +174,6 @@
   }
   .innerHeader.scrolled .inner :global(.wordmark > span) {
     font-size: 6px;
-  }
-  .innerHeader.scrolled .inner .action {
-    padding-inline: 12px;
   }
 }
 @media (prefers-reduced-transparency: reduce) {
@@ -238,13 +189,9 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .action,
   .homeHeader .inner,
   .innerHeader .inner {
     transition: none;
-  }
-  .action:active {
-    transform: none;
   }
 }
 

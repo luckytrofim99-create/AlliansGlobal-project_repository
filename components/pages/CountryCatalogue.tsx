@@ -3,6 +3,7 @@
 import { Search, X } from "lucide-react";
 import { useId, useMemo, useRef, useState } from "react";
 import type { Country } from "@/lib/content";
+import { ActionButton } from "@/components/actions/Action";
 import { PageCard, PageColumns, PageLink } from "./PageKit";
 import styles from "./CountryCatalogue.module.css";
 import { useAllianceLocale, tx } from "@/components/alliance/AllianceLocale";
@@ -56,7 +57,7 @@ export default function CountryCatalogue({ items }: { items: Country[] }) {
       <h3>{tx(locale, "Здесь пока нет совпадений.")}</h3>
       <p>{tx(locale, "Попробуйте другое название или выберите все регионы. Если нужного направления нет в списке, его можно обсудить на консультации.")}</p>
       <div className={styles.emptyActions}>
-        <button type="button" onClick={() => { setQuery(""); setRegion(""); input.current?.focus(); }}>{tx(locale, "Сбросить фильтры")}</button>
+        <ActionButton type="button" onClick={() => { setQuery(""); setRegion(""); input.current?.focus(); }}>{tx(locale, "Сбросить фильтры")}</ActionButton>
         <PageLink href="/consultation" quiet>{tx(locale, "Обсудить другое направление")}</PageLink>
       </div>
     </div>}

@@ -5,6 +5,7 @@ import { countries } from "@/lib/content";
 import styles from "./QuickConsultation.module.css";
 import { AccentLine, RevealWords } from "./JourneyMotion";
 import { LocalizedTree, useAllianceLocale, tx } from "@/components/alliance/AllianceLocale";
+import { ActionButton } from "@/components/actions/Action";
 
 const goals = [
   { value: "visa", label: "Виза" },
@@ -309,9 +310,9 @@ export default function QuickConsultation({
           </div>
 
           <div className={styles.actions}>
-            <button className={styles.submit} type="submit">
+            <ActionButton className={styles.submit} type="submit">
               Запросить консультацию
-            </button>
+            </ActionButton>
             <div className={styles.next}>
               <p>
                 Укажите страну и задачу. Свяжемся с вами, чтобы уточнить детали
@@ -336,13 +337,15 @@ export default function QuickConsultation({
                   в форме на этой странице до её перезагрузки. Можно изменить
                   запрос и попробовать снова или скачать черновик.
                 </p>
-                <button
+                <ActionButton
                   className={styles.download}
                   type="button"
+                  variant="secondary"
+                  icon="download"
                   onClick={downloadDraft}
                 >
                   Скачать черновик
-                </button>
+                </ActionButton>
                 {downloaded && (
                   <small>
                     Черновик подготовлен для скачивания. Обращение не

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { ReactNode } from "react";
+import { ActionLink } from "@/components/actions/Action";
 import theme from "@/components/home/HomeTheme.module.css";
 import { RevealWords } from "@/components/home/JourneyMotion";
 import { PageMotion, PagePhotoMotion } from "./PageMotion";
@@ -18,7 +18,7 @@ export function PageHero({ title, intro, image, imageAlt = "", compact = false, 
 }) {
   return <header className={`${styles.hero} ${image ? styles.heroSplit : ""} ${compact ? styles.compact : ""}`}>
     <div className={styles.heroCopy}>
-      <Link href="/" className={styles.back}>На главную</Link>
+      <ActionLink href="/" variant="quiet" size="compact" className={styles.back}>На главную</ActionLink>
       <h1 data-reveal><RevealWords>{title}</RevealWords></h1>
       {intro && <p className={styles.lead} data-reveal>{intro}</p>}
       {children && <div className={styles.actions} data-reveal>{children}</div>}
@@ -49,10 +49,11 @@ export function PageCard({ title, body, image, href, action = "Подробне�
   </article>;
 }
 
-export function PageLink({ href, children, secondary = false, quiet = false }: {
-  href: string; children: ReactNode; secondary?: boolean; quiet?: boolean;
+export function PageLink({ href, children, secondary = false, quiet = false, variant }: {
+  href: string; children: ReactNode; secondary?: boolean; quiet?: boolean; variant?: "primary" | "secondary" | "light" | "quiet";
 }) {
-  return <Link href={href} className={quiet ? styles.quiet : `${styles.action} ${secondary ? styles.secondary : ""}`}>{children}</Link>;
+  const appearance = variant ?? (quiet ? "quiet" : secondary ? "secondary" : "primary");
+  return <ActionLink href={href} variant={appearance} className={appearance === "quiet" ? styles.quiet : styles.action}>{children}</ActionLink>;
 }
 
 export function PageList({ items }: { items: readonly string[] }) {
@@ -62,7 +63,7 @@ export function PageList({ items }: { items: readonly string[] }) {
 export function PageClosing({ title = "Начнём с ваших планов.", text = "Расскажите, что для вас важно. Разберёмся в исходной ситуации и определим следующий шаг.", href = "/consultation", action = "Запросить консультацию" }: {
   title?: ReactNode; text?: string; href?: string; action?: string;
 }) {
-  return <section className={styles.closing} data-reveal><div><h2>{title}</h2><p>{text}</p></div><PageLink href={href}>{action}</PageLink></section>;
+  return <section className={styles.closing} data-reveal><div><h2>{title}</h2><p>{text}</p></div><PageLink href={href} variant="light">{action}</PageLink></section>;
 }
 
 export function PageReading({ children, className = "" }: Children) {

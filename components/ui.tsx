@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
+import { ActionLink } from "./actions/Action";
 import type { ReactNode } from "react";
 
 export function Eyebrow({
@@ -28,10 +29,9 @@ export function ButtonLink({
   className?: string;
 }) {
   return (
-    <Link href={href} className={`button button-${variant} ${className}`}>
-      <span>{children}</span>
-      <ArrowUpRight size={18} strokeWidth={1.4} />
-    </Link>
+    <ActionLink href={href} variant={variant === "navy" ? "primary" : variant === "outline" ? "secondary" : "light"} tone={variant === "outline" ? "inverse" : "default"} className={className}>
+      {children}
+    </ActionLink>
   );
 }
 export function TextLink({
@@ -44,10 +44,9 @@ export function TextLink({
   light?: boolean;
 }) {
   return (
-    <Link href={href} className={`text-link${light ? " light" : ""}`}>
-      <span>{children}</span>
-      <ArrowRight size={20} strokeWidth={1.3} />
-    </Link>
+    <ActionLink href={href} variant="quiet" tone={light ? "inverse" : "default"}>
+      {children}
+    </ActionLink>
   );
 }
 export function Logo({ light = false }: { light?: boolean }) {

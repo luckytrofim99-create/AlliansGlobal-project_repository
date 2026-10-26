@@ -21,7 +21,8 @@ typography:
 Branch dev2 starts from feature/dev-website-updates at 6c47539. The content,
 section order, routes, localization and interactive flows come from that branch.
 The visual language comes from dev at f9887a5: ivory and paper, navy and gold,
-light serif headings, fine rules, rectangular controls and architectural imagery.
+light serif headings, fine rules and architectural imagery. The user-selected
+soft capsule button system refines the controls in dev2.
 
 This system covers the homepage, all internal pages, shared header and footer,
 FAQ, country controls and the single shared consultation form.
@@ -34,8 +35,10 @@ FAQ, country controls and the single shared consultation form.
 - Background is ivory #F8F6F0; surfaces are paper #FFFEFA. Navy #102F3E anchors
   actions, the destination scene and footer. Ink is #163846; gold is #A88A5C.
 - Supporting reading text uses #617176 for contrast. Fine dividers use #DCDED7.
-- Controls and cards have square corners and restrained borders. The primary
-  hero photograph keeps the architectural arch from dev, with a fine offset frame.
+- Cards and photographic crops retain square corners and restrained borders.
+  Action buttons are capsules with a trailing circular icon; fields have a 10px
+  radius and icon controls are circular. The primary hero photograph keeps the
+  architectural arch from dev, with a fine offset frame.
 - Do not add the former paper dot pattern, grain, travel collage or handwritten
   underline. Section accents are simple gold hairlines.
 - Keep generous responsive gutters, balanced headings, real photography, visible
@@ -63,6 +66,19 @@ persistent RU/EN selection. The footer retains the feature branch navigation.
 PageKit preserves each page's structure and applies serif hierarchy, outlined
 rectangular cards, straight photographic crops and navy closing panels. Catalogue
 search and region filters, FAQ disclosure states and selected controls stay visible.
+
+## Shared actions
+
+`components/actions/Action.tsx` owns action appearance and native link/button
+semantics. Default actions are 54px tall with 13px Manrope labels and a 38px
+trailing icon circle. Header actions use the deliberate 44px compact size. Navy
+primary actions, navy outlines, ivory actions on dark panels and quiet underlined
+links establish hierarchy. Placement modules control only width and spacing.
+Selection controls use rounded groups with visible selected states.
+
+Press feedback starts on pointer down at scale .97 with an 80ms response; hover
+is limited to fine pointers. Focus remains visible and reduced motion disables
+transforms. No additional UI or motion dependency is installed.
 
 ## Motion and accessibility
 
