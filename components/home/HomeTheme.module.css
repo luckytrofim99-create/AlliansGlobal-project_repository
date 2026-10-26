@@ -1,40 +1,15 @@
-@font-face {
-  font-family: "Idadu Work Sans";
-  src: url("/fonts/idadu/work-sans-latin-variable.woff2") format("woff2");
-  font-weight: 400 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Idadu Anton";
-  src: url("/fonts/idadu/anton-latin-400.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Idadu Mono";
-  src: url("/fonts/idadu/ibm-plex-mono-latin-400.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-  unicode-range: U+0000-024F;
-}
-@font-face {
-  font-family: "Idadu Mono";
-  src: url("/fonts/idadu/ibm-plex-mono-cyrillic-400.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-  unicode-range: U+0400-052F;
-}
 :global(body):has(.surface) {
-  --home-bg: #f1ebdd;
-  --home-ink: #0d2734;
-  --home-muted: #59656a;
-  --home-accent: #0d2734;
-  --home-accent-hover: #174353;
-  --home-gold: #b19365;
-  --home-soft: #e9ddc9;
-  --home-sans: "Idadu Work Sans", "Manrope", system-ui, sans-serif;
-  --home-display: "Idadu Work Sans", "Manrope", system-ui, sans-serif;
+  --home-bg: var(--ivory);
+  --home-ink: var(--ink);
+  --home-muted: #617176;
+  --home-accent: var(--navy);
+  --home-accent-hover: #204655;
+  --home-gold: var(--gold);
+  --home-soft: #eee9df;
+  --home-line: var(--line);
+  --home-surface: var(--paper);
+  --home-sans: var(--sans);
+  --home-display: var(--serif);
   background: var(--home-bg);
 }
 .surface {
@@ -42,38 +17,24 @@
   isolation: isolate;
   font-family: var(--home-sans);
   color: var(--home-ink);
-  background-color: var(--home-bg);
-  background-image: radial-gradient(circle, #0d27341a 1px, transparent 1px);
-  background-size: 26px 26px;
-}
-.surface::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.42;
-  mix-blend-mode: multiply;
-  background-image: url("/images/idadu/paper-grain.svg");
+  background: var(--home-bg);
 }
 .surface ::selection {
-  color: #fff;
-  background: #0d2734;
+  color: var(--navy);
+  background: #a88a5c40;
 }
 .surface :focus-visible {
-  outline: 3px solid #0d2734;
+  outline: 2px solid var(--home-gold);
   outline-offset: 5px;
 }
 .surface input,
 .surface textarea {
-  caret-color: #0d2734;
+  caret-color: var(--home-accent);
 }
 .surface * {
-  scrollbar-color: #a9a293 #eee8dc;
+  scrollbar-color: #a88a5c80 var(--ivory);
   scrollbar-width: thin;
 }
 @media (prefers-contrast: more) {
-  .surface {
-    --home-muted: #38352f;
-  }
+  .surface { --home-muted: #374c54; }
 }

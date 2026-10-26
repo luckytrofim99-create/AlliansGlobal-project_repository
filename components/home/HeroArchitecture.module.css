@@ -1,0 +1,38 @@
+.stage {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  margin-inline: auto;
+  padding: 16px 0 0 16px;
+}
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: 0 16px 16px 0;
+  border: 1px solid #a88a5c55;
+  border-radius: 47% 47% 0 0;
+  pointer-events: none;
+}
+.arch {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 4 / 5;
+  max-height: 660px;
+  overflow: hidden;
+  border-radius: 47% 47% 0 0;
+  background: #d7cab5;
+}
+.photo { position: absolute; inset: 0 0 -40px; }
+.photo img { object-fit: cover; object-position: center; }
+.shade {
+  position: absolute;
+  inset: 60% 0 0;
+  background: linear-gradient(transparent, #102f3e30);
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  .stage { max-width: 480px; padding: 12px 0 0 12px; }
+  .stage::before { inset: 0 12px 12px 0; }
+  .arch { aspect-ratio: 4 / 4.3; max-height: 480px; }
+}
+@media (prefers-reduced-motion: reduce) { .photo { transform: none !important; } }

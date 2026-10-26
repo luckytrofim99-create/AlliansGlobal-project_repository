@@ -1,13 +1,13 @@
 :root {
-  --ivory: #f1ebdd;
-  --paper: #faf7ef;
-  --navy: #0d2734;
-  --ink: #0d2734;
-  --gold: #b19365;
-  --muted: #59656a;
+  --ivory: #f8f6f0;
+  --paper: #fffefa;
+  --navy: #102f3e;
+  --ink: #163846;
+  --gold: #a88a5c;
+  --muted: #768184;
   --line: #dcded7;
   --serif: "Cormorant Garamond", Georgia, serif;
-  --sans: "Idadu Work Sans", "Manrope", system-ui, sans-serif;
+  --sans: "Manrope", Arial, sans-serif;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);

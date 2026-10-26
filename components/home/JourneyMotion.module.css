@@ -9,17 +9,13 @@
 .wordMask > span { display: inline-block; color: inherit; }
 .accent {
   display: block;
-  width: min(75%, 261.609px);
-  margin: -2px auto 5px;
-  line-height: 0;
+  width: 48px;
+  height: 1px;
+  margin: 22px auto;
   pointer-events: none;
-  background: var(--home-gold, #b19365);
-  mask-image: url("/images/home-figma/handdrawn-underline.svg");
-  mask-repeat: no-repeat;
-  mask-size: 100% 100%;
+  background: var(--home-gold);
 }
-.accent img { display: block; width: 100%; height: auto; opacity: 0; }
-.wide { width: min(100%, 321px); margin: -2px 0 5px; }
+.wide { width: 72px; margin-inline: 0; }
 @media (prefers-reduced-motion: reduce) {
   .wordMask > span, .accent { transform: none !important; clip-path: none !important; }
 }

@@ -1,24 +1,24 @@
 .controls { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
 .regions button, .searchControl button, .emptyActions > button { border: 0; appearance: none; }
 .regions { display: flex; flex-wrap: wrap; gap: 8px; max-width: 770px; }
-.regions button { min-height: 48px; padding: 12px 19px; border-radius: 999px; background: #faf7ef; color: var(--home-ink); font: 500 14px/1.5 var(--home-sans); touch-action: manipulation; transition: background-color 160ms ease, color 160ms ease, transform 100ms var(--ease-out); }
-.regions button[aria-pressed="true"] { background: var(--home-accent); color: #fff; }
+.regions button { min-height: 48px; padding: 12px 19px; border: 1px solid var(--home-line, #dcded7); background: transparent; color: var(--home-ink); font: 500 12px/1.5 var(--home-sans); letter-spacing: .025em; touch-action: manipulation; transition: background-color 160ms ease, color 160ms ease, transform 100ms var(--ease-out); }
+.regions button[aria-pressed="true"] { border-color: var(--home-accent); background: var(--home-accent); color: #fff; }
 .regions button:active { transform: scale(.97); }
 .search { flex: 1 1 260px; max-width: 350px; }
 .search label { display: block; margin: 0 0 10px 3px; color: var(--home-ink); font-size: 13px; font-weight: 500; }
-.searchControl { display: flex; align-items: center; gap: 12px; min-height: 54px; padding-inline: 17px 8px; border-radius: 18px; background: #eae5da; }
-.searchControl:focus-within { background: #fffdf8; outline: 2px solid var(--home-accent); outline-offset: 3px; }
+.searchControl { display: flex; align-items: center; gap: 12px; min-height: 54px; padding-inline: 17px 8px; border: 1px solid var(--home-line, #dcded7); background: var(--home-surface, #fffefa); }
+.searchControl:focus-within { background: #fffefa; outline: 2px solid var(--home-accent); outline-offset: 3px; }
 .searchControl input { width: 100%; min-width: 0; min-height: 54px; border: 0; outline: none; background: transparent; color: var(--home-ink); font: 400 16px/1.5 var(--home-sans); }
 .searchControl input:focus-visible { outline: none; }
 .searchControl input::placeholder { color: var(--home-muted); }
 .searchControl input::-webkit-search-cancel-button { display: none; }
 .searchControl > svg { flex: 0 0 18px; color: var(--home-muted); }
-.searchControl button { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 44px; min-height: 44px; border-radius: 50%; color: var(--home-accent); }
+.searchControl button { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 44px; min-height: 44px; border-radius: 0; background: transparent; color: var(--home-accent); }
 .result { margin-block: 26px 22px; }
-.empty { padding: clamp(28px, 5vw, 60px); border-radius: 36px; background: #faf7ef; }
+.empty { padding: clamp(28px, 5vw, 60px); border: 1px solid var(--home-line, #dcded7); background: var(--home-surface, #fffefa); }
 .empty p { max-width: 640px; margin-top: 18px; }
 .emptyActions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 24px; }
-.emptyActions > button { min-height: 54px; padding: 15px 25px; border-radius: 999px; background: var(--home-accent); color: #fff; font-size: 14px; font-weight: 500; }
+.emptyActions > button { min-height: 54px; padding: 15px 25px; border-radius: 0; background: var(--home-accent); color: #fff; font-size: 12px; font-weight: 500; letter-spacing: .035em; }
 @media (hover: hover) and (pointer: fine) { .regions button:not([aria-pressed="true"]):hover { background: var(--home-soft); } .searchControl button:hover { background: var(--home-soft); } }
-@media (max-width: 760px) { .controls { gap: 24px; } .regions { gap: 8px; } .regions button { min-height: 46px; padding: 11px 16px; font-size: 13px; } .search { max-width: none; flex-basis: 100%; } .empty { border-radius: 28px; } }
+@media (max-width: 760px) { .controls { gap: 24px; } .regions { gap: 8px; } .regions button { min-height: 46px; padding: 11px 16px; font-size: 13px; } .search { max-width: none; flex-basis: 100%; } .empty { border-radius: 0; } }
 @media (prefers-reduced-motion: reduce) { .regions button { transition: none; } .regions button:active { transform: none; } }

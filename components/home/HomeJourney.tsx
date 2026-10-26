@@ -1,13 +1,8 @@
 "use client";
 
 /*
-DIRECTION: Apple-inspired physical controls on Idadu's observed paper ground.
-DESIGN_VARIANCE 7 / MOTION_INTENSITY 6 / VISUAL_DENSITY 3.
-FIRST VIEWPORT: plain-language Figma offer; one primary pill; a travel print, tickets and stamps assemble into a collage. No slogans, section counters or diagonal arrows.
-SIGNATURE: independent printed objects assemble with distinct physical entrances; the mobile
-composition is authored separately. Native scrolling remains in charge.
-MOTION: Motion owns the homepage; inner routes reuse its visible-first entrance vocabulary.
-FINISH: verify desktop/mobile behavior and record the built system in DESIGN.md.
+The feature branch owns the content, section order and interactive journeys.
+Dev2 applies dev's ivory, serif and architectural visual language to that flow.
 */
 import Image from "next/image";
 import Link from "next/link";
@@ -30,7 +25,7 @@ import {
   type PanInfo,
 } from "motion/react";
 import QuickConsultation from "./QuickConsultation";
-import HeroCollage from "./HeroCollage";
+import HeroArchitecture from "./HeroArchitecture";
 import { AccentLine, ChangingCopy, RevealWords, useJourneyMotion } from "./JourneyMotion";
 import styles from "./HomeJourney.module.css";
 import theme from "./HomeTheme.module.css";
@@ -236,7 +231,7 @@ function Hero() {
           согласовать консультацию.
         </p>
       </div>
-      <HeroCollage progress={smooth} reduced={!!reduce} narrow={narrow} />
+      <HeroArchitecture progress={smooth} reduced={!!reduce} narrow={narrow} />
     </section></LocalizedTree>
   );
 }

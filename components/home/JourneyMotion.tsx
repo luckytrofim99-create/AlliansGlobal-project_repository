@@ -18,11 +18,7 @@ export function RevealWords({ children }: { children: string }) {
 
 export function AccentLine({ wide = false }: { wide?: boolean }) {
   return (
-    <span className={`${styles.accent}${wide ? ` ${styles.wide}` : ""}`} aria-hidden="true" data-motion-ink>
-      {/* Original Figma vector; its paths and root dimensions are unchanged. */}
-      {/* eslint-disable-next-line @next/next/no-img-element -- preserve the original Figma SVG dimensions */}
-      <img src="/images/home-figma/handdrawn-underline.svg" width="256.261" height="16.6431" alt="" />
-    </span>
+    <span className={`${styles.accent}${wide ? ` ${styles.wide}` : ""}`} aria-hidden="true" data-motion-ink />
   );
 }
 
@@ -43,11 +39,11 @@ export function useJourneyMotion(root: RefObject<HTMLDivElement | null>) {
     let observer: IntersectionObserver | undefined;
     let generation = 0;
     let imageTimeout: ReturnType<typeof setTimeout> | undefined;
-    const collage = surface.querySelector<HTMLElement>("[data-hero-collage]");
+    const artwork = surface.querySelector<HTMLElement>("[data-hero-art]");
     const finishAll = () => {
       generation++;
       clearTimeout(imageTimeout);
-      if (collage) collage.style.removeProperty("opacity");
+      if (artwork) artwork.style.removeProperty("opacity");
       observer?.disconnect();
       animations.forEach((animation) => animation.cancel());
       animations.clear();
@@ -97,19 +93,19 @@ export function useJourneyMotion(root: RefObject<HTMLDivElement | null>) {
         });
       }, { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
       surface.querySelectorAll<HTMLElement>("[data-reveal], [data-motion-ink]").forEach((element) => observer?.observe(element));
-      // Only the decorative collage waits for decoding. The offer, CTA and
+      // Only the decorative artwork waits for decoding. The offer, CTA and
       // native scrolling are ready immediately. A bounded fallback prevents a
       // stalled image request from keeping the composition hidden indefinitely.
       const run = generation;
-      let collageStarted = false;
-      const startCollage = () => {
-        if (collageStarted) return;
+      let artworkStarted = false;
+      const startArtwork = () => {
+        if (artworkStarted) return;
         if (run !== generation || preference.matches) return;
-        collageStarted = true;
+        artworkStarted = true;
         clearTimeout(imageTimeout);
         imageTimeout = undefined;
-        collage?.style.removeProperty("opacity");
-        if (collage && collage.getBoundingClientRect().bottom <= 0) return;
+        artwork?.style.removeProperty("opacity");
+        if (artwork && artwork.getBoundingClientRect().bottom <= 0) return;
         surface.querySelectorAll<HTMLElement>("[data-motion-object]").forEach((element) => {
         const kind = element.dataset.motionObject;
         const end = { opacity: 1, transform: "translate3d(0, 0, 0) rotate(0deg) scale(1)" };
@@ -124,10 +120,10 @@ export function useJourneyMotion(root: RefObject<HTMLDivElement | null>) {
         play(element, recipe.frames, mobile ? recipe.phone : recipe.desktop, Number(element.dataset.motionDelay || 180));
       });
       };
-      if (collage) collage.style.opacity = "0";
-      imageTimeout = setTimeout(startCollage, 2000);
-      void Promise.all(Array.from(collage?.querySelectorAll("img") || []).map((image) => image.decode().catch(() => undefined))).then(() => {
-        if (imageTimeout !== undefined) startCollage();
+      if (artwork) artwork.style.opacity = "0";
+      imageTimeout = setTimeout(startArtwork, 2000);
+      void Promise.all(Array.from(artwork?.querySelectorAll("img") || []).map((image) => image.decode().catch(() => undefined))).then(() => {
+        if (imageTimeout !== undefined) startArtwork();
       });
     };
     const onFocus = (event: FocusEvent) => {

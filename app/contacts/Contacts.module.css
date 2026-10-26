@@ -1,19 +1,20 @@
 .status {
   min-width: 0;
   align-self: start;
-  border: 1px solid color-mix(in srgb, var(--home-gold, #b19365) 35%, transparent);
-  border-radius: 36px;
+  border: 1px solid var(--home-line, #dcded7);
+  border-top-color: var(--home-gold, #a88a5c);
+  border-radius: 0;
   padding: clamp(28px, 4vw, 48px);
-  background: color-mix(in srgb, var(--home-gold, #b19365) 8%, #faf7ef);
-  color: var(--home-ink, #0d2734);
+  background: var(--home-surface, #fffefa);
+  color: var(--home-ink, #102f3e);
 }
 
 .status h3 {
   max-width: 17ch;
   margin: 0;
-  font-family: var(--home-display, var(--sans, sans-serif));
-  font-size: clamp(26px, 2.6vw, 36px);
-  font-weight: 500;
+  font-family: var(--home-display, var(--serif, Georgia, serif));
+  font-size: clamp(34px, 3.2vw, 46px);
+  font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.035em;
   text-wrap: balance;
@@ -21,7 +22,7 @@
 
 .status p {
   margin: 22px 0 0;
-  color: var(--home-muted, #53616a);
+  color: var(--home-muted, #617176);
   font-size: 16px;
   line-height: 1.7;
 }
@@ -36,7 +37,7 @@
 }
 
 @media (max-width: 560px) {
-  .status { border-radius: 28px; }
+  .status { border-radius: 0; }
 }
 .columns {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);

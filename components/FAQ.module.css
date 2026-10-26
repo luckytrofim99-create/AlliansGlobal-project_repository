@@ -1,17 +1,17 @@
 .list {
   display: grid;
-  gap: 12px;
+  gap: 0;
+  border-top: 1px solid var(--home-line, #dcded7);
   min-width: 0;
   width: 100%;
-  color: var(--home-ink, #0d2734);
+  color: var(--home-ink, #102f3e);
   font-family: var(--home-sans, var(--sans, sans-serif));
 }
 
 .item {
   min-width: 0;
-  border-radius: 24px;
-  background: var(--home-surface, #faf7ef);
-  box-shadow: 0 4px 24px -20px #0d273426;
+  border-bottom: 1px solid var(--home-line, #dcded7);
+  background: transparent;
 }
 
 .item summary {
@@ -21,9 +21,9 @@
   justify-content: space-between;
   gap: 24px;
   border-radius: inherit;
-  padding: 24px 28px;
+  padding: 24px 0;
   color: inherit;
-  font-size: clamp(16px, 1.5vw, 20px);
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.5;
   list-style: none;
@@ -36,7 +36,7 @@
 .item summary::-webkit-details-marker { display: none; }
 
 .item summary:focus-visible {
-  outline: 2px solid var(--home-ink, #0d2734);
+  outline: 2px solid var(--home-ink, #102f3e);
   outline-offset: 4px;
 }
 
@@ -46,8 +46,7 @@
   flex: 0 0 28px;
   width: 28px;
   height: 28px;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--home-gold, #b19365) 15%, transparent);
+  color: var(--home-gold, #a88a5c);
 }
 
 .indicator::before,
@@ -74,25 +73,25 @@
   transform: translate(-50%, -50%) rotate(0deg);
 }
 
-.answer { padding: 0 76px 28px 28px; }
+.answer { padding: 0 52px 28px 0; }
 
 .answer p {
   max-width: 65ch;
   margin: 0;
-  color: var(--home-muted, #53616a);
-  font-size: 16px;
+  color: var(--home-muted, #617176);
+  font-size: 14px;
   line-height: 1.75;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .item summary:hover { color: var(--home-accent, #0d2734); }
+  .item summary:hover { color: var(--home-accent, #102f3e); background: color-mix(in srgb, var(--home-gold, #a88a5c) 6%, transparent); }
 }
 
 @media (max-width: 560px) {
-  .item { border-radius: 22px; }
-  .item summary { gap: 16px; padding: 22px 20px; }
-  .answer { padding: 0 20px 24px; }
-  .answer p { font-size: 15px; }
+  .item { border-radius: 0; }
+  .item summary { gap: 16px; padding: 22px 0; }
+  .answer { padding: 0 0 24px; }
+  .answer p { font-size: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
