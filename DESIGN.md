@@ -115,3 +115,8 @@ groups. No section reserves multiple viewport heights for a short interaction.
 Shared internal hero/section padding is 24–28px. Readable article line height and
 44px control targets remain. Photos crop inside rounded containers rather than
 rounding individual animated image layers.
+
+
+## Services and about overviews
+
+The user-supplied reference governs compact icon-and-copy rows on /services and /about. Service links form three cards followed by two wider cards on desktop, two columns on tablet and one on mobile. Four informational cards on /about describe what the visitor will understand before applying. Cards use 22px corners, gold line icons and short body copy. These two pages use 48px photo corners on desktop and 28px on mobile, with an explicit rounded clipping mask and inherited corners through the moving layers. Their copy speaks to the visitor’s task and next step. Other page copy remains unchanged. New blocks reuse useJourneyMotion with a capped sibling delay; native links, focus, reduced motion and visible server HTML remain intact.
