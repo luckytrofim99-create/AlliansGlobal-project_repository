@@ -1,5 +1,5 @@
 .page {
-  padding-bottom: clamp(64px, 7vw, 120px);
+  padding-bottom: 40px;
   overflow: clip;
 }
 .page h1, .page h2, .page h3, .page h4 {
@@ -16,29 +16,29 @@
 .page h4 { font-size: 28px; line-height: 1.18; }
 .page p { color: var(--home-muted); font-size: 15px; line-height: 1.75; }
 .hero, .section, .closing { width: min(1300px, calc(100% - 2 * clamp(22px, 5vw, 88px))); margin-inline: auto; }
-.hero { padding-block: clamp(40px, 6vw, 88px) clamp(55px, 8vw, 110px); }
+.hero { padding-block: 28px 24px; }
 .heroCopy { max-width: 970px; margin-inline: auto; text-align: center; }
 .back { margin-bottom: 24px; }
 .lead { max-width: 650px; margin: 27px auto 0; }
 .hero .lead { font-size: 17px; line-height: 1.7; }
 .actions { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 28px; }
-.heroSplit { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: clamp(32px, 6vw, 90px); }
+.heroSplit { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: clamp(24px, 4vw, 56px); }
 .heroSplit .heroCopy { text-align: left; }
 .heroSplit .actions { justify-content: flex-start; }
 .heroSplit .lead { margin-left: 0; }
 .heroSplit h1 { font-size: clamp(52px, 6vw, 90px); }
-.heroFigure { position: relative; aspect-ratio: 4 / 4.4; max-height: 600px; overflow: hidden; border-radius: 0; background: #e8e4db; }
+.heroFigure { position: relative; aspect-ratio: 4 / 4.4; max-height: 600px; overflow: hidden; border-radius: var(--photo-radius); background: #e8e4db; }
 .heroFigure img { object-fit: cover; }
 .photoTrack, .photoInner { position: absolute; inset: 0; }
-.compact { padding-bottom: 40px; }
+.compact { padding-bottom: 24px; }
 .compact h1 { font-size: clamp(50px, 6vw, 90px); }
-.section { padding-block: clamp(40px, 5vw, 76px); scroll-margin-top: 110px; }
-.sectionHead { max-width: 850px; margin: 0 auto 44px; text-align: center; }
+.section { padding-block: 24px; scroll-margin-top: 110px; }
+.sectionHead { max-width: 850px; margin: 0 auto 24px; text-align: center; }
 .sectionHead p { max-width: 640px; margin: 20px auto 0; font-size: 16px; }
 .columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .columns > * { min-width: 0; }
 .card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--home-line, #dcded7); background: var(--home-surface, #fffefa); }
-.cardImage { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+.cardImage { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--photo-radius); }
 .cardImage img { object-fit: cover; transition: transform 500ms var(--ease-out); }
 .cardBody { display: flex; flex: 1; align-items: flex-start; flex-direction: column; gap: 17px; padding: clamp(25px, 2.8vw, 36px); }
 .cardBody h3 { font-size: clamp(30px, 2.8vw, 40px); }
@@ -48,7 +48,7 @@
 .list { list-style: disc; margin: 20px 0 0; padding-left: 19px; color: var(--home-muted); font-size: 15px; line-height: 1.8; }
 .list li { padding-left: 4px; margin-bottom: 14px; }
 .list li::marker { color: var(--home-gold); }
-.closing { display: flex; align-items: center; justify-content: space-between; gap: 44px; margin-top: 60px; padding: clamp(30px, 5vw, 64px); border-radius: 0; background: #102f3e; }
+.closing { display: flex; align-items: center; justify-content: space-between; gap: 44px; margin-top: 24px; padding: clamp(30px, 5vw, 64px); border-radius: 0; background: #102f3e; }
 .closing > div { max-width: 730px; }
 .closing h2 { color: #fffefa; font-size: clamp(40px, 4.4vw, 64px); }
 .closing p { color: #d7dedc; max-width: 570px; margin-top: 20px; }
@@ -64,23 +64,24 @@
 @media (hover: hover) and (pointer: fine) {
   .card:hover .cardImage img { transform: scale(1.04); }
 }
-@media (max-width: 1000px) { .columns { grid-template-columns: repeat(2, minmax(0, 1fr)); } .closing { align-items: flex-start; flex-direction: column; gap: 28px; } }
+@media (max-width: 1000px) { .columns { grid-template-columns: repeat(2, minmax(0, 1fr)); } .closing { align-items: flex-start; flex-direction: column; gap: 28px; margin-top: 24px; } }
 @media (max-width: 760px) {
   .page h1 { font-size: clamp(42px, 10.5vw, 62px); }
-  .hero { padding-top: 24px; padding-bottom: 44px; }
+  .hero { padding-block: 28px 24px; }
   .heroCopy, .heroSplit .heroCopy { text-align: left; }
   .heroSplit { grid-template-columns: 1fr; gap: 32px; }
   .hero .actions { justify-content: flex-start; }
   .hero .lead { font-size: 16px; margin-top: 22px; }
-  .heroFigure { aspect-ratio: 4 / 3.4; border-radius: 0; }
+  .heroFigure { aspect-ratio: 4 / 3.4; border-radius: var(--photo-radius); }
   .back { margin-bottom: 16px; }
   .sectionHead { text-align: left; margin-bottom: 26px; }
   .sectionHead p { margin-top: 17px; font-size: 15px; }
   .columns { grid-template-columns: 1fr; gap: 20px; }
   .card { border-radius: 0; }
   .cardBody { padding: 25px; }
-  .closing { margin-top: 36px; border-radius: 0; padding: 30px 25px; }
+  .closing { margin-top: 24px; border-radius: 0; padding: 30px 25px; }
   .closing .action { max-width: 100%; }
   .reading p { font-size: 16px; }
 }
 @media (prefers-reduced-motion: reduce) { .photoInner { transform: none !important; } .cardImage img { transition: none; } .card:hover .cardImage img { transform: none; } }
+.card:has(.cardImage) { border-radius: var(--photo-radius); }

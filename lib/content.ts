@@ -1,3 +1,5 @@
+import { suppliedArticles } from "./journal-imports";
+
 export type Service = {
   slug: string;
   title: string;
@@ -89,6 +91,13 @@ export type Program = {
 
 export const programs: Program[] = [
   {
+    slug: "education",
+    title: "Переезд для учёбы",
+    description:
+      "Разберём визовые вопросы для школы или университета. Учтём документы и планы сопровождающих членов семьи.",
+    tag: "Для школьников и студентов",
+  },
+  {
     slug: "sport",
     title: "Переезд для спортивной карьеры",
     description:
@@ -101,13 +110,6 @@ export const programs: Program[] = [
     description:
       "Учтём предложение работодателя, участие принимающей стороны и планы семьи. Объём помощи согласуем отдельно от поиска работы.",
     tag: "Для специалистов",
-  },
-  {
-    slug: "education",
-    title: "Переезд для учёбы",
-    description:
-      "Разберём визовые вопросы для школы или университета. Учтём документы и планы сопровождающих членов семьи.",
-    tag: "Для школьников и студентов",
   },
   {
     slug: "business",
@@ -223,10 +225,14 @@ export type Article = {
   readTime: string;
   excerpt: string;
   image: string;
-  sections: { title: string; text: string }[];
+  sections: { title: string; text: string; paragraphs?: string[] }[];
+  sourceFile?: string;
+  asOf?: string;
+  sources?: { label: string; url: string }[];
 };
 
 export const articles: Article[] = [
+  ...suppliedArticles,
   {
     slug: "where-to-start",
     title: "Как выбрать страну для переезда",

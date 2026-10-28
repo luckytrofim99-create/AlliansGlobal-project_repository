@@ -4,9 +4,9 @@ import { programs } from "@/lib/content";
 import styles from "@/components/pages/EditorialLayouts.module.css";
 
 export const metadata: Metadata = {
-  title: "Ваши задачи",
+  title: "Образование и переезд",
   description:
-    "Подготовка к переезду для работы, учёбы, спорта, бизнеса и семьи.",
+    "Подготовка к учёбе за рубежом и переезду для работы, спорта, бизнеса и семьи.",
 };
 
 const images: Record<string, string> = {
@@ -22,10 +22,10 @@ export default function ProgramsPage() {
   return (
     <PageShell>
       <PageHero
-        title="Выберите цель переезда"
-        intro="Найдите свою задачу и узнайте вопросы для подготовки."
+        title="Образование и другие цели переезда"
+        intro="Готовим документы для учёбы за рубежом. Помогаем с визовыми вопросами для работы, семьи и бизнеса."
         image="/images/education-campus.jpg"
-        imageAlt="Кампус в окружении зелени"
+        imageAlt="Выпускники университета на фоне города"
       >
         <PageLink href="#explore">Найти свою задачу</PageLink>
       </PageHero>
@@ -39,7 +39,7 @@ export default function ProgramsPage() {
                 body={program.description}
                 label={program.tag}
                 image={images[program.slug]}
-                href="/consultation"
+                href={program.slug === "education" ? "/consultation?goal=education" : "/consultation"}
                 action="Обсудить мою ситуацию"
               />
             </div>

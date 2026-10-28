@@ -437,7 +437,27 @@ export const englishCopy: Record<string, string> = {
   "Выберите цель обращения": "Choose your enquiry goal",
   "Возможные основания проверяются по вашей ситуации.": "Possible eligibility grounds are reviewed for your situation.",
   "Выберите другую услугу": "Choose another service",
-  "Подробнее об услуге": "About this service"
+  "Подробнее об услуге": "About this service",
+  "Учёба за рубежом": "Study abroad",
+  "визы и переезд": "visas and relocation",
+  "Обучение за рубежом": "Study abroad",
+  "Другие услуги": "Other services",
+  "Образование": "Education",
+  "Образование за рубежом": "Education abroad",
+  "Образование — одно из основных направлений Alliance Global. Разберём учебные планы, визовые вопросы и документы для переезда.": "Education is a core focus at Alliance Global. We review study plans, visa questions and relocation documents.",
+  "Школа, университет или продолжение обучения. Начнём с учебной цели и подготовки к поездке.": "School, university or further education. Start with your study plans and travel preparation.",
+  "Учебные планы": "Study plans",
+  "Уровень обучения и предполагаемая страна.": "Level of study and destination.",
+  "Виза и документы": "Visa and documents",
+  "Приглашение и порядок подготовки к подаче.": "Invitation and application preparation.",
+  "Планы семьи": "Family plans",
+  "Вопросы переезда сопровождающих.": "Relocation questions for accompanying family.",
+  "Обсудить обучение": "Discuss study plans",
+  "Подготовка к учёбе": "Preparing to study",
+  "Университетский кампус": "University campus",
+  "Выпускники университета на фоне города": "University graduates with the city skyline",
+  "Официальные источники": "Official sources",
+  "Скачать исходный материал": "Download the original article"
 };
 
 export function translate(locale: "ru" | "en", text: string) {

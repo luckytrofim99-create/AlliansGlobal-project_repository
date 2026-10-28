@@ -18,7 +18,7 @@ typography:
 
 ## Sources and scope
 
-Branch dev2 starts from feature/dev-website-updates at 6c47539. The section order, routes and interactive flows come from that branch.
+Branch dev2 starts from feature/dev-website-updates at 6c47539. Routes and interactive flows come from that branch; education now follows the hero.
 Headings and supporting copy were subsequently edited at the user’s request: no
 commas in headings, concise task-led language and fewer repetitions.
 The visual language comes from dev at f9887a5: ivory and paper, navy and gold,
@@ -36,7 +36,8 @@ FAQ, country controls and the single shared consultation form.
 - Background is ivory #F8F6F0; surfaces are paper #FFFEFA. Navy #102F3E anchors
   actions, the destination scene and footer. Ink is #163846; gold is #A88A5C.
 - Supporting reading text uses #617176 for contrast. Fine dividers use #DCDED7.
-- Cards and photographic crops retain square corners and restrained borders.
+- Text cards retain restrained borders. Photo frames use a shared 24px radius
+  on desktop and 18px on mobile; image cards follow the same crop.
   Action buttons are capsules with a trailing circular icon; fields have a 10px
   radius and icon controls are circular. The primary hero photograph keeps the
   architectural arch from dev, with a fine offset frame.
@@ -47,16 +48,19 @@ FAQ, country controls and the single shared consultation form.
 
 ## Homepage composition and behavior
 
-1. Hero: the unchanged offer, supporting text, consultation and services links.
-   Copy and the Roman architectural photograph form two columns on desktop and
-   stack on mobile. A small scroll drift respects reduced-motion preferences.
-2. Services: the existing three-choice selector, live content and detail links.
-   The scroll scene, manual selection, swipe and keyboard behavior are retained.
-3. Destinations: the existing seven-country selector and detail link, presented
+1. Hero: study abroad leads the offer and primary link to the education section.
+   A quieter link opens the other services. A university graduation photograph sits in the arch with rounded
+   lower corners; a shorter mobile crop brings the next section into view.
+2. Education: the first section after the hero explains study plans, visa
+   preparation and family questions; its consultation CTA prefills education.
+3. Services: the existing three-choice selector, live content and detail links.
+   The scene follows its content height; manual selection and swipe remain.
+   Services no longer change automatically while the visitor scrolls.
+4. Destinations: the existing seven-country selector and detail link, presented
    on a navy ground. Gold identifies the selected country.
-4. Purpose: the existing six goals, default education selection and program link.
-5. Process: the same three steps and links, with thin rules and a navy aside.
-6. Quick consultation: the same task/country/contact/comment/consent flow.
+5. Purpose: the existing six goals, default education selection and program link.
+6. Process: the same three steps and links, with thin rules and a navy aside.
+7. Quick consultation: the same task/country/contact/comment/consent flow.
 
 ## Shared and internal pages
 
@@ -64,8 +68,8 @@ The homepage retains its minimal header and hash CTA. Internal pages retain thei
 navigation and native mobile dialog. Both use a capsule-shaped header container and keep the compact-on-scroll shell and
 persistent RU/EN selection. The footer retains the feature branch navigation.
 
-PageKit preserves each page's structure and applies serif hierarchy, outlined
-rectangular cards, straight photographic crops and navy closing panels. Catalogue
+PageKit preserves each page's structure and applies serif hierarchy, restrained
+text cards, rounded photographic crops and navy closing panels. Catalogue
 search and region filters, FAQ disclosure states and selected controls stay visible.
 
 ## Shared actions
@@ -101,3 +105,11 @@ and offers a local draft download. It does not submit to an external service.
 - dev: http://127.0.0.1:3000
 - feature/dev-website-updates: http://127.0.0.1:3001
 - dev2: http://127.0.0.1:3002
+
+## Density and photography
+
+Main section padding is 20–28px per side vertically, with 12–24px inside related
+groups. No section reserves multiple viewport heights for a short interaction.
+Shared internal hero/section padding is 24–28px. Readable article line height and
+44px control targets remain. Photos crop inside rounded containers rather than
+rounding individual animated image layers.

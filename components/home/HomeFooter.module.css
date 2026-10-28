@@ -1,5 +1,5 @@
 .footer {
-  padding: 65px clamp(22px, 5vw, 88px) 28px;
+  padding: 36px clamp(22px, 5vw, 88px) 24px;
   color: var(--ivory, #f8f6f0);
   background: var(--navy, #102f3e);
   font-family: var(--home-sans, "Manrope", sans-serif);

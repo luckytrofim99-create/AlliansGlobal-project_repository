@@ -11,7 +11,7 @@
   display: block;
   width: 48px;
   height: 1px;
-  margin: 22px auto;
+  margin: 16px auto;
   pointer-events: none;
   background: var(--home-gold);
 }

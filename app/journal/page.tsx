@@ -4,7 +4,7 @@ import { articles } from "@/lib/content";
 import styles from "@/components/pages/EditorialLayouts.module.css";
 
 export const metadata: Metadata = {
-  title: "Полезное",
+  title: "Журнал",
   description:
     "Как выбрать страну, подготовиться к консультации и согласовать объём сопровождения.",
 };
@@ -14,7 +14,7 @@ export default function JournalPage() {
     <PageShell>
       <PageHero
         title="Подготовьтесь к переезду"
-        intro="Материалы о выборе страны, документах и объёме сопровождения."
+        intro="Обучение, визы, работа и переезд. Материалы по семи направлениям и подготовке документов."
         compact
       >
         <PageLink href="#explore" secondary>Выбрать материал</PageLink>

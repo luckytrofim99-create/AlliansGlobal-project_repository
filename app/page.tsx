@@ -4,9 +4,9 @@ import "@fontsource/manrope/latin-700.css";
 import HomeJourney from "@/components/home/HomeJourney";
 
 export const metadata: Metadata = {
-  title: "Визы и переезд от выбора до подачи",
+  title: "Учёба за рубежом — визы и переезд",
   description:
-    "Поможем определить основание, подготовить документы и составить план подачи.",
+    "Образование за рубежом, визовые вопросы и подготовка к переезду. Разберём учебные планы и документы для вас и семьи.",
 };
 
 export default function Home() {

@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  padding: clamp(88px, 12vw, 180px) max(24px, 6vw);
+  padding: clamp(24px, 3vw, 40px) max(20px, 6vw);
   scroll-margin-top: 100px;
   color: var(--home-ink, #163846);
   background: var(--home-bg, #f8f6f0);
@@ -11,14 +11,14 @@
   display: grid;
   grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.3fr);
   align-items: start;
-  gap: clamp(40px, 7vw, 110px);
+  gap: clamp(24px, 4vw, 56px);
   width: 100%;
   max-width: 1160px;
   margin: 0 auto;
 }
 
 .heading {
-  padding-top: 24px;
+  padding-top: 0;
 }
 
 .section .heading h2 {
@@ -374,7 +374,7 @@
 
 @media (max-width: 560px) {
   .section {
-    padding: 88px 20px;
+    padding: clamp(24px, 3vw, 40px) max(20px, 6vw);
     scroll-margin-top: 88px;
   }
   .inner {

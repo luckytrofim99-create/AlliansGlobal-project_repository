@@ -53,7 +53,7 @@
   border-color: var(--line, #dcded7);
 }
 .innerHeader.scrolled .inner {
-  max-width: 1000px;
+  max-width: 1120px;
   height: 56px;
   padding: 6px 16px;
   border-color: var(--line, #dcded7);

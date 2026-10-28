@@ -1,8 +1,8 @@
 "use client";
 
 /*
-The feature branch owns the content, section order and interactive journeys.
-Dev2 applies dev's ivory, serif and architectural visual language to that flow.
+Dev2 retains the feature branch journeys with dev's architectural visual language.
+Education leads the offer and follows the hero; the other services remain available.
 */
 import Image from "next/image";
 import { ActionLink, type ActionVariant } from "@/components/actions/Action";
@@ -114,18 +114,18 @@ const countries = [
 ];
 const goals = [
   {
-    slug: "work",
-    name: "Работать",
-    title: "Переезд по работе",
-    text: "Рассмотрим приглашение работодателя и документы для переезда.",
-    image: "/images/usa-new-york.jpg",
-  },
-  {
     slug: "education",
     name: "Учиться",
     title: "Переезд для учёбы",
     text: "Разберём визовые вопросы по приглашению школы или университета.",
     image: "/images/university-campus.jpg",
+  },
+  {
+    slug: "work",
+    name: "Работать",
+    title: "Переезд по работе",
+    text: "Рассмотрим приглашение работодателя и документы для переезда.",
+    image: "/images/usa-new-york.jpg",
   },
   {
     slug: "family",
@@ -202,17 +202,17 @@ function Hero() {
     <LocalizedTree><section className={styles.hero} ref={ref} aria-labelledby="home-title">
       <div className={styles.heroCopy}>
         <h1 id="home-title" data-reveal="title">
-          <RevealWords>Визы и переезд</RevealWords>
+          <RevealWords>Учёба за рубежом</RevealWords>
           <br />
-          <span className={styles.titleMuted}><RevealWords>от выбора до подачи</RevealWords></span>
+          <span className={styles.titleMuted}><RevealWords>визы и переезд</RevealWords></span>
         </h1>
         <p className={styles.lead} data-reveal="copy" data-motion-delay="80">
-          Поможем определить основание, подготовить документы и составить план подачи.
+          Образование — одно из основных направлений Alliance Global. Разберём учебные планы, визовые вопросы и документы для переезда.
         </p>
         <div className={styles.heroActions} data-reveal="copy" data-motion-delay="140">
-          <PillLink href="#consultation">Запросить консультацию</PillLink>
+          <PillLink href="#education">Обучение за рубежом</PillLink>
           <ActionLink href="#services" variant="quiet" className={styles.quietLink}>
-            Посмотреть услуги
+            Другие услуги
           </ActionLink>
         </div>
       </div>
@@ -221,11 +221,30 @@ function Hero() {
   );
 }
 
+function Education() {
+  return <LocalizedTree><section id="education" className={styles.education} aria-labelledby="education-title">
+    <div className={styles.educationPhoto} data-reveal="picture">
+      <Image src="/images/university-campus.jpg" alt="Университетский кампус" fill sizes="(max-width: 760px) 90vw, 45vw" />
+    </div>
+    <div className={styles.educationCopy}>
+      <h2 id="education-title" data-reveal="heading"><RevealWords>Образование за рубежом</RevealWords></h2>
+      <p>Школа, университет или продолжение обучения. Начнём с учебной цели и подготовки к поездке.</p>
+      <ul className={styles.educationSteps}>
+        <li><h3>Учебные планы</h3><p>Уровень обучения и предполагаемая страна.</p></li>
+        <li><h3>Виза и документы</h3><p>Приглашение и порядок подготовки к подаче.</p></li>
+        <li><h3>Планы семьи</h3><p>Вопросы переезда сопровождающих.</p></li>
+      </ul>
+      <div className={styles.educationActions}>
+        <PillLink href="/consultation?goal=education">Обсудить обучение</PillLink>
+        <ActionLink href="/programs#education" variant="quiet">Подготовка к учёбе</ActionLink>
+      </div>
+    </div>
+  </section></LocalizedTree>;
+}
+
 function ServiceScene() {
   const [selected, setSelected] = useState(0);
-  const [manual, setManual] = useState(false);
   const [keyboard, setKeyboard] = useState(false);
-  const root = useRef<HTMLElement>(null);
   const reduce = useStableReducedMotion();
   const x = useMotionValue(0);
   const carrier = useRef<HTMLDivElement>(null);
@@ -239,30 +258,9 @@ function ServiceScene() {
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
-  const { scrollYProgress } = useScroll({
-    target: root,
-    offset: ["start start", "end end"],
-  });
-  // Scroll state is discrete. Continuous values stay outside React rendering.
-  useEffect(() => {
-    let previous = -1;
-    const compact = window.matchMedia(
-      "(min-width:761px) and (max-height:760px), (max-width:760px) and (max-height:720px)",
-    );
-    return scrollYProgress.on("change", (progress) => {
-      if (!manual && !reduce && !compact.matches) {
-        const next = Math.min(2, Math.floor(Math.max(0, progress) * 3));
-        if (next !== previous) {
-          previous = next;
-          setSelected(next);
-        }
-      }
-    });
-  }, [manual, reduce, scrollYProgress]);
   const item = services[selected];
   const choose = (index: number, fromKeyboard = false) => {
     setKeyboard(fromKeyboard);
-    setManual(true);
     setSelected(index);
   };
   function endDrag(_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) {
@@ -274,8 +272,7 @@ function ServiceScene() {
   return (
     <LocalizedTree><section
       id="services"
-      ref={root}
-      className={`${styles.services}${reduce ? ` ${styles.staticScene}` : ""}`}
+      className={styles.services}
       aria-labelledby="services-title"
     >
       <div className={styles.servicesSticky}>
@@ -475,7 +472,7 @@ function Destinations() {
 }
 
 function Purpose() {
-  const [selected, setSelected] = useState(1);
+  const [selected, setSelected] = useState(0);
   const [keyboard, setKeyboard] = useState(false);
   const reduce = useStableReducedMotion();
   const ref = useRef<HTMLElement>(null);
@@ -601,7 +598,7 @@ export default function HomeJourney() {
   const ref = useRef<HTMLDivElement>(null);
   useJourneyMotion(ref);
   useEffect(() => {
-    const target = ["#consultation", "#services", "#destinations"].includes(
+    const target = ["#consultation", "#education", "#services", "#destinations"].includes(
       location.hash,
     )
       ? location.hash.slice(1)
@@ -636,6 +633,7 @@ export default function HomeJourney() {
         data-home-journey
       >
         <Hero />
+        <Education />
         <ServiceScene />
         <Destinations />
         <Purpose />

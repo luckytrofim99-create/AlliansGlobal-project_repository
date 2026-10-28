@@ -67,10 +67,11 @@ export function useJourneyMotion(root: RefObject<HTMLDivElement | null>) {
             { transform: "translate3d(0, 0, 0) rotate(0deg)", opacity: 1 },
           ], mobile ? 350 : 810, Math.min(index * 20, 160)));
         } else if (element.dataset.reveal === "picture") {
+          const radius = getComputedStyle(element).borderTopLeftRadius;
           play(element, [
-            { clipPath: "polygon(34% 32%, 63% 28%, 68% 64%, 31% 69%)", transform: "translate3d(0, 36px, 0) scale(.93) rotate(-1deg)" },
-            { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", transform: "translate3d(0, 0, 0) scale(1)" },
-          ], mobile ? 560 : 800);
+            { clipPath: `inset(14% round ${radius})`, transform: "translate3d(0, 16px, 0) scale(.98)" },
+            { clipPath: `inset(0% round ${radius})`, transform: "translate3d(0, 0, 0) scale(1)" },
+          ], mobile ? 420 : 600);
         } else {
           play(element, [
             { opacity: 0, transform: `translate3d(0, ${mobile ? 10 : 20}px, 0)` },

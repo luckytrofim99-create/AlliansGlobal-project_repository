@@ -8,6 +8,7 @@ import { LocalizedTree, useAllianceLocale, tx } from "@/components/alliance/Alli
 import { ActionButton } from "@/components/actions/Action";
 
 const goals = [
+  { value: "education", label: "Образование" },
   { value: "visa", label: "Виза" },
   { value: "residence", label: "ВНЖ и ПМЖ" },
   { value: "citizenship", label: "Гражданство" },

@@ -26,6 +26,14 @@ const routes = [
     "south-korea",
   ].map((s) => `/countries/${s}`),
   ...[
+    "uk-student-visa",
+    "us-b1-b2-visa",
+    "canada-express-entry",
+    "schengen-visa",
+    "australia-skilled-visas",
+    "new-zealand-aewv",
+    "south-korea-k-eta",
+    "eu-blue-card-germany",
     "where-to-start",
     "first-consultation",
     "moving-with-family",
@@ -55,7 +63,7 @@ for (let i = 0; i < routes.length; i += 5) {
         const url = new URL(match[1].replaceAll("&amp;", "&"), base);
         if (url.origin === new URL(base).origin) {
           if (
-            /\.(?:jpg|png|svg|woff2)$/.test(url.pathname) ||
+            /\.(?:jpg|png|svg|woff2|docx)$/.test(url.pathname) ||
             url.pathname === "/_next/image"
           )
             assets.add(url.href);
