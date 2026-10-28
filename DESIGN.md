@@ -54,11 +54,12 @@ FAQ, country controls and the single shared consultation form.
    The main CTA opens consultation and the quieter link opens services. The Roman
    photograph keeps its arch and rounded lower corners. Its outline follows the same
    geometry with an even 10px gap (8px on mobile).
-2. Preparation: a compact navy strip uses a quiet architectural backdrop and
-   three checks for grounds, documents and timing. A light logo-style ribbon uses
-   six goal pictograms and words, never invented third-party logos. It has a
-   native pause button, pauses offscreen and becomes a static wrapped list when
-   reduced motion is requested.
+2. Preparation: three light rounded cards cover grounds, documents and timing.
+   The centred document card is wider, following the supplied card-layout reference.
+   Whole-card links open programmes, services and approach. A light ribbon shows
+   only six large goal pictograms with no visible text or pause control. Its loop
+   runs continuously without hover or offscreen pauses. Reduced-motion preferences
+   still receive a static wrapped group.
 3. Services: the existing three-choice selector, live content and detail links.
    The scene follows its content height; manual selection and swipe remain.
    Services no longer change automatically while the visitor scrolls.
