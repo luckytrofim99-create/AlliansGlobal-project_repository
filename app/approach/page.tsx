@@ -20,17 +20,17 @@ const circumstances = [
 export default function ApproachPage() {
   return (
     <PageShell>
-      <PageHero title="Узнайте порядок сопровождения" intro="От разбора задачи до подготовки документов и подачи. Содержание этапов зависит от страны и основания.">
+      <PageHero title="6 этапов вашего обращения" intro="От проверки оснований до разбора решения. Для каждого этапа согласуются документы, ваши действия и задачи специалиста.">
         <PageLink href="#explore">Посмотреть этапы</PageLink>
       </PageHero>
 
       <PageSection id="explore">
         <div className={styles.split}>
           <div className={styles.copy} data-reveal>
-            <h2>Этапы работы над обращением</h2>
+            <h2>Ваши действия на каждом этапе</h2>
             <p>Согласуем содержание этапов по вашей ситуации.</p>
             <p>Определим необходимые документы, действия клиента и задачи команды.</p>
-            <PageLink href="/consultation" secondary>Обсудить задачу</PageLink>
+            <PageLink href="/consultation" secondary>Разобрать мою ситуацию</PageLink>
           </div>
           <ol className={styles.steps} aria-label="Этапы сопровождения">
             {processSteps.map((step) => <li key={step.number} data-reveal><h3>{step.title}</h3><p>{step.description}</p></li>)}
@@ -38,13 +38,13 @@ export default function ApproachPage() {
         </div>
       </PageSection>
 
-      <PageSection title="Что влияет на план переезда" intro="Для оценки нужны цель, история обращений и ограничения.">
+      <PageSection title="Что влияет на ваш маршрут" intro="Для оценки нужны цель, история обращений и ограничения.">
         <div className={styles.pair}>
           {circumstances.map(([title, text]) => <PageCard key={title} title={title} body={text} />)}
         </div>
       </PageSection>
 
-      <PageSection title="Разберите отказ или смену статуса">
+      <PageSection title="После отказа или смены статуса">
         <PageReading>
           <p data-reveal>Подготовьте решения по прошлым обращениям и документы о текущем статусе.</p>
           <p data-reveal>Восстановим хронологию и определим вопросы для проверки. После анализа оценим возможность сопровождения.</p>
@@ -58,12 +58,12 @@ export default function ApproachPage() {
           <div className={styles.copy} data-reveal>
             <h2>Уточните условия до начала работы</h2>
             <p>Согласуйте задачи команды, своё участие и результат этапа.</p>
-            <PageLink href="/consultation" secondary>Обсудить задачу</PageLink>
+            <PageLink href="/consultation" secondary>Разобрать мою ситуацию</PageLink>
           </div>
           <div data-reveal><FAQ items={[faq[3], faq[4], faq[5]]} /></div>
         </div>
       </PageSection>
-      <PageClosing title="Подготовьте запрос на консультацию" />
+      <PageClosing title="Ваши первые действия" />
     </PageShell>
   );
 }

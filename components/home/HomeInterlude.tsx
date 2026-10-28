@@ -1,14 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { Pause, Play } from "lucide-react";
+import { Building2, BriefcaseBusiness, GraduationCap, Laptop, Pause, Play, Trophy, UsersRound } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { ActionLink } from "@/components/actions/Action";
 import { LocalizedTree, tx, useAllianceLocale } from "@/components/alliance/AllianceLocale";
 import { RevealWords } from "./JourneyMotion";
 import styles from "./HomeInterlude.module.css";
 
-const topics = ["Учёба за рубежом", "Визы", "Работа", "Семья", "Бизнес", "Спорт", "Гражданство"];
+const topics = [
+  { label: "Учёба за рубежом", mark: "Учёба", Icon: GraduationCap },
+  { label: "Переезд по работе", mark: "Работа", Icon: BriefcaseBusiness },
+  { label: "Переезд с семьёй", mark: "Семья", Icon: UsersRound },
+  { label: "Переезд для бизнеса", mark: "Бизнес", Icon: Building2 },
+  { label: "Переезд для спорта", mark: "Спорт", Icon: Trophy },
+  { label: "Переезд с удалённой работой", mark: "Удалённая работа", Icon: Laptop },
+];
 const checks = [
   { title: "Основания", text: "Условия страны под вашу цель." },
   { title: "Документы", text: "Перечень и порядок подготовки." },
@@ -31,7 +38,7 @@ export default function HomeInterlude() {
     <div className={styles.backdrop} aria-hidden="true"><Image src="/images/hero-arch.jpg" alt="" fill sizes="46vw" /></div>
     <div className={styles.inner}>
       <div className={styles.headingRow}>
-        <h2 id="preparation-title" className={styles.heading} data-reveal><RevealWords>До подачи проверьте</RevealWords></h2>
+        <h2 id="preparation-title" className={styles.heading} data-reveal><RevealWords>Что проверить до подачи</RevealWords></h2>
         <ActionLink href="/approach" variant="quiet" tone="inverse">Порядок подготовки</ActionLink>
       </div>
       <div className={styles.checks}>
@@ -41,10 +48,10 @@ export default function HomeInterlude() {
       </div>
     </div>
     <div className={styles.ticker} data-paused={paused || !inView}>
-      <ul className={styles.srOnly} aria-label="Задачи для сопровождения">{topics.map(topic => <li key={topic}>{topic}</li>)}</ul>
+      <ul className={styles.srOnly} aria-label="Задачи для сопровождения">{topics.map(topic => <li key={topic.label}>{topic.label}</li>)}</ul>
       <div className={styles.tickerWindow} aria-hidden="true">
         <div className={styles.track}>
-          {[0, 1, 2].map(copy => <div className={styles.group} key={copy}>{topics.map(topic => <span className={styles.topic} key={topic}>{topic}</span>)}</div>)}
+          {[0, 1, 2].map(copy => <div className={styles.group} key={copy}>{topics.map(({ label, mark, Icon }) => <span className={styles.topic} key={label}><Icon size={30} strokeWidth={1.35} /><span>{mark}</span></span>)}</div>)}
         </div>
       </div>
       <button className={styles.pause} type="button" onClick={() => setPaused(value => !value)} aria-label={tx(locale, paused ? "Продолжить бегущую строку" : "Остановить бегущую строку")} aria-pressed={paused}>

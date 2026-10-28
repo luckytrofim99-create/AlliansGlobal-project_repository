@@ -10,15 +10,16 @@
 .check + .check { padding-left: 28px; border-left: 1px solid #a88a5c70; }
 .band .label { color: var(--ivory); font-size: 27px; line-height: 1.15; }
 .band .detail { margin-top: 8px; color: #d0dcdf; font-size: 14px; line-height: 1.6; }
-.ticker { display: flex; align-items: center; gap: 14px; width: min(1440px, 100%); margin-inline: auto; padding: 8px var(--pad); border-top: 1px solid #ffffff20; }
-.tickerWindow { min-width: 0; flex: 1; overflow: hidden; }
-.track { display: flex; width: max-content; animation: drift 38s linear infinite; }
+.ticker { display: flex; align-items: center; gap: 20px; width: 100%; padding: 18px var(--pad); border-block: 1px solid var(--line); background: var(--paper); color: var(--muted); }
+.tickerWindow { min-width: 0; flex: 1; overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 28px, #000 calc(100% - 28px), transparent); }
+.track { display: flex; width: max-content; animation: drift 52s linear infinite; }
 .ticker[data-paused="true"] .track { animation-play-state: paused; }
 .group { display: flex; flex-shrink: 0; align-items: center; }
-.topic { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; color: #cbb58f; white-space: nowrap; font: 400 25px/1.3 var(--home-display); }
-.topic::after { content: ""; width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
-.pause { display: grid; flex-shrink: 0; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid #ffffff40; border-radius: 50%; background: transparent; color: var(--ivory); cursor: pointer; touch-action: manipulation; transition: background-color 160ms, transform 140ms; }
-.pause:focus-visible { outline: 2px solid #cbb58f; outline-offset: 3px; }
+.topic { display: inline-flex; align-items: center; gap: 12px; padding-right: 72px; color: #627075; white-space: nowrap; font: 500 20px/1.2 var(--home-display); }
+.topic > span { max-width: 115px; white-space: normal; }
+.topic > svg { flex-shrink: 0; }
+.pause { display: grid; flex-shrink: 0; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer; touch-action: manipulation; transition: background-color 160ms, transform 140ms; }
+.pause:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .pause:active { transform: scale(.97); }
 .srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @keyframes drift { to { transform: translateX(-33.333333%); } }
@@ -31,18 +32,20 @@
   .check + .check { padding-left: 0; border-left: 0; border-top: 1px solid #a88a5c50; }
   .band .label { font-size: 23px; }
   .band .detail { margin-top: 0; font-size: 13px; }
-  .topic { font-size: 23px; gap: 22px; padding-right: 22px; }
+  .topic { font-size: 19px; gap: 10px; padding-right: 44px; }
+  .ticker { padding-block: 14px; gap: 8px; }
   .backdrop { width: 76%; }
 }
 @media (hover: hover) and (pointer: fine) {
   .tickerWindow:hover .track { animation-play-state: paused; }
-  .pause:hover { background: #ffffff15; }
+  .pause:hover { background: var(--ivory); }
 }
 @media (prefers-reduced-motion: reduce) {
   .track { animation: none; width: auto; display: block; transform: none; }
-  .group { flex-wrap: wrap; gap: 4px 0; }
+  .group { flex-wrap: wrap; gap: 20px 0; }
+  .tickerWindow { mask-image: none; }
   .group:not(:first-child) { display: none; }
-  .topic { font-size: 21px; white-space: normal; }
+  .topic { font-size: 20px; white-space: normal; padding-right: 28px; }
   .ticker { padding-block: 12px; }
   .pause { display: none; }
 }

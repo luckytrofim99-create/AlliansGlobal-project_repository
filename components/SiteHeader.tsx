@@ -11,7 +11,6 @@ import { LanguageSwitcher } from "./alliance/LanguageSwitcher";
 import { ActionLink } from "./actions/Action";
 
 const links = [
-  { href: "/education", label: "Образование" },
   { href: "/countries", label: "Страны" },
   { href: "/programs", label: "Программы" },
   { href: "/services", label: "Услуги" },
@@ -60,7 +59,7 @@ export default function SiteHeader() {
       <div className={styles.menuTop}><h2 id="site-menu-title">{tx(locale, "Меню")}</h2><button type="button" className={styles.close} onClick={close} aria-label={tx(locale, "Закрыть меню")} autoFocus><X size={22} strokeWidth={1.5} aria-hidden="true" /></button></div>
       <div className={styles.dialogLanguage}><LanguageSwitcher /></div>
       <nav className={styles.mobile} aria-label={tx(locale, "Разделы сайта")} lang={locale}>{[{ href: "/", label: "Главная" }, ...links, { href: "/contacts", label: "Контакты" }].map((link) => <Link key={link.href} href={link.href} onClick={close} aria-current={pathname === link.href ? "page" : undefined}>{tx(locale, link.label)}</Link>)}</nav>
-      <ActionLink href="/consultation" className={styles.menuCta} onClick={close}>{tx(locale, "Запросить консультацию")}</ActionLink>
+      <ActionLink href="/consultation" className={styles.menuCta} onClick={close}>{tx(locale, "Разобрать мою ситуацию")}</ActionLink>
     </dialog>
   </>;
 }

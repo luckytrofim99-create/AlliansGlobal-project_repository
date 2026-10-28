@@ -20,7 +20,7 @@ export default function CountriesPage() {
   return (
     <PageShell>
       <PageHero
-        title="Выберите страну для переезда"
+        title="7 направлений для переезда"
         intro="Сравните направления по цели поездки и планам семьи."
       >
         <PageLink href="#explore">Выбрать направление</PageLink>
@@ -29,8 +29,8 @@ export default function CountriesPage() {
 
       <PageSection
         id="explore"
-        title="Сравните направления"
-        intro="Выберите страну для изучения задач и подготовки к обращению."
+        title="Сравните условия переезда"
+        intro="Найдите направление и узнайте, какие документы и обстоятельства нужно проверить."
       >
         <CountryCatalogue items={countries} />
       </PageSection>
@@ -48,9 +48,9 @@ export default function CountriesPage() {
       </PageSection>
 
       <PageClosing
-        title="Начните с выбора цели"
+        title="Страна под вашу цель"
         text="Укажите цель и ограничения для сравнения направлений."
-        action="Обсудить мои планы"
+        action="Разобрать мою ситуацию"
       />
     </PageShell>
   );

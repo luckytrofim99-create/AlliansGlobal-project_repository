@@ -48,13 +48,15 @@ FAQ, country controls and the single shared consultation form.
 
 ## Homepage composition and behavior
 
-1. Hero: the agency offer follows the supplied reference: “Ваше будущее — без границ”.
-   Supporting copy names visas, residence, citizenship and legal support. The USP
+1. Hero: “Визы и переезд с планом действий” names the service and client benefit.
+   Supporting copy names grounds and documents for visas, residence and citizenship. The USP
    is a contractual guarantee of meeting deadlines for the agency’s own work.
    The main CTA opens consultation and the quieter link opens services. The Roman
-   photograph keeps its arch and rounded lower corners.
+   photograph keeps its arch and rounded lower corners. Its outline follows the same
+   geometry with an even 10px gap (8px on mobile).
 2. Preparation: a compact navy strip uses a quiet architectural backdrop and
-   three checks for grounds, documents and timing. A scrolling topic row has a
+   three checks for grounds, documents and timing. A light logo-style ribbon uses
+   six goal pictograms and words, never invented third-party logos. It has a
    native pause button, pauses offscreen and becomes a static wrapped list when
    reduced motion is requested.
 3. Services: the existing three-choice selector, live content and detail links.
@@ -63,7 +65,8 @@ FAQ, country controls and the single shared consultation form.
 4. Destinations: the existing seven-country selector and detail link, presented
    on a navy ground. Gold identifies the selected country.
 5. Purpose: the existing six goals, default education selection and program link.
-6. Quick consultation: the same task/country/contact/comment/consent flow.
+6. Quick consultation: the same task/country/contact/comment/consent flow, with a
+   centred heading above a centred form of at most 820px.
 
 ## Shared and internal pages
 
@@ -75,11 +78,16 @@ PageKit preserves each page's structure and applies serif hierarchy, restrained
 text cards, rounded photographic crops and navy closing panels. Catalogue
 search and region filters, FAQ disclosure states and selected controls stay visible.
 
-The dedicated /education page opens with the campus photograph and the moved
-study, visa and family rows. It has one H1, 48px photograph corners (28px on
-mobile), the shared reveal motion and a consultation link prefilled for education.
-The preparation section links to the existing student-visa article. Legacy
-/#education bookmarks redirect to this page.
+Education is the first content section of /programs#education. The campus
+photograph and three study/visa/family rows use an H2, 48px photograph corners
+(28px on mobile), shared reveal motion and a consultation link prefilled for
+education. The quiet link opens the student-visa article. The header has no
+separate education item. Legacy /education and /#education links redirect here.
+
+Standalone panels, text cards, callouts and closing CTAs use a shared panel
+radius of 32px, reduced to 24px on mobile. Full-width separator bands retain
+their edge-to-edge geometry. Headings name the client task or useful outcome;
+counts always correspond to actual content.
 
 Only the detailed /services/residence H1 reads “Вид на жительство”. Catalogue
 labels and other mentions of “ВНЖ и ПМЖ” remain unchanged.

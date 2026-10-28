@@ -20,13 +20,13 @@ export default function ContactsPage() {
   return (
     <PageShell>
       <PageHero
-        title="Подготовьте обращение"
+        title="Запрос на разбор переезда"
         intro="Укажите цель поездки или переезда и вопросы для консультации."
         compact
       >
-        <PageLink href="/consultation">Обсудить мои планы</PageLink>
+        <PageLink href="/consultation">Разобрать мою ситуацию</PageLink>
       </PageHero>
-      <PageSection title="Что указать в обращении">
+      <PageSection title="3 пункта для первого обращения">
         <PageColumns className={styles.columns}>
           <PageReading>
             <p>
@@ -49,7 +49,7 @@ export default function ContactsPage() {
               Данные остаются на странице до её перезагрузки.
             </p>
             <PageLink href="/consultation" secondary>
-              Подготовить обращение
+              Подготовить запрос
             </PageLink>
           </aside>
         </PageColumns>

@@ -229,19 +229,19 @@ export default async function CountryPage({ params }: Props) {
         image={country.image}
         imageAlt={context.location}
       >
-        <PageLink href={consultationHref}>Обсудить мои планы</PageLink>
+        <PageLink href={consultationHref}>Разобрать мою ситуацию</PageLink>
         <PageLink href="/countries" quiet>Все направления</PageLink>
         <p className={styles.location}>{context.location} · {country.en}</p>
       </PageHero>
 
       <PageSection
         id="explore"
-        title="Подготовьтесь к разбору ситуации"
+        title="Что проверить перед поездкой"
         intro={context.introduction}
       >
         <div className={styles.context}>
           <article className={styles.preparation} data-reveal>
-            <h3>Сведения для разбора</h3>
+            <h3>Ваши исходные данные</h3>
             <PageList items={context.tasks} />
             <p>
               Возможные действия, сроки и документы уточняются после изучения вашей ситуации.
@@ -265,13 +265,13 @@ export default async function CountryPage({ params }: Props) {
             title={program.title}
             label={program.tag}
             body={program.description}
-            href={program.slug === "education" ? "/education" : `/programs#${program.slug}`}
+            href={program.slug === "education" ? "/programs#education" : `/programs#${program.slug}`}
             action="Подробнее о задаче"
           />)}
         </PageColumns>
       </PageSection>
 
-      <PageSection title="Узнайте первые этапы работы">
+      <PageSection title="3 шага до подготовки документов">
         <PageColumns>
           {processSteps.slice(0, 3).map((step) => <PageCard
             key={step.number}
@@ -296,10 +296,10 @@ export default async function CountryPage({ params }: Props) {
       </PageSection>
 
       <PageClosing
-        title={`Обсудите поездку: ${country.name}`}
+        title="План вашей поездки"
         text="Укажите цель поездки и документы для предварительного разбора."
         href={consultationHref}
-        action="Обсудить мои планы"
+        action="Разобрать мою ситуацию"
       />
     </PageShell>
   );

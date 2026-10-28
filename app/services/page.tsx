@@ -27,23 +27,23 @@ const questions = [
 export default function ServicesPage() {
   return <PageShell className={styles.page}>
     <PageHero
-      title="Визы и переезд"
+      title="Документы для визы и переезда"
       intro="Узнайте, какие документы нужны для визы, проживания или гражданства."
       image="/images/office-interior.jpg"
       imageAlt="Светлый интерьер для обсуждения планов переезда"
     >
       <PageLink href="#explore">Выбрать услугу</PageLink>
-      <PageLink href="/consultation" quiet>Обсудить задачу</PageLink>
+      <PageLink href="/consultation" quiet>Разобрать мою ситуацию</PageLink>
     </PageHero>
 
-    <PageSection id="explore" title="С чего начать?">
+    <PageSection id="explore" title="5 задач перед переездом">
       <OverviewCards items={services} layout="services" />
     </PageSection>
 
-    <PageSection title="Перед консультацией">
+    <PageSection title="Документы и стоимость">
       <div className={styles.faq} data-reveal><FAQ items={questions} /></div>
     </PageSection>
 
-    <PageClosing title="Составьте план подготовки" text="Опишите цель поездки и вашу ситуацию." action="Обсудить задачу" />
+    <PageClosing title="Узнайте список документов" text="Начните с цели поездки и страны. Перечень зависит от ваших обстоятельств." action="Разобрать мою ситуацию" />
   </PageShell>;
 }

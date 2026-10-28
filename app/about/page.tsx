@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const benefits = [
-  { id: "grounds", title: "Основание для переезда", text: "Поймёте, подходит ли вам выбранный путь.", icon: Route },
+  { id: "grounds", title: "Основание для переезда", text: "Проверка выбранного пути по вашим обстоятельствам.", icon: Route },
   { id: "documents", title: "Документы для подачи", text: "Список и порядок подготовки.", icon: FileCheck2 },
   { id: "family", title: "Планы всей семьи", text: "Учёба, работа и документы близких.", icon: UsersRound },
   { id: "terms", title: "Сроки и расходы", text: "Согласованы до начала работы.", icon: CalendarCheck2 },
@@ -22,16 +22,16 @@ const benefits = [
 export default function AboutPage() {
   return <PageShell className={styles.page}>
     <PageHero
-      title="Ваш план переезда"
-      intro="Визовые вопросы и документы для учёбы, работы и жизни за рубежом."
+      title="Условия переезда в договоре"
+      intro="До подготовки документов вам понятны объём сопровождения, ваши задачи, сроки работы и расходы."
       image="/images/office-interior.jpg"
       imageAlt="Светлый интерьер для обсуждения вашего переезда"
     >
-      <PageLink href="/consultation">Обсудить переезд</PageLink>
+      <PageLink href="/consultation">Разобрать мою ситуацию</PageLink>
       <PageLink href="/approach" quiet>Порядок работы</PageLink>
     </PageHero>
 
-    <PageSection title="До подачи вы будете знать">
+    <PageSection title="Что согласовать до подачи">
       <OverviewCards items={benefits} />
     </PageSection>
 
@@ -45,13 +45,13 @@ export default function AboutPage() {
           <p data-reveal>Визовые вопросы по приглашению учебного заведения или клуба.</p>
           <p data-reveal>Alliance Global связан с Alliance Sport Group. Спортивные и миграционные задачи обсуждаются отдельно.</p>
           <div className={styles.storyActions} data-reveal>
-            <PageLink href="/education" quiet>Подготовка к учёбе</PageLink>
+            <PageLink href="/programs#education" quiet>Подготовка к учёбе</PageLink>
             <PageLink href="/programs#sport" quiet>Спортивный переезд</PageLink>
           </div>
         </div>
       </div>
     </PageSection>
 
-    <PageClosing title="Обсудите ваш переезд" text="Укажите цель переезда и имеющиеся документы." action="Обсудить переезд" />
+    <PageClosing title="Проверьте план переезда" text="Начните с цели и документов. Состав сопровождения согласуется до начала работы." action="Разобрать мою ситуацию" />
   </PageShell>;
 }

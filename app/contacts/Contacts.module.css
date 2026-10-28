@@ -3,7 +3,7 @@
   align-self: start;
   border: 1px solid var(--home-line, #dcded7);
   border-top-color: var(--home-gold, #a88a5c);
-  border-radius: 0;
+  border-radius: var(--panel-radius, 24px);
   padding: clamp(28px, 4vw, 48px);
   background: var(--home-surface, #fffefa);
   color: var(--home-ink, #102f3e);
@@ -37,7 +37,7 @@
 }
 
 @media (max-width: 560px) {
-  .status { border-radius: 0; }
+  .status { border-radius: var(--panel-radius, 24px); }
 }
 .columns {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);

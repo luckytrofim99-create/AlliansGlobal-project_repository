@@ -137,7 +137,7 @@ export default function QuickConsultation({
         <div className={styles.heading}>
           <h2 id={`${id}-title`} data-reveal="heading"><RevealWords>Опишите задачу</RevealWords></h2>
           <AccentLine wide />
-          <p>Выберите страну и оставьте контакт.</p>
+          <p>Укажите цель и страну для разбора документов и порядка подготовки.</p>
         </div>
 
         <form
@@ -312,7 +312,7 @@ export default function QuickConsultation({
 
           <div className={styles.actions}>
             <ActionButton className={styles.submit} type="submit">
-              Запросить консультацию
+              Подготовить запрос
             </ActionButton>
             <div className={styles.next}>
               <p>Прототип: отправка не подключена. Можно скачать черновик.</p>

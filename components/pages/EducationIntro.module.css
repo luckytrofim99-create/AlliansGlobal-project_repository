@@ -2,12 +2,11 @@
 .photo { position: relative; min-width: 0; height: clamp(340px, 32vw, 460px); overflow: hidden; border-radius: var(--photo-radius); clip-path: inset(0 round var(--photo-radius)); isolation: isolate; }
 .photo img { object-fit: cover; border-radius: inherit; }
 .copy { min-width: 0; }
-.back { margin-bottom: 24px; }
 .intro .title { font-size: clamp(40px, 4.3vw, 62px); line-height: 1.08; }
 .copy > p { max-width: 48ch; margin-top: 16px; font-size: 15px; line-height: 1.7; }
 .steps { display: grid; margin: 20px 0 0; padding: 0; list-style: none; }
 .steps li { display: grid; grid-template-columns: 140px 1fr; align-items: baseline; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
-.intro .steps h2 { font-size: 23px; line-height: 1.15; letter-spacing: -.02em; }
+.intro .steps h3 { font-size: 23px; line-height: 1.15; letter-spacing: -.02em; }
 .intro .steps p { font-size: 13px; line-height: 1.6; }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 20px; }
 @media (max-width: 760px) {
@@ -16,6 +15,5 @@
   .photo { height: 260px; }
   .intro .title { font-size: clamp(36px, 8vw, 44px); }
   .steps li { grid-template-columns: 112px 1fr; gap: 12px; }
-  .intro .steps h2 { font-size: 21px; }
-  .back { margin-bottom: 16px; }
+  .intro .steps h3 { font-size: 21px; }
 }

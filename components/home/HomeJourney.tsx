@@ -44,27 +44,27 @@ const services = [
   {
     name: "Визы",
     title: "Подготовка к визе",
-    text: "Разберём цель поездки, визовую историю и документы для подачи.",
+    text: "Узнайте, какие документы нужны под вашу цель поездки и визовую историю.",
     href: "/services/visas",
-    label: "Подробнее о визах",
+    label: "Документы для визы",
     image: "/images/europe-paris.jpg",
     photo: "Париж",
   },
   {
     name: "ВНЖ и ПМЖ",
     title: "Основание для ВНЖ",
-    text: "Рассмотрим основания для проживания с учётом работы и планов семьи.",
+    text: "Проверьте основания для проживания с учётом работы и планов семьи.",
     href: "/services/residence",
-    label: "Подробнее о переезде",
+    label: "Основания для проживания",
     image: "/images/canada-toronto.jpg",
     photo: "Торонто",
   },
   {
     name: "Гражданство",
     title: "Основания для гражданства",
-    text: "Изучим личную историю и документы для проверки оснований.",
+    text: "Узнайте, какие личные и семейные документы подтверждают ваши основания.",
     href: "/services/citizenship",
-    label: "Подробнее о гражданстве",
+    label: "Основания для гражданства",
     image: "/images/hero-rome.jpg",
     photo: "Рим",
   },
@@ -74,43 +74,43 @@ const countries = [
     slug: "canada",
     name: "Канада",
     image: "/images/canada-toronto.jpg",
-    text: "Уточним цель переезда и документы для проверки оснований.",
+    text: "Проверьте основания для учёбы, работы или переезда с семьёй.",
   },
   {
     slug: "usa",
     name: "США",
     image: "/images/usa-new-york.jpg",
-    text: "Разберём цель поездки, приглашение и визовую историю.",
+    text: "Подготовьте приглашение и визовую историю под цель поездки.",
   },
   {
     slug: "europe",
     name: "Европа",
     image: "/images/europe-paris.jpg",
-    text: "Сравним направления по работе, учёбе и планам семьи.",
+    text: "Сравните страны по работе, учёбе и планам семьи.",
   },
   {
     slug: "uk",
     name: "Великобритания",
     image: "/images/uk-london.jpg",
-    text: "Определим вопросы к документам и принимающей стороне.",
+    text: "Проверьте приглашение и документы принимающей стороны.",
   },
   {
     slug: "australia",
     name: "Австралия",
     image: "/images/australia-sydney.jpg",
-    text: "Рассмотрим цель переезда и порядок подготовки.",
+    text: "Узнайте порядок подготовки под вашу цель переезда.",
   },
   {
     slug: "new-zealand",
     name: "Новая Зеландия",
     image: "/images/new-zealand-queenstown.jpg",
-    text: "Уточним основание для проверки и планы семьи.",
+    text: "Уточните основание для переезда и документы членов семьи.",
   },
   {
     slug: "south-korea",
     name: "Южная Корея",
     image: "/images/korea-seoul.jpg",
-    text: "Уточним цель поездки и необходимые документы.",
+    text: "Подготовьте документы под цель и срок поездки.",
   },
 ];
 const goals = [
@@ -118,42 +118,42 @@ const goals = [
     slug: "education",
     name: "Учиться",
     title: "Переезд для учёбы",
-    text: "Разберём визовые вопросы по приглашению школы или университета.",
+    text: "Подготовьте учебную визу и документы по приглашению школы или университета.",
     image: "/images/university-campus.jpg",
   },
   {
     slug: "work",
     name: "Работать",
     title: "Переезд по работе",
-    text: "Рассмотрим приглашение работодателя и документы для переезда.",
+    text: "Проверьте приглашение работодателя и документы для переезда.",
     image: "/images/usa-new-york.jpg",
   },
   {
     slug: "family",
     name: "Переехать с семьёй",
     title: "Переезд с семьёй",
-    text: "Учтём документы и обстоятельства каждого участника переезда.",
+    text: "Узнайте, что подготовить каждому участнику переезда.",
     image: "/images/new-zealand-queenstown.jpg",
   },
   {
     slug: "business",
     name: "Развивать бизнес",
     title: "Переезд для бизнеса",
-    text: "Определим миграционные вопросы для бизнеса и инвестиций.",
+    text: "Проверьте основания для проживания при ведении бизнеса или инвестициях.",
     image: "/images/uk-london.jpg",
   },
   {
     slug: "sport",
     name: "Заниматься спортом",
     title: "Переезд для спорта",
-    text: "Рассмотрим визовые вопросы по приглашению клуба или учебного заведения.",
+    text: "Подготовьте визовые документы по приглашению клуба или учебного заведения.",
     image: "/images/education-campus.jpg",
   },
   {
     slug: "digital-nomad",
     name: "Работать удалённо",
     title: "Переезд с удалённой работой",
-    text: "Разберём модель занятости и вопросы для проверки по выбранной стране.",
+    text: "Проверьте требования выбранной страны к вашей удалённой работе.",
     image: "/images/australia-sydney.jpg",
   },
 ];
@@ -203,21 +203,21 @@ function Hero() {
     <LocalizedTree><section className={styles.hero} ref={ref} aria-labelledby="home-title">
       <div className={styles.heroCopy}>
         <h1 id="home-title" data-reveal="title">
-          <RevealWords>Ваше будущее —</RevealWords>
+          <RevealWords>Визы и переезд</RevealWords>
           <br />
-          <RevealWords>без границ</RevealWords>
+          <RevealWords>с планом действий</RevealWords>
         </h1>
         <p className={styles.lead} data-reveal="copy" data-motion-delay="80">
-          Визы, ВНЖ, ПМЖ и гражданство. Юридическая помощь за рубежом для вас, семьи и бизнеса.
+          Узнайте основания для визы, ВНЖ или гражданства и перечень документов для учёбы, работы и переезда с семьёй.
         </p>
         <div className={styles.heroGuarantee} data-reveal="copy">
           <p><strong>Юридическая гарантия соблюдения сроков</strong></p>
-          <p>Сроки нашей работы закрепляем в договоре.</p>
+          <p>Сроки подготовки закреплены в вашем договоре.</p>
         </div>
         <div className={styles.heroActions} data-reveal="copy" data-motion-delay="140">
-          <PillLink href="#consultation">Обсудить мою задачу</PillLink>
+          <PillLink href="#consultation">Разобрать мою ситуацию</PillLink>
           <ActionLink href="#services" variant="quiet" className={styles.quietLink}>
-            Наши услуги
+            Документы и услуги
           </ActionLink>
         </div>
       </div>
@@ -261,7 +261,7 @@ function ServiceScene() {
     >
       <div className={styles.servicesSticky}>
         <div className={styles.sectionIntro}>
-          <h2 id="services-title" data-reveal="heading"><RevealWords>Выберите задачу</RevealWords></h2>
+          <h2 id="services-title" data-reveal="heading"><RevealWords>Документы под вашу задачу</RevealWords></h2>
         <AccentLine />
           <p>Виза, проживание или гражданство.</p>
         </div>
@@ -363,7 +363,7 @@ function Destinations() {
       aria-labelledby="destinations-title"
     >
       <div className={styles.sectionIntro}>
-        <h2 id="destinations-title" data-reveal="heading"><RevealWords>Выберите страну</RevealWords></h2>
+        <h2 id="destinations-title" data-reveal="heading"><RevealWords>7 направлений для переезда</RevealWords></h2>
         <AccentLine />
         <p>
           Посмотрите задачи и подготовку по каждому направлению.
@@ -441,14 +441,14 @@ function Destinations() {
             <p>{item.text}</p>
           </div>
           <PillLink variant="light" href={`/countries/${item.slug}`}>
-            Подробнее о направлении
+            Документы для поездки
           </PillLink>
         </div>
       </div>
       <div className={styles.countryQuestion}>
         <p>Страна ещё не выбрана?</p>
         <ActionLink variant="quiet" tone="inverse" className={styles.quietLink} href="/services/consulting">
-          Поможем разобраться
+          Сравнить страны
         </ActionLink>
       </div>
     </section></LocalizedTree>
@@ -529,8 +529,8 @@ function Purpose() {
         <ChangingCopy className={styles.goalCopy} key={`copy-${item.slug}`} instant={!!reduce || keyboard}>
           <h3>{item.title}</h3>
           <p>{item.text}</p>
-          <PillLink href={item.slug === "education" ? "/education" : `/programs#${item.slug}`} secondary>
-            Подготовка по вашей задаче
+          <PillLink href={item.slug === "education" ? "/programs#education" : `/programs#${item.slug}`} secondary>
+            Документы по моей цели
           </PillLink>
         </ChangingCopy>
       </div>
@@ -543,7 +543,7 @@ export default function HomeJourney() {
   useJourneyMotion(ref);
   useEffect(() => {
     if (location.hash === "#education") {
-      window.location.replace("/education");
+      window.location.replace("/programs#education");
       return;
     }
     const target = ["#consultation", "#services", "#destinations"].includes(

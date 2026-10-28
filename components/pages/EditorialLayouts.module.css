@@ -15,14 +15,14 @@
 .steps li p { margin-top: 14px; }
 .articleLayout { display: grid; grid-template-columns: 230px minmax(0, 760px); justify-content: space-between; gap: clamp(24px, 4vw, 56px); }
 .toc { position: sticky; top: 120px; align-self: start; padding: 24px 0; border-top: 1px solid var(--home-gold); }
-.toc p { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #78613f; margin-bottom: 14px; }
+.toc p { font-size: 13px; color: #78613f; margin-bottom: 14px; }
 .toc ol { list-style: none; padding: 0; margin: 0; }
 .toc a { display: flex; align-items: center; min-height: 44px; padding-block: 9px; color: var(--home-muted); font-size: 13px; line-height: 1.6; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 4px; }
 .articleSection { scroll-margin-top: 120px; }
 .articleSection:first-child h2 { margin-top: 0; }
 .articleMeta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin-top: 4px; }
 .articleMeta span { color: var(--home-muted); font-size: 13px; }
-.note { margin-top: 42px; padding: 26px; border-left: 1px solid var(--home-gold); background: var(--home-surface, #fffefa); }
+.note { border-radius: var(--panel-radius); margin-top: 42px; padding: 26px; border-left: 1px solid var(--home-gold); background: var(--home-surface, #fffefa); }
 .note p:last-child { margin-bottom: 0; }
 .legal h2:first-child { margin-top: 0; }
 .legal > section + section { margin-top: 48px; }

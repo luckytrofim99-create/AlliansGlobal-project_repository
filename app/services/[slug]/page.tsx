@@ -51,7 +51,7 @@ export default async function ServicePage({ params }: Props) {
         image={photograph.image}
         imageAlt={photograph.alt}
       >
-        <PageLink href="/consultation">Обсудить мою ситуацию</PageLink>
+        <PageLink href="/consultation">Разобрать мою ситуацию</PageLink>
         <PageLink href="/services" quiet>Все услуги</PageLink>
       </PageHero>
 
@@ -59,16 +59,16 @@ export default async function ServicePage({ params }: Props) {
 
       <PageSection id="explore" title={service.short}>
         <PageReading>
-          <h3>Что рассматриваем</h3>
+          <h3>Что входит в разбор</h3>
           <PageList items={service.includes} />
           <p>
-            Порядок действий согласуем после анализа. При изменении обстоятельств пересмотрим план и объём помощи.
+            План составляется по вашим документам. Если обстоятельства изменятся, порядок действий и объём помощи пересматриваются.
           </p>
         </PageReading>
       </PageSection>
 
       <PageSection
-        title="Узнайте этапы подготовки"
+        title="6 этапов вашего обращения"
         intro="Этапы и объём работы согласуем по стране, основанию и вашим документам."
       >
         <ol className={styles.steps}>
@@ -80,7 +80,7 @@ export default async function ServicePage({ params }: Props) {
         <div className={styles.sectionAction}><PageLink href="/approach" quiet>Как устроена работа</PageLink></div>
       </PageSection>
 
-      <PageSection title="Уточните условия сопровождения">
+      <PageSection title="Объём помощи и расходы">
         <PageReading><FAQ items={[faq[3], faq[4], faq[5]]} /></PageReading>
       </PageSection>
 

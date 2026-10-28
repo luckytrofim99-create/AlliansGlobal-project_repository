@@ -13,7 +13,7 @@ export default function JournalPage() {
   return (
     <PageShell>
       <PageHero
-        title="Подготовьтесь к переезду"
+        title="Визы и документы в деталях"
         intro="Обучение, визы, работа и переезд. Материалы по семи направлениям и подготовке документов."
         compact
       >
@@ -37,7 +37,7 @@ export default function JournalPage() {
       </PageSection>
 
       <PageClosing
-        title="Проверьте вопросы по своей ситуации"
+        title="Разбор вашей ситуации"
         text="Опишите цель и документы для разбора на консультации."
       />
     </PageShell>

@@ -41,6 +41,9 @@ const routes = [
     "clear-scope",
   ].map((s) => `/journal/${s}`),
 ];
+const educationRedirect = await fetch(new URL("/education", base), { redirect: "manual" });
+assert.equal(educationRedirect.status, 307, "Legacy education route redirects");
+assert.equal(educationRedirect.headers.get("location"), "/programs#education", "Education lives in programmes");
 const assets = new Set();
 const stylesheets = new Set();
 for (let i = 0; i < routes.length; i += 5) {

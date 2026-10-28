@@ -68,7 +68,7 @@ export default async function ArticlePage({ params }: Props) {
         </div>
       </PageSection>
 
-      <PageClosing title="Подготовьте вопросы по своему обращению" text="Укажите цель и вопросы для консультации." />
+      <PageClosing title="Условия вашей поездки" text="Правила зависят от страны и ваших обстоятельств. Подготовьте вопросы по документам и основаниям." />
     </PageShell>
   );
 }
