@@ -16,7 +16,13 @@ export const metadata: Metadata = {
     "Канада, США, Европа, Великобритания, Австралия, Новая Зеландия и Южная Корея. Изучите направления Alliance Global и начните с вашей цели.",
 };
 
-export default function CountriesPage() {
+export default async function CountriesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string | string[] }>;
+}) {
+  const { q } = await searchParams;
+  const initialQuery = (Array.isArray(q) ? q[0] : q)?.slice(0, 80) ?? "";
   return (
     <PageShell>
       <PageHero
@@ -32,7 +38,7 @@ export default function CountriesPage() {
         title="Сравните условия переезда"
         intro="Найдите направление и узнайте, какие документы и обстоятельства нужно проверить."
       >
-        <CountryCatalogue items={countries} />
+        <CountryCatalogue key={initialQuery} items={countries} initialQuery={initialQuery} />
       </PageSection>
 
       <PageSection title="Не выбрали страну?">

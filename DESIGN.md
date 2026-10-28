@@ -54,12 +54,12 @@ FAQ, country controls and the single shared consultation form.
    The main CTA opens consultation and the quieter link opens services. The Roman
    photograph keeps its arch and rounded lower corners. Its outline follows the same
    geometry with an even 10px gap (8px on mobile).
-2. Preparation: three light rounded cards cover grounds, documents and timing.
-   The centred document card is wider, following the supplied card-layout reference.
-   Whole-card links open programmes, services and approach. A light ribbon shows
-   only six large goal pictograms with no visible text or pause control. Its loop
-   runs continuously without hover or offscreen pauses. Reduced-motion preferences
-   still receive a static wrapped group.
+2. Country finder: three light rounded cards follow the supplied reference in a
+   1:2:1 desktop composition. The wide centre contains a real country search above
+   its heading; it opens the catalogue with the query already applied. Smaller
+   study and preparation cards use a route illustration and linked process nodes.
+   On mobile the search comes first, followed by two side-by-side cards. There is
+   no marquee below the block.
 3. Services: the existing three-choice selector, live content and detail links.
    The scene follows its content height; manual selection and swipe remain.
    Services no longer change automatically while the visitor scrolls.
@@ -85,8 +85,7 @@ card at /programs#education and keeps its prefilled consultation link. The
 header has no separate education item. Legacy education URLs still work.
 
 Thin 44px connector rows link adjacent sections on the homepage and programmes
-page. Icon ribbon copies use explicit grid tracks and a shared step, so their
-width is always the number of icons multiplied by that step.
+page.
 
 Standalone panels, text cards, callouts and closing CTAs use a shared panel
 radius of 32px, reduced to 24px on mobile. Full-width separator bands retain

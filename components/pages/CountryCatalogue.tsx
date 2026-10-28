@@ -8,18 +8,18 @@ import { PageCard, PageColumns, PageLink } from "./PageKit";
 import styles from "./CountryCatalogue.module.css";
 import { useAllianceLocale, tx } from "@/components/alliance/AllianceLocale";
 
-export default function CountryCatalogue({ items }: { items: Country[] }) {
+export default function CountryCatalogue({ items, initialQuery = "" }: { items: Country[]; initialQuery?: string }) {
   const inputId = useId();
   const { locale } = useAllianceLocale();
   const input = useRef<HTMLInputElement>(null);
   const [region, setRegion] = useState("");
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery);
   const regions = useMemo(() => [...new Set(items.map((item) => item.region))], [items]);
   const filtered = useMemo(() => {
     const search = query.trim().toLocaleLowerCase("ru");
     return items.filter((country) =>
       (!region || country.region === region) &&
-      `${country.name} ${country.en} ${country.region}`.toLocaleLowerCase("ru").includes(search),
+      `${country.name} ${country.en} ${country.region} ${country.slug}`.toLocaleLowerCase("ru").includes(search),
     );
   }, [items, query, region]);
 

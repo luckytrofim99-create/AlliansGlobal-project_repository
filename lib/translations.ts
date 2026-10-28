@@ -663,7 +663,12 @@ export const englishCopy: Record<string, string> = {
   "Выбрать программу": "Choose a programme",
   "Программа": "Programme",
   "Что подготовить": "What to prepare",
-  "6 целей переезда": "6 relocation goals"
+  "6 целей переезда": "6 relocation goals",
+  "Выберите свою страну": "Choose your country",
+  "Найти страну": "Find a country",
+  "Виза и документы к поездке.": "Visa and travel documents.",
+  "Переезд по шагам": "Your move step by step",
+  "Этапы и сроки по договору.": "Steps and deadlines agreed in your contract."
 };
 
 export function translate(locale: "ru" | "en", text: string) {

@@ -10,6 +10,7 @@ const routes = [
   "/consultation?country=canada",
   "/contacts",
   "/countries",
+  "/countries?q=canada",
   "/programs",
   "/services",
   "/journal",
@@ -73,6 +74,11 @@ for (let i = 0; i < routes.length; i += 5) {
             assets.add(url.href);
           if (url.pathname.endsWith(".css")) stylesheets.add(url.href);
         }
+      }
+      if (route === "/countries?q=canada") {
+        assert.equal((html.match(/<article[ >]/g) || []).length, 1, "Country search renders only the matching destination");
+        assert.match(html, /<input[^>]*value="canada"/, "Country query prefills the catalogue search");
+        assert.match(html, /href="\/countries\/canada"/, "Country search retains its detail link");
       }
       if (route === "/consultation?country=canada")
         assert.ok(
