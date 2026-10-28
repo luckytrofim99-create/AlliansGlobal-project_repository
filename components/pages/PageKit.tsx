@@ -13,10 +13,10 @@ export function PageShell({ children, className = "" }: Children) {
   return <div className={`${theme.surface} ${styles.page} ${className}`} data-paper-page><PageMotion><LocalizedTree>{children}</LocalizedTree></PageMotion></div>;
 }
 
-export function PageHero({ title, intro, image, imageAlt = "", compact = false, children }: {
-  title: string; intro?: string; image?: string; imageAlt?: string; compact?: boolean; children?: ReactNode;
+export function PageHero({ title, intro, image, imageAlt = "", compact = false, centered = false, children }: {
+  title: string; intro?: string; image?: string; imageAlt?: string; compact?: boolean; centered?: boolean; children?: ReactNode;
 }) {
-  return <header className={`${styles.hero} ${image ? styles.heroSplit : ""} ${compact ? styles.compact : ""}`}>
+  return <header className={`${styles.hero} ${image ? styles.heroSplit : ""} ${compact ? styles.compact : ""} ${centered ? styles.centered : ""}`}>
     <div className={styles.heroCopy}>
       <ActionLink href="/" variant="quiet" size="compact" className={styles.back}>На главную</ActionLink>
       <h1 data-reveal><RevealWords>{title}</RevealWords></h1>

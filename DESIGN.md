@@ -48,7 +48,7 @@ FAQ, country controls and the single shared consultation form.
 
 ## Homepage composition and behavior
 
-1. Hero: “Визы и переезд с планом действий” names the service and client benefit.
+1. Hero: “Ваше будущее — без границ” is the user-supplied two-line headline.
    Supporting copy names grounds and documents for visas, residence and citizenship. The USP
    is a contractual guarantee of meeting deadlines for the agency’s own work.
    The main CTA opens consultation and the quieter link opens services. The Roman
@@ -80,8 +80,9 @@ text cards, rounded photographic crops and navy closing panels. Catalogue
 search and region filters, FAQ disclosure states and selected controls stay visible.
 
 The programmes catalogue presents all six goals in a compact disclosure grid.
-Each photographic card opens in place to show its description, three preparation
-tips and a consultation link. Native details support keyboard use and work without
+The page has no photos, including its hero. Introductory text, supporting sections
+and closing actions use a centred composition. Cards centre their titles, disclosure controls, descriptions,
+preparation tips and consultation links. Each card opens in place. Native details support keyboard use and work without
 JavaScript; the opening motion respects reduced-motion preferences. Redundant
 count headings above the programmes and services catalogues are removed.
 The former large campus/study block is removed. Education remains the first

@@ -90,3 +90,7 @@
 }
 @media (prefers-reduced-motion: reduce) { .photoInner { transform: none !important; } .cardImage img { transition: none; } .card:hover .cardImage img { transform: none; } }
 .card:has(.cardImage) { border-radius: var(--photo-radius); }
+
+.centered .heroCopy { text-align: center; }
+.centered .actions { justify-content: center; }
+.centered .lead { margin-inline: auto; }

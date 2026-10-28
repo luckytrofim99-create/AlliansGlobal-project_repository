@@ -3,11 +3,9 @@
 .summary { display: block; list-style: none; cursor: pointer; touch-action: manipulation; }
 .summary::-webkit-details-marker { display: none; }
 .summary::marker { content: ""; }
-.image { position: relative; display: block; overflow: hidden; aspect-ratio: 16 / 9; border-radius: var(--photo-radius); background: var(--home-soft); }
-.image img { object-fit: cover; transition: transform 300ms ease-out; }
-.copy { padding: 25px 28px; }
-.card .title { font-size: clamp(30px, 2.8vw, 40px); line-height: 1.12; text-align: left; }
-.trigger { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; margin-top: 16px; color: var(--home-ink); font-size: 13px; line-height: 1.5; }
+.copy { padding: 28px; text-align: center; }
+.card .title { font-size: clamp(30px, 2.8vw, 40px); line-height: 1.12; text-align: center; }
+.trigger { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 44px; margin-top: 16px; color: var(--home-ink); font-size: 13px; line-height: 1.5; }
 .icon { display: grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--home-soft); color: var(--home-accent); transition: background 180ms ease-out, color 180ms ease-out; }
 .icon svg { transition: transform 180ms ease-out; }
 .hide { display: none; }
@@ -16,17 +14,15 @@
 .card[open] .icon { background: var(--home-accent); color: var(--home-surface); }
 .card[open] .icon svg { transform: rotate(45deg); }
 .summary:focus-visible { outline-offset: -5px; border-radius: var(--panel-radius); }
-.body { padding: 0 28px 28px; }
-.description { padding-top: 22px; border-top: 1px solid var(--home-line); }
+.body { display: flex; flex-direction: column; align-items: center; padding: 0 28px 28px; text-align: center; }
+.description { width: 100%; padding-top: 22px; border-top: 1px solid var(--home-line); }
 .card .subheading { margin-top: 24px; font-size: 28px; line-height: 1.15; }
-.recommendations { margin: 15px 0 26px; padding-left: 20px; color: var(--home-muted); font-size: 14px; line-height: 1.7; }
-.recommendations li { padding-left: 3px; margin-top: 12px; }
-.recommendations li::marker { color: var(--home-gold); }
+.recommendations { width: 100%; max-width: 48ch; list-style: none; margin: 15px auto 26px; padding: 0; color: var(--home-muted); font-size: 14px; line-height: 1.7; }
+.recommendations li + li { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--home-line); }
 .body > a { max-width: 100%; }
 .card[open] .body { animation: reveal 220ms cubic-bezier(.16, 1, .3, 1); }
 @keyframes reveal { from { opacity: .4; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 @media (hover: hover) and (pointer: fine) {
-  .summary:hover .image img { transform: scale(1.025); }
   .summary:hover .icon { background: var(--home-accent); color: var(--home-surface); }
 }
 @media (max-width: 760px) {
@@ -37,7 +33,6 @@
   .card .subheading { font-size: 27px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .image img, .icon, .icon svg { transition: none; }
+  .icon, .icon svg { transition: none; }
   .card[open] .body { animation: none; }
-  .summary:hover .image img { transform: none; }
 }

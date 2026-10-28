@@ -204,9 +204,9 @@ function Hero() {
     <LocalizedTree><section className={styles.hero} ref={ref} aria-labelledby="home-title">
       <div className={styles.heroCopy}>
         <h1 id="home-title" data-reveal="title">
-          <RevealWords>Визы и переезд</RevealWords>
+          <RevealWords>Ваше будущее —</RevealWords>{" "}
           <br />
-          <RevealWords>с планом действий</RevealWords>
+          <RevealWords>без границ</RevealWords>
         </h1>
         <p className={styles.lead} data-reveal="copy" data-motion-delay="80">
           Узнайте основания для визы, ВНЖ или гражданства и перечень документов для учёбы, работы и переезда с семьёй.

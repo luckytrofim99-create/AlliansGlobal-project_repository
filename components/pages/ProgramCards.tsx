@@ -1,23 +1,12 @@
-import Image from "next/image";
 import { Plus } from "lucide-react";
 import { programs } from "@/lib/content";
 import { PageLink } from "./PageKit";
 import styles from "./ProgramCards.module.css";
 
-const images: Record<string, string> = {
-  sport: "/images/university-campus.jpg",
-  work: "/images/office-interior.jpg",
-  education: "/images/education-campus.jpg",
-  business: "/images/usa-new-york.jpg",
-  family: "/images/home-figma/travelers.jpg",
-  "digital-nomad": "/images/new-zealand-queenstown.jpg",
-};
-
 export default function ProgramCards() {
   return <div className={styles.grid}>
     {programs.map(program => <details className={styles.card} id={program.slug} key={program.slug} data-reveal>
       <summary className={styles.summary}>
-        <span className={styles.image}><Image src={images[program.slug]} alt="" fill sizes="(min-width: 761px) 44vw, 90vw" /></span>
         <div className={styles.copy}>
           <h2 className={styles.title}>{program.title}</h2>
           <span className={styles.trigger}>

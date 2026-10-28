@@ -524,8 +524,6 @@ export const englishCopy: Record<string, string> = {
   "Вид на жительство": "Residence permit",
   "Перед консультацией об учёбе": "Before discussing study plans",
   "Укажите уровень обучения, страну и предполагаемую дату начала. Если есть приглашение, подготовьте его для разбора.": "State your study level, destination and expected start date. If you have an invitation, bring it for review.",
-  "с планом действий": "with a plan of action",
-  "Визы и переезд с планом действий": "Visas and relocation with a plan of action",
   "Узнайте основания для визы, ВНЖ или гражданства и перечень документов для учёбы, работы и переезда с семьёй.": "Understand your grounds for a visa, residence or citizenship and the documents needed for study, work or a family move.",
   "Сроки подготовки закреплены в вашем договоре.": "Preparation deadlines are set in your contract.",
   "Разобрать мою ситуацию": "Review my situation",
