@@ -2,7 +2,7 @@
 
 /*
 Dev2 retains the feature branch journeys with dev's architectural visual language.
-The hero presents the agency; education follows it as a core area of work.
+The hero presents the agency; a compact preparation strip connects the journeys.
 */
 import Image from "next/image";
 import { ActionLink, type ActionVariant } from "@/components/actions/Action";
@@ -26,6 +26,7 @@ import {
 } from "motion/react";
 import QuickConsultation from "./QuickConsultation";
 import HeroArchitecture from "./HeroArchitecture";
+import HomeInterlude from "./HomeInterlude";
 import { AccentLine, ChangingCopy, RevealWords, useJourneyMotion } from "./JourneyMotion";
 import styles from "./HomeJourney.module.css";
 import theme from "./HomeTheme.module.css";
@@ -223,27 +224,6 @@ function Hero() {
       <HeroArchitecture progress={smooth} reduced={!!reduce} narrow={narrow} />
     </section></LocalizedTree>
   );
-}
-
-function Education() {
-  return <LocalizedTree><section id="education" className={styles.education} aria-labelledby="education-title">
-    <div className={styles.educationPhoto} data-reveal="picture">
-      <Image src="/images/university-campus.jpg" alt="Университетский кампус" fill sizes="(max-width: 760px) 90vw, 45vw" />
-    </div>
-    <div className={styles.educationCopy}>
-      <h2 id="education-title" data-reveal="heading"><RevealWords>Образование за рубежом</RevealWords></h2>
-      <p>Школа, университет или продолжение обучения. Начнём с учебной цели и подготовки к поездке.</p>
-      <ul className={styles.educationSteps}>
-        <li><h3>Учебные планы</h3><p>Уровень обучения и предполагаемая страна.</p></li>
-        <li><h3>Виза и документы</h3><p>Приглашение и порядок подготовки к подаче.</p></li>
-        <li><h3>Планы семьи</h3><p>Вопросы переезда сопровождающих.</p></li>
-      </ul>
-      <div className={styles.educationActions}>
-        <PillLink href="/consultation?goal=education">Обсудить обучение</PillLink>
-        <ActionLink href="/programs#education" variant="quiet">Подготовка к учёбе</ActionLink>
-      </div>
-    </div>
-  </section></LocalizedTree>;
 }
 
 function ServiceScene() {
@@ -549,50 +529,10 @@ function Purpose() {
         <ChangingCopy className={styles.goalCopy} key={`copy-${item.slug}`} instant={!!reduce || keyboard}>
           <h3>{item.title}</h3>
           <p>{item.text}</p>
-          <PillLink href={`/programs#${item.slug}`} secondary>
+          <PillLink href={item.slug === "education" ? "/education" : `/programs#${item.slug}`} secondary>
             Подготовка по вашей задаче
           </PillLink>
         </ChangingCopy>
-      </div>
-    </section></LocalizedTree>
-  );
-}
-
-function Process() {
-  return (
-    <LocalizedTree><section className={styles.process} aria-labelledby="process-title">
-      <div className={styles.sectionIntro}>
-        <h2 id="process-title" data-reveal="heading"><RevealWords>Узнайте порядок работы</RevealWords></h2>
-        <AccentLine />
-      </div>
-      <div className={styles.processBody}>
-        <div className={styles.processSteps}>
-          <article data-reveal="copy">
-            <h3>Разбор вашей задачи</h3>
-            <p>Уточняем цель, страну и историю обращений.</p>
-          </article>
-          <article data-reveal="copy">
-            <h3>План подготовки</h3>
-            <p>Определяем документы и порядок действий.</p>
-          </article>
-          <article data-reveal="copy">
-            <h3>Подготовка к подаче</h3>
-            <p>Проверяем документы и готовность к подаче.</p>
-          </article>
-        </div>
-        <div className={styles.processAside} data-reveal="copy">
-          <p>
-            Согласуйте объём работы
-            <br />
-            до начала подготовки
-          </p>
-          <PillLink variant="light" href="/approach">
-            Как мы работаем
-          </PillLink>
-          <ActionLink href="/services/complex-cases" variant="quiet" tone="inverse" className={styles.quietLink}>
-            Разбор отказа и смены статуса
-          </ActionLink>
-        </div>
       </div>
     </section></LocalizedTree>
   );
@@ -602,7 +542,11 @@ export default function HomeJourney() {
   const ref = useRef<HTMLDivElement>(null);
   useJourneyMotion(ref);
   useEffect(() => {
-    const target = ["#consultation", "#education", "#services", "#destinations"].includes(
+    if (location.hash === "#education") {
+      window.location.replace("/education");
+      return;
+    }
+    const target = ["#consultation", "#services", "#destinations"].includes(
       location.hash,
     )
       ? location.hash.slice(1)
@@ -637,11 +581,10 @@ export default function HomeJourney() {
         data-home-journey
       >
         <Hero />
-        <Education />
+        <HomeInterlude />
         <ServiceScene />
         <Destinations />
         <Purpose />
-        <Process />
         <QuickConsultation />
       </div>
     </MotionConfig>

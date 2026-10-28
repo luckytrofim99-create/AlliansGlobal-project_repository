@@ -7,6 +7,7 @@ const groups = [
   {
     title: "Услуги и страны",
     links: [
+      ["/education", "Образование"],
       ["/services", "Услуги"],
       ["/countries", "Направления"],
       ["/programs", "Ваши задачи"],

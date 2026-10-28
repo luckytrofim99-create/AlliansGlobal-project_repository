@@ -46,7 +46,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <PageShell>
       <PageHero
-        title={service.title}
+        title={slug === "residence" ? "Вид на жительство" : service.title}
         intro={service.description}
         image={photograph.image}
         imageAlt={photograph.alt}

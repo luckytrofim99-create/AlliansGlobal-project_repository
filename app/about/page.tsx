@@ -45,7 +45,7 @@ export default function AboutPage() {
           <p data-reveal>Визовые вопросы по приглашению учебного заведения или клуба.</p>
           <p data-reveal>Alliance Global связан с Alliance Sport Group. Спортивные и миграционные задачи обсуждаются отдельно.</p>
           <div className={styles.storyActions} data-reveal>
-            <PageLink href="/programs#education" quiet>Подготовка к учёбе</PageLink>
+            <PageLink href="/education" quiet>Подготовка к учёбе</PageLink>
             <PageLink href="/programs#sport" quiet>Спортивный переезд</PageLink>
           </div>
         </div>

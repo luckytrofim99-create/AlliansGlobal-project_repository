@@ -265,7 +265,7 @@ export default async function CountryPage({ params }: Props) {
             title={program.title}
             label={program.tag}
             body={program.description}
-            href={`/programs#${program.slug}`}
+            href={program.slug === "education" ? "/education" : `/programs#${program.slug}`}
             action="Подробнее о задаче"
           />)}
         </PageColumns>

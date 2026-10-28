@@ -11,7 +11,7 @@ import { LanguageSwitcher } from "./alliance/LanguageSwitcher";
 import { ActionLink } from "./actions/Action";
 
 const links = [
-  { href: "/programs#education", label: "Образование" },
+  { href: "/education", label: "Образование" },
   { href: "/countries", label: "Страны" },
   { href: "/programs", label: "Программы" },
   { href: "/services", label: "Услуги" },

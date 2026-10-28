@@ -39,8 +39,8 @@ export default function ProgramsPage() {
                 body={program.description}
                 label={program.tag}
                 image={images[program.slug]}
-                href={program.slug === "education" ? "/consultation?goal=education" : "/consultation"}
-                action="Обсудить мою ситуацию"
+                href={program.slug === "education" ? "/education" : "/consultation"}
+                action={program.slug === "education" ? "Подготовка к учёбе" : "Обсудить мою ситуацию"}
               />
             </div>
           ))}

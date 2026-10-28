@@ -383,60 +383,6 @@
 .goalCopy .pill {
   margin-top: 23px;
 }
-.process {
-  width: min(100%, 1360px);
-  margin-inline: auto;
-  padding: var(--frame-space) var(--pad);
-}
-.process h2 {
-  font-size: clamp(37px, 4.5vw, 62px);
-}
-.processBody {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  margin-top: 28px;
-  align-items: center;
-}
-.processSteps {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.processSteps article {
-  padding: 16px 0 0;
-  border-top: 1px solid var(--line);
-  position: relative;
-}
-
-.processSteps h3 {
-  font-size: clamp(23px, 2.4vw, 31px);
-}
-.processSteps p {
-  font-size: 15px;
-  line-height: 1.7;
-  margin-top: 10px;
-}
-.processAside {
-  padding: 35px;
-  background: var(--navy);
-  border-radius: 0;
-}
-.processAside p {
-  color: var(--ivory);
-  font-family: var(--serif);
-  font-size: 34px;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-}
-.processAside .pill {
-  margin-top: 25px;
-}
-.processAside .quietLink {
-  display: flex;
-  width: fit-content;
-  margin-top: 14px;
-}
 .journey .destinations h2,
 .journey .destinations h3 { color: var(--ivory); }
 .destinations p { color: #bac9cb; }
@@ -650,31 +596,6 @@
   .goalCopy .pill {
     margin-top: 20px;
   }
-  .process h2 {
-    font-size: clamp(32px, 8vw, 44px);
-  }
-  .processBody {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    margin-top: 35px;
-  }
-  .processSteps {
-    gap: 28px;
-  }
-  .processSteps h3 {
-    font-size: 24px;
-  }
-  .processSteps p {
-    font-size: 14px;
-    margin-top: 8px;
-  }
-  .processAside {
-    padding: 27px;
-    border-radius: 0;
-  }
-  .processAside p {
-    font-size: 30px;
-  }
 }
 @media (max-height: 720px) and (max-width: 760px) {
   .servicePhoto {
@@ -733,34 +654,8 @@
   .segmented button:active, .countryChoices > button:active, .goalChoices > button:active { transform: none; }
 }
 
-.education { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(28px, 4vw, 56px); max-width: 1480px; margin-inline: auto; padding: var(--frame-space) var(--pad); scroll-margin-top: 88px; }
-
-.educationPhoto { position: relative; min-width: 0; height: clamp(340px, 32vw, 460px); overflow: hidden; border-radius: var(--photo-radius); }
-
-.educationPhoto img { object-fit: cover; }
-
-.educationCopy > h2 { font-size: clamp(38px, 4.3vw, 62px); }
-
-.educationCopy > p { max-width: 48ch; margin-top: 16px; font-size: 15px; line-height: 1.7; }
-
-.educationSteps { display: grid; gap: 0; margin: 20px 0 0; padding: 0; list-style: none; }
-
-.educationSteps li { display: grid; grid-template-columns: 140px 1fr; align-items: baseline; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
-
-.educationSteps h3 { font-size: 23px; line-height: 1.15; letter-spacing: -.02em; }
-
-.educationSteps p { font-size: 13px; line-height: 1.6; }
-
-.educationActions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 20px; }
-
 @media (max-width: 760px) {
   .hero { gap: 24px; padding-block: 24px; }
-  .education { grid-template-columns: 1fr; gap: 24px; }
-  .educationCopy { order: -1; }
-  .educationPhoto { height: 240px; }
-  .educationCopy > h2 { font-size: clamp(32px, 8vw, 44px); }
-  .educationSteps li { grid-template-columns: 112px 1fr; gap: 12px; }
-  .educationSteps h3 { font-size: 21px; }
 }
 
 .countryImage, .goalImage { border-radius: inherit; }

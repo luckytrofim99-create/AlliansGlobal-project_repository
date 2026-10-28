@@ -504,7 +504,26 @@ export const englishCopy: Record<string, string> = {
   "Спортивный переезд": "Relocating for sport",
   "Университетский кампус в окружении зелени": "A university campus surrounded by greenery",
   "Обсудите ваш переезд": "Discuss your move",
-  "Укажите цель переезда и имеющиеся документы.": "State your reason for moving and the documents you already have."
+  "Укажите цель переезда и имеющиеся документы.": "State your reason for moving and the documents you already have.",
+  "Школа, университет или продолжение обучения. Учебная цель определяет документы и подготовку к поездке.": "School, university or further education. Your study plans shape the documents and travel preparation.",
+  "До подачи проверьте": "Check before applying",
+  "Порядок подготовки": "Preparation steps",
+  "Основания": "Grounds",
+  "Условия страны под вашу цель.": "Destination requirements for your plans.",
+  "Документы": "Documents",
+  "Перечень и порядок подготовки.": "Your document list and preparation steps.",
+  "Сроки": "Timeline",
+  "Этапы и расходы по договору.": "Stages and costs agreed in the contract.",
+  "Работа": "Work",
+  "Семья": "Family",
+  "Бизнес": "Business",
+  "Спорт": "Sport",
+  "Задачи для сопровождения": "Support for your plans",
+  "Остановить бегущую строку": "Pause scrolling topics",
+  "Продолжить бегущую строку": "Resume scrolling topics",
+  "Вид на жительство": "Residence permit",
+  "Перед консультацией об учёбе": "Before discussing study plans",
+  "Укажите уровень обучения, страну и предполагаемую дату начала. Если есть приглашение, подготовьте его для разбора.": "State your study level, destination and expected start date. If you have an invitation, bring it for review."
 };
 
 export function translate(locale: "ru" | "en", text: string) {

@@ -53,16 +53,17 @@ FAQ, country controls and the single shared consultation form.
    is a contractual guarantee of meeting deadlines for the agency’s own work.
    The main CTA opens consultation and the quieter link opens services. The Roman
    photograph keeps its arch and rounded lower corners.
-2. Education: the first section after the hero explains study plans, visa
-   preparation and family questions; its consultation CTA prefills education.
+2. Preparation: a compact navy strip uses a quiet architectural backdrop and
+   three checks for grounds, documents and timing. A scrolling topic row has a
+   native pause button, pauses offscreen and becomes a static wrapped list when
+   reduced motion is requested.
 3. Services: the existing three-choice selector, live content and detail links.
    The scene follows its content height; manual selection and swipe remain.
    Services no longer change automatically while the visitor scrolls.
 4. Destinations: the existing seven-country selector and detail link, presented
    on a navy ground. Gold identifies the selected country.
 5. Purpose: the existing six goals, default education selection and program link.
-6. Process: the same three steps and links, with thin rules and a navy aside.
-7. Quick consultation: the same task/country/contact/comment/consent flow.
+6. Quick consultation: the same task/country/contact/comment/consent flow.
 
 ## Shared and internal pages
 
@@ -73,6 +74,15 @@ persistent RU/EN selection. The footer retains the feature branch navigation.
 PageKit preserves each page's structure and applies serif hierarchy, restrained
 text cards, rounded photographic crops and navy closing panels. Catalogue
 search and region filters, FAQ disclosure states and selected controls stay visible.
+
+The dedicated /education page opens with the campus photograph and the moved
+study, visa and family rows. It has one H1, 48px photograph corners (28px on
+mobile), the shared reveal motion and a consultation link prefilled for education.
+The preparation section links to the existing student-visa article. Legacy
+/#education bookmarks redirect to this page.
+
+Only the detailed /services/residence H1 reads “Вид на жительство”. Catalogue
+labels and other mentions of “ВНЖ и ПМЖ” remain unchanged.
 
 ## Shared actions
 
