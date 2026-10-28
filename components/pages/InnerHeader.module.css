@@ -10,7 +10,7 @@
 .menuButton:active, .close:active { transform: scale(.97); }
 .menuButton:focus-visible:active, .close:focus-visible:active { transform: none; }
 .menuButton { display: none; }
-.dialog { width: min(560px, calc(100vw - 32px)); max-width: none; max-height: calc(100svh - 32px); margin: auto; padding: 30px; border: 1px solid var(--home-line, #dcded7); border-radius: 0; background: #fffefa; color: #102f3e; font-family: var(--home-sans, "Manrope", sans-serif); box-shadow: 0 24px 90px #102f3e3d; overflow-y: auto; }
+.dialog { width: min(560px, calc(100vw - 32px)); max-width: none; max-height: calc(100svh - 32px); margin: auto; padding: 30px; border: 1px solid var(--home-line, #dcded7); border-radius: 28px; background: #fffefa; color: #102f3e; font-family: var(--home-sans, "Manrope", sans-serif); box-shadow: 0 24px 90px #102f3e3d; overflow-y: auto; }
 .dialog::backdrop { background: #102f3e80; backdrop-filter: blur(8px); }
 .dialog[open]:not([data-instant="true"]) { animation: arrive 200ms var(--ease-out); }
 .menuTop { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 25px; }
@@ -21,7 +21,7 @@
 .mobile a[aria-current] { font-weight: 600; text-decoration: underline; text-decoration-color: #a88a5c; text-underline-offset: 7px; }
 .dialog .menuCta { width: 100%; margin-top: 28px; }
 @media (max-width: 1149px) { .desktop { display: none; } .navLanguage { display: none; } .dialogLanguage { display: flex; } .menuButton { display: grid; } }
-@media (max-width: 760px) { .actions { gap: 8px; } .dialog { padding: 25px; border-radius: 0; } .homeCtaFull { display: none; } .homeCtaShort { display: inline; } }
+@media (max-width: 760px) { .actions { gap: 8px; } .dialog { padding: 25px; border-radius: 28px; } .homeCtaFull { display: none; } .homeCtaShort { display: inline; } }
 @media (hover: hover) and (pointer: fine) { .desktop a:hover { color: #102f3e; text-decoration: underline; } .menuButton:hover, .close:hover { background: #e8e4db; } }
 @media (prefers-reduced-transparency: reduce) { .dialog::backdrop { backdrop-filter: none; background: #102f3ecc; } }
 @media (prefers-reduced-motion: reduce) { .dialog[open] { animation: none; } .menuButton, .close { transition: none; } .menuButton:active, .close:active { transform: none; } }

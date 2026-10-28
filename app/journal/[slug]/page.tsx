@@ -53,7 +53,7 @@ export default async function ArticlePage({ params }: Props) {
                 </section>
               ))}
               <aside className={styles.note} data-reveal>
-                <p>Этот материал посвящён общей подготовке. Условия конкретных программ, требования к документам и возможные действия необходимо проверять отдельно с учётом страны и вашей ситуации.</p>
+                <p>Материал посвящён подготовке. Требования к программам и документам проверяются по стране и вашей ситуации.</p>
               </aside>
               <PageLink href="/journal" quiet>Все материалы</PageLink>
             </PageReading>
@@ -61,7 +61,7 @@ export default async function ArticlePage({ params }: Props) {
         </div>
       </PageSection>
 
-      <PageClosing title="От общего понимания — к вашей ситуации." text="Расскажите, что вы планируете. Определим вопросы, с которых стоит начать дальнейшее обсуждение." />
+      <PageClosing title="Подготовьте вопросы по своему обращению" text="Укажите цель и вопросы для консультации." />
     </PageShell>
   );
 }

@@ -5,7 +5,7 @@ import { LocalizedTree } from "@/components/alliance/AllianceLocale";
 
 const groups = [
   {
-    title: "Возможности",
+    title: "Услуги и страны",
     links: [
       ["/services", "Услуги"],
       ["/countries", "Направления"],
@@ -21,7 +21,7 @@ const groups = [
     ],
   },
   {
-    title: "Полезное",
+    title: "Подготовка к обращению",
     links: [
       ["/journal", "Журнал"],
       ["/consultation", "Консультация"],
@@ -38,7 +38,7 @@ export default function HomeFooter() {
         <div className={styles.brand}>
           <Logo />
           <p>Международный консалтинг</p>
-          <Link href="/about">Новый горизонт Alliance Sport Group</Link>
+          <Link href="/about">Связь с Alliance Sport Group</Link>
         </div>
         <nav className={styles.links} aria-label="Разделы сайта">
           {groups.map((group) => (

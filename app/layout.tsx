@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   ),
   title: {
-    default: "Alliance Global — Ваше будущее без границ",
+    default: "Alliance Global — Визы и переезд",
     template: "%s · Alliance Global",
   },
   description:
-    "Визы, переезд и иммиграционная стратегия. Начните следующий этап с понятного плана — Alliance Global.",
+    "Подготовка к визе и переезду: основания, документы и порядок подачи. Alliance Global.",
   robots: { index: false, follow: false },
 };
 export default function RootLayout({

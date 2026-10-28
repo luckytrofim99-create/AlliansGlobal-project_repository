@@ -42,8 +42,8 @@ const enterEase = [0.2, 0.72, 0.22, 1] as const;
 const services = [
   {
     name: "Визы",
-    title: "Для поездки, которую вы планируете.",
-    text: "К близким, на деловую встречу или обучение. Начнём с цели и подготовки документов.",
+    title: "Подготовка к визе",
+    text: "Разберём цель поездки, визовую историю и документы для подачи.",
     href: "/services/visas",
     label: "Подробнее о визах",
     image: "/images/europe-paris.jpg",
@@ -51,8 +51,8 @@ const services = [
   },
   {
     name: "ВНЖ и ПМЖ",
-    title: "Когда одной поездки уже мало.",
-    text: "Работа, семья и жизнь в новой стране. Рассмотрим основания для переезда и дальнейшие шаги.",
+    title: "Основание для ВНЖ",
+    text: "Рассмотрим основания для проживания с учётом работы и планов семьи.",
     href: "/services/residence",
     label: "Подробнее о переезде",
     image: "/images/canada-toronto.jpg",
@@ -60,8 +60,8 @@ const services = [
   },
   {
     name: "Гражданство",
-    title: "Для долгосрочных решений.",
-    text: "Личная история, семейные связи, подтверждённые основания. Разберём возможности в вашей ситуации.",
+    title: "Основания для гражданства",
+    text: "Изучим личную историю и документы для проверки оснований.",
     href: "/services/citizenship",
     label: "Подробнее о гражданстве",
     image: "/images/hero-rome.jpg",
@@ -73,86 +73,86 @@ const countries = [
     slug: "canada",
     name: "Канада",
     image: "/images/canada-toronto.jpg",
-    text: "Работа, образование или переезд с семьёй. Всё начинается с вашей цели.",
+    text: "Уточним цель переезда и документы для проверки оснований.",
   },
   {
     slug: "usa",
     name: "США",
     image: "/images/usa-new-york.jpg",
-    text: "Деловые, учебные и личные планы. Рассмотрим вопросы поездки и переезда.",
+    text: "Разберём цель поездки, приглашение и визовую историю.",
   },
   {
     slug: "europe",
     name: "Европа",
     image: "/images/europe-paris.jpg",
-    text: "Разные страны и возможности. Сопоставим ваши планы с исходными обстоятельствами.",
+    text: "Сравним направления по работе, учёбе и планам семьи.",
   },
   {
     slug: "uk",
     name: "Великобритания",
     image: "/images/uk-london.jpg",
-    text: "Учёба, профессиональные и семейные планы. Определим, с чего начать подготовку.",
+    text: "Определим вопросы к документам и принимающей стороне.",
   },
   {
     slug: "australia",
     name: "Австралия",
     image: "/images/australia-sydney.jpg",
-    text: "Новая страна для следующего этапа жизни. Обсудим цель и горизонт планирования.",
+    text: "Рассмотрим цель переезда и порядок подготовки.",
   },
   {
     slug: "new-zealand",
     name: "Новая Зеландия",
     image: "/images/new-zealand-queenstown.jpg",
-    text: "Профессиональные, образовательные или семейные планы. Начнём с общей картины.",
+    text: "Уточним основание для проверки и планы семьи.",
   },
   {
     slug: "south-korea",
     name: "Южная Корея",
     image: "/images/korea-seoul.jpg",
-    text: "Учёба, деловые задачи или поездка к близким. Уточним цель и необходимые документы.",
+    text: "Уточним цель поездки и необходимые документы.",
   },
 ];
 const goals = [
   {
     slug: "work",
     name: "Работать",
-    title: "Новый этап карьеры.",
-    text: "Предложение работодателя или планы на международный переезд. Учтём вашу профессиональную ситуацию.",
+    title: "Переезд по работе",
+    text: "Рассмотрим приглашение работодателя и документы для переезда.",
     image: "/images/usa-new-york.jpg",
   },
   {
     slug: "education",
     name: "Учиться",
-    title: "Легализация через обучение",
-    text: "Школа, университет или продолжение обучения. Свяжем вашу цель с визовыми вопросами.",
+    title: "Переезд для учёбы",
+    text: "Разберём визовые вопросы по приглашению школы или университета.",
     image: "/images/university-campus.jpg",
   },
   {
     slug: "family",
     name: "Переехать с семьёй",
-    title: "План, который учитывает каждого.",
-    text: "Начать новую главу вместе или воссоединиться с близкими. Рассмотрим ситуацию всех участников переезда.",
+    title: "Переезд с семьёй",
+    text: "Учтём документы и обстоятельства каждого участника переезда.",
     image: "/images/new-zealand-queenstown.jpg",
   },
   {
     slug: "business",
     name: "Развивать бизнес",
-    title: "Новые рынки для ваших планов.",
-    text: "Собственное дело или инвестиционные цели. Определим миграционные вопросы и необходимую экспертизу.",
+    title: "Переезд для бизнеса",
+    text: "Определим миграционные вопросы для бизнеса и инвестиций.",
     image: "/images/uk-london.jpg",
   },
   {
     slug: "sport",
     name: "Заниматься спортом",
-    title: "Карьера в движении.",
-    text: "Приглашение клуба или спортивное образование. Рассмотрим документы в контексте ваших планов.",
+    title: "Переезд для спорта",
+    text: "Рассмотрим визовые вопросы по приглашению клуба или учебного заведения.",
     image: "/images/education-campus.jpg",
   },
   {
     slug: "digital-nomad",
     name: "Работать удалённо",
-    title: "Работа с вами. Страна меняется.",
-    text: "Сохранить международную занятость и переехать. Начнём с вашей модели работы и целей.",
+    title: "Переезд с удалённой работой",
+    text: "Разберём модель занятости и вопросы для проверки по выбранной стране.",
     image: "/images/australia-sydney.jpg",
   },
 ];
@@ -204,11 +204,10 @@ function Hero() {
         <h1 id="home-title" data-reveal="title">
           <RevealWords>Визы и переезд</RevealWords>
           <br />
-          <span className={styles.titleMuted}><RevealWords>с понятным планом.</RevealWords></span>
+          <span className={styles.titleMuted}><RevealWords>от выбора до подачи</RevealWords></span>
         </h1>
         <p className={styles.lead} data-reveal="copy" data-motion-delay="80">
-          Поможем выбрать основание для переезда, подготовить документы и пройти
-          этапы подачи. Для вас, вашей семьи и бизнеса.
+          Поможем определить основание, подготовить документы и составить план подачи.
         </p>
         <div className={styles.heroActions} data-reveal="copy" data-motion-delay="140">
           <PillLink href="#consultation">Запросить консультацию</PillLink>
@@ -216,10 +215,6 @@ function Hero() {
             Посмотреть услуги
           </ActionLink>
         </div>
-        <p className={styles.heroHelper} data-reveal="copy" data-motion-delay="240">
-          Укажите страну и задачу. Свяжемся с вами, чтобы уточнить детали и
-          согласовать консультацию.
-        </p>
       </div>
       <HeroArchitecture progress={smooth} reduced={!!reduce} narrow={narrow} />
     </section></LocalizedTree>
@@ -285,9 +280,9 @@ function ServiceScene() {
     >
       <div className={styles.servicesSticky}>
         <div className={styles.sectionIntro}>
-          <h2 id="services-title" data-reveal="heading"><RevealWords>Что нужно сейчас?</RevealWords></h2>
+          <h2 id="services-title" data-reveal="heading"><RevealWords>Выберите задачу</RevealWords></h2>
         <AccentLine />
-          <p>Поездка, переезд или долгосрочный план.</p>
+          <p>Виза, проживание или гражданство.</p>
         </div>
         <div
           className={styles.segmented}
@@ -387,11 +382,10 @@ function Destinations() {
       aria-labelledby="destinations-title"
     >
       <div className={styles.sectionIntro}>
-        <h2 id="destinations-title" data-reveal="heading"><RevealWords>Куда хочется вам?</RevealWords></h2>
+        <h2 id="destinations-title" data-reveal="heading"><RevealWords>Выберите страну</RevealWords></h2>
         <AccentLine />
         <p>
-          Выберите направление. Или начните с цели, если страна ещё не
-          определена.
+          Посмотрите задачи и подготовку по каждому направлению.
         </p>
       </div>
       <div
@@ -499,12 +493,9 @@ function Purpose() {
     >
       <div className={styles.purposeIntro}>
         <h2 id="purpose-title" data-reveal="heading">
-          <RevealWords>Начните с того,</RevealWords>
-          <br />
-          <RevealWords>что важно вам.</RevealWords>
+          <RevealWords>Выберите цель переезда</RevealWords>
         </h2>
         <AccentLine />
-        <p>Название программы можно выбрать позже.</p>
         <div className={styles.goalChoices} role="group" aria-label="Ваша цель">
           {goals.map((goal, index) => (
             <button
@@ -558,7 +549,7 @@ function Purpose() {
           <h3>{item.title}</h3>
           <p>{item.text}</p>
           <PillLink href={`/programs#${item.slug}`} secondary>
-            Подробнее о вашем маршруте
+            Подготовка по вашей задаче
           </PillLink>
         </ChangingCopy>
       </div>
@@ -570,35 +561,35 @@ function Process() {
   return (
     <LocalizedTree><section className={styles.process} aria-labelledby="process-title">
       <div className={styles.sectionIntro}>
-        <h2 id="process-title" data-reveal="heading"><RevealWords>Рядом на каждом этапе.</RevealWords></h2>
+        <h2 id="process-title" data-reveal="heading"><RevealWords>Узнайте порядок работы</RevealWords></h2>
         <AccentLine />
       </div>
       <div className={styles.processBody}>
         <div className={styles.processSteps}>
           <article data-reveal="copy">
-            <h3>Разберём ситуацию</h3>
-            <p>Цель, страна и исходные обстоятельства.</p>
+            <h3>Разбор вашей задачи</h3>
+            <p>Уточняем цель, страну и историю обращений.</p>
           </article>
           <article data-reveal="copy">
-            <h3>Составим план</h3>
-            <p>Основания, документы и последовательность действий.</p>
+            <h3>План подготовки</h3>
+            <p>Определяем документы и порядок действий.</p>
           </article>
           <article data-reveal="copy">
-            <h3>Пройдём этапы вместе</h3>
-            <p>В согласованном объёме сопровождения.</p>
+            <h3>Подготовка к подаче</h3>
+            <p>Проверяем документы и готовность к подаче.</p>
           </article>
         </div>
         <div className={styles.processAside} data-reveal="copy">
           <p>
-            Понятный следующий шаг.
+            Согласуйте объём работы
             <br />
-            Даже если всё кажется сложным.
+            до начала подготовки
           </p>
           <PillLink variant="light" href="/approach">
             Как мы работаем
           </PillLink>
           <ActionLink href="/services/complex-cases" variant="quiet" tone="inverse" className={styles.quietLink}>
-            Был отказ или нужна смена статуса?
+            Разбор отказа и смены статуса
           </ActionLink>
         </div>
       </div>

@@ -17,8 +17,8 @@ export default async function ConsultationPage({
   return (
     <PageShell>
       <PageHero
-        title="Обсудим ваши планы."
-        intro="Страна уже выбрана или вы только думаете о переменах — начнём с того, что важно для вас."
+        title="Подготовьте вопросы к консультации"
+        intro="Выберите задачу и страну. Опишите обстоятельства в комментарии."
         compact
       />
       <ConsultationForm initialCountry={country} initialGoal={goal} />

@@ -54,8 +54,8 @@ export default function CountryCatalogue({ items }: { items: Country[] }) {
         action={locale === "ru" ? `Изучить направление: ${country.name}` : `Explore ${tx(locale, country.name)}`}
       />)}
     </PageColumns> : <div className={styles.empty}>
-      <h3>{tx(locale, "Здесь пока нет совпадений.")}</h3>
-      <p>{tx(locale, "Попробуйте другое название или выберите все регионы. Если нужного направления нет в списке, его можно обсудить на консультации.")}</p>
+      <h3>{tx(locale, "Направление не найдено")}</h3>
+      <p>{tx(locale, "Измените название или сбросьте фильтры. Другое направление можно обсудить на консультации.")}</p>
       <div className={styles.emptyActions}>
         <ActionButton type="button" onClick={() => { setQuery(""); setRegion(""); input.current?.focus(); }}>{tx(locale, "Сбросить фильтры")}</ActionButton>
         <PageLink href="/consultation" quiet>{tx(locale, "Обсудить другое направление")}</PageLink>

@@ -4,9 +4,9 @@ import "@fontsource/manrope/latin-700.css";
 import HomeJourney from "@/components/home/HomeJourney";
 
 export const metadata: Metadata = {
-  title: "Визы и переезд с понятным планом",
+  title: "Визы и переезд от выбора до подачи",
   description:
-    "Поможем выбрать основание для переезда, подготовить документы и пройти этапы подачи. Для вас, вашей семьи и бизнеса.",
+    "Поможем определить основание, подготовить документы и составить план подачи.",
 };
 
 export default function Home() {

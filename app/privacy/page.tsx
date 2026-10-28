@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Конфиденциальность
 export default function PrivacyPage() {
   return (
     <PageShell>
-      <PageHero title="Личная информация. Осознанное обращение." intro="Как работает информация в демонстрационной версии сайта Alliance Global." compact />
+      <PageHero title="Как используются данные" intro="Обработка данных в прототипе Alliance Global." compact />
       <PageSection id="explore">
         <PageReading>
           <article className={styles.legal}>

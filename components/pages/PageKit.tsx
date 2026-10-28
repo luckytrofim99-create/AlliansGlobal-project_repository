@@ -60,7 +60,7 @@ export function PageList({ items }: { items: readonly string[] }) {
   return <ul className={styles.list}>{items.map((item) => <li key={item}>{item}</li>)}</ul>;
 }
 
-export function PageClosing({ title = "Начнём с ваших планов.", text = "Расскажите, что для вас важно. Разберёмся в исходной ситуации и определим следующий шаг.", href = "/consultation", action = "Запросить консультацию" }: {
+export function PageClosing({ title = "Определите первый шаг", text = "Опишите задачу и имеющиеся документы для разбора.", href = "/consultation", action = "Запросить консультацию" }: {
   title?: ReactNode; text?: string; href?: string; action?: string;
 }) {
   return <section className={styles.closing} data-reveal><div><h2>{title}</h2><p>{text}</p></div><PageLink href={href} variant="light">{action}</PageLink></section>;

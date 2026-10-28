@@ -18,8 +18,9 @@ typography:
 
 ## Sources and scope
 
-Branch dev2 starts from feature/dev-website-updates at 6c47539. The content,
-section order, routes, localization and interactive flows come from that branch.
+Branch dev2 starts from feature/dev-website-updates at 6c47539. The section order, routes and interactive flows come from that branch.
+Headings and supporting copy were subsequently edited at the user’s request: no
+commas in headings, concise task-led language and fewer repetitions.
 The visual language comes from dev at f9887a5: ivory and paper, navy and gold,
 light serif headings, fine rules and architectural imagery. The user-selected
 soft capsule button system refines the controls in dev2.
@@ -60,7 +61,7 @@ FAQ, country controls and the single shared consultation form.
 ## Shared and internal pages
 
 The homepage retains its minimal header and hash CTA. Internal pages retain their
-navigation and native mobile dialog. Both keep the compact-on-scroll shell and
+navigation and native mobile dialog. Both use a capsule-shaped header container and keep the compact-on-scroll shell and
 persistent RU/EN selection. The footer retains the feature branch navigation.
 
 PageKit preserves each page's structure and applies serif hierarchy, outlined
@@ -89,7 +90,8 @@ aria-controls, live regions, form semantics or the mobile dialog's close behavio
 
 ## Content and form boundaries
 
-All product copy and translations remain from feature/dev-website-updates. Do not
+Product facts and service boundaries remain from feature/dev-website-updates.
+The user-authorized editorial pass shortens headings and copy. Do not
 invent contacts, prices, partners, reviews or outcomes. The form remains a local
 prototype, validates the contact and initially unchecked consent, preserves input
 and offers a local draft download. It does not submit to an external service.

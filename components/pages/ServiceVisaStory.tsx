@@ -4,17 +4,17 @@ import { PagePhotoMotion } from "./PageMotion";
 import styles from "./ServicePages.module.css";
 
 export default function ServiceVisaStory() {
-  return <PageSection title="Не просто документы. Начало новой главы.">
+  return <PageSection title="Подготовьте документы под цель поездки">
     <div className={styles.visaStory}>
       <div className={styles.visaObject} data-reveal="picture" aria-hidden="true">
         <PagePhotoMotion><Image src="/images/journey-wallet.webp" alt="" fill sizes="(min-width: 1000px) 45vw, 90vw" /></PagePhotoMotion>
       </div>
       <div className={styles.visaCopy} data-reveal>
-        <p>За каждой визой — чья-то большая идея. Учиться, быть рядом с семьёй, открыть своё дело. Мы начинаем с вашей цели и выстраиваем подготовку вокруг того, что важно именно вам.</p>
+        <p>Цель поездки определяет вопросы к документам. Разберём приглашение, визовую историю и планируемый формат пребывания.</p>
         <ul className={styles.principles}>
-          <li>Понимаем вашу ситуацию</li>
-          <li>Собираем понятный маршрут</li>
-          <li>Готовим каждый следующий шаг</li>
+          <li>Уточняем цель поездки</li>
+          <li>Определяем перечень документов</li>
+          <li>Согласуем порядок подготовки</li>
         </ul>
       </div>
     </div>

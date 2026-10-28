@@ -62,16 +62,14 @@ export default async function ServicePage({ params }: Props) {
           <h3>Что рассматриваем</h3>
           <PageList items={service.includes} />
           <p>
-            Конкретный перечень действий определяется после анализа запроса.
-            Если обстоятельства меняются, следующие шаги и объём помощи
-            необходимо согласовать заново.
+            Порядок действий согласуем после анализа. При изменении обстоятельств пересмотрим план и объём помощи.
           </p>
         </PageReading>
       </PageSection>
 
       <PageSection
-        title="Видеть маршрут. Понимать каждый шаг."
-        intro="Общая логика помогает сориентироваться. Содержание каждого этапа зависит от страны, основания и вашей личной ситуации."
+        title="Узнайте этапы подготовки"
+        intro="Этапы и объём работы согласуем по стране, основанию и вашим документам."
       >
         <ol className={styles.steps}>
           {processSteps.map((step) => <li key={step.number} data-reveal>
@@ -82,22 +80,22 @@ export default async function ServicePage({ params }: Props) {
         <div className={styles.sectionAction}><PageLink href="/approach" quiet>Как устроена работа</PageLink></div>
       </PageSection>
 
-      <PageSection title="До первого решения.">
+      <PageSection title="Уточните условия сопровождения">
         <PageReading><FAQ items={[faq[3], faq[4], faq[5]]} /></PageReading>
       </PageSection>
 
-      <PageSection title="Посмотреть на ситуацию шире.">
+      <PageSection title="Выберите другую услугу">
         <PageColumns>
           {services.filter((item) => item.slug !== slug).slice(0, 3).map((item) => <PageCard
             key={item.slug}
             title={item.title}
             body={item.short}
             href={`/services/${item.slug}`}
-            action="Изучить направление"
+            action="Подробнее об услуге"
           />)}
         </PageColumns>
       </PageSection>
-      <PageClosing text="Опишите вашу задачу и текущие обстоятельства. Начнём с вопросов, от которых зависит следующий шаг." />
+      <PageClosing text="Укажите задачу и имеющиеся документы для предварительного разбора." />
     </PageShell>
   );
 }

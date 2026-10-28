@@ -134,9 +134,9 @@ export default function QuickConsultation({
     >
       <div className={styles.inner}>
         <div className={styles.heading}>
-          <h2 id={`${id}-title`} data-reveal="heading"><RevealWords>Разберём вашу ситуацию</RevealWords></h2>
+          <h2 id={`${id}-title`} data-reveal="heading"><RevealWords>Опишите задачу</RevealWords></h2>
           <AccentLine wide />
-          <p>Начнём с того, что важно вам.</p>
+          <p>Выберите страну и оставьте контакт.</p>
         </div>
 
         <form
@@ -256,7 +256,7 @@ export default function QuickConsultation({
               <summary>Добавить комментарий</summary>
               <div className={styles.field}>
                 <label htmlFor={`${id}-comment`}>
-                  Пара слов о ситуации <span>необязательно</span>
+                  Описание задачи <span>необязательно</span>
                 </label>
                 <textarea
                   id={`${id}-comment`}
@@ -314,11 +314,7 @@ export default function QuickConsultation({
               Запросить консультацию
             </ActionButton>
             <div className={styles.next}>
-              <p>
-                Укажите страну и задачу. Свяжемся с вами, чтобы уточнить детали
-                и согласовать консультацию.
-              </p>
-              <small>Прототип: отправка пока не подключена</small>
+              <p>Прототип: отправка не подключена. Можно скачать черновик.</p>
             </div>
           </div>
           <p id={`${id}-required`} className={styles.required}>
@@ -333,9 +329,7 @@ export default function QuickConsultation({
             {submissionAttempted && (
               <div className={styles.prototypeStatus}>
                 <p>
-                  <strong>Отправка пока не подключена.</strong> Данные остались
-                  в форме на этой странице до её перезагрузки. Можно изменить
-                  запрос и попробовать снова или скачать черновик.
+                  <strong>Отправка пока не подключена.</strong> Данные остаются на странице до перезагрузки. Их можно изменить или скачать черновик.
                 </p>
                 <ActionButton
                   className={styles.download}
