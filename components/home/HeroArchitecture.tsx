@@ -16,7 +16,7 @@ export default function HeroArchitecture({ progress, reduced, narrow }: {
     <div className={styles.stage} data-hero-art>
       <div className={styles.arch} data-motion-object="place" data-motion-delay="180">
         <motion.div className={styles.photo} style={reduced ? undefined : { y }}>
-          <Image src="/images/education-campus.jpg" alt={tx(locale, "Выпускники университета на фоне города")} fill priority sizes="(max-width: 760px) 90vw, 44vw" />
+          <Image src="/images/hero-arch.jpg" alt={tx(locale, "Вид на Рим через светлую каменную арку")} fill priority sizes="(max-width: 760px) 90vw, 44vw" />
         </motion.div>
         <div className={styles.shade} />
       </div>

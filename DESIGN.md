@@ -30,8 +30,8 @@ FAQ, country controls and the single shared consultation form.
 
 ## Visual foundations
 
-- Use Cormorant Garamond 400 for display and editorial headings. Italic gold
-  emphasis is used on the existing second line of the homepage offer.
+- Use Cormorant Garamond 400 for display and editorial headings. The homepage
+  offer uses navy on both lines, following the user-supplied reference.
 - Use locally bundled Manrope 400/500/600/700 for body and interface text.
 - Background is ivory #F8F6F0; surfaces are paper #FFFEFA. Navy #102F3E anchors
   actions, the destination scene and footer. Ink is #163846; gold is #A88A5C.
@@ -48,9 +48,11 @@ FAQ, country controls and the single shared consultation form.
 
 ## Homepage composition and behavior
 
-1. Hero: study abroad leads the offer and primary link to the education section.
-   A quieter link opens the other services. A university graduation photograph sits in the arch with rounded
-   lower corners; a shorter mobile crop brings the next section into view.
+1. Hero: the agency offer follows the supplied reference: “Ваше будущее — без границ”.
+   Supporting copy names visas, residence, citizenship and legal support. The USP
+   is a contractual guarantee of meeting deadlines for the agency’s own work.
+   The main CTA opens consultation and the quieter link opens services. The Roman
+   photograph keeps its arch and rounded lower corners.
 2. Education: the first section after the hero explains study plans, visa
    preparation and family questions; its consultation CTA prefills education.
 3. Services: the existing three-choice selector, live content and detail links.
@@ -64,8 +66,8 @@ FAQ, country controls and the single shared consultation form.
 
 ## Shared and internal pages
 
-The homepage retains its minimal header and hash CTA. Internal pages retain their
-navigation and native mobile dialog. Both use a capsule-shaped header container and keep the compact-on-scroll shell and
+The homepage and internal pages share the full desktop navigation and native
+mobile dialog. The homepage header CTA opens its consultation section. Both use a capsule-shaped header container and keep the compact-on-scroll shell and
 persistent RU/EN selection. The footer retains the feature branch navigation.
 
 PageKit preserves each page's structure and applies serif hierarchy, restrained

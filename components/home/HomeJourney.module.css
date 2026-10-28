@@ -53,6 +53,7 @@
   text-align: left;
   max-width: 640px;
 }
+.heroCopy h1 { font-size: clamp(46px, 5.7vw, 94px); }
 .heroCopy::before {
   content: "";
   display: block;
@@ -60,10 +61,6 @@
   height: 1px;
   margin-bottom: 30px;
   background: var(--gold);
-}
-.heroCopy .titleMuted {
-  color: var(--gold);
-  font-style: italic;
 }
 .lead {
   max-width: 430px;
@@ -767,3 +764,12 @@
 }
 
 .countryImage, .goalImage { border-radius: inherit; }
+
+.heroGuarantee { max-width: 430px; margin-top: 22px; }
+.heroGuarantee p:first-child { color: var(--navy); font-size: 16px; line-height: 1.5; }
+.heroGuarantee strong { font-weight: 600; }
+.heroGuarantee p + p { margin-top: 5px; font-size: 14px; line-height: 1.6; }
+@media (max-width: 760px) {
+  .heroCopy h1 { font-size: clamp(34px, 10.7vw, 70px); }
+  .heroGuarantee { margin-top: 20px; }
+}

@@ -2,7 +2,7 @@
 
 /*
 Dev2 retains the feature branch journeys with dev's architectural visual language.
-Education leads the offer and follows the hero; the other services remain available.
+The hero presents the agency; education follows it as a core area of work.
 */
 import Image from "next/image";
 import { ActionLink, type ActionVariant } from "@/components/actions/Action";
@@ -202,17 +202,21 @@ function Hero() {
     <LocalizedTree><section className={styles.hero} ref={ref} aria-labelledby="home-title">
       <div className={styles.heroCopy}>
         <h1 id="home-title" data-reveal="title">
-          <RevealWords>Учёба за рубежом</RevealWords>
+          <RevealWords>Ваше будущее —</RevealWords>
           <br />
-          <span className={styles.titleMuted}><RevealWords>визы и переезд</RevealWords></span>
+          <RevealWords>без границ</RevealWords>
         </h1>
         <p className={styles.lead} data-reveal="copy" data-motion-delay="80">
-          Образование — одно из основных направлений Alliance Global. Разберём учебные планы, визовые вопросы и документы для переезда.
+          Визы, ВНЖ, ПМЖ и гражданство. Юридическая помощь за рубежом для вас, семьи и бизнеса.
         </p>
+        <div className={styles.heroGuarantee} data-reveal="copy">
+          <p><strong>Юридическая гарантия соблюдения сроков</strong></p>
+          <p>Сроки нашей работы закрепляем в договоре.</p>
+        </div>
         <div className={styles.heroActions} data-reveal="copy" data-motion-delay="140">
-          <PillLink href="#education">Обучение за рубежом</PillLink>
+          <PillLink href="#consultation">Обсудить мою задачу</PillLink>
           <ActionLink href="#services" variant="quiet" className={styles.quietLink}>
-            Другие услуги
+            Наши услуги
           </ActionLink>
         </div>
       </div>

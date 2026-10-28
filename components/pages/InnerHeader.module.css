@@ -3,9 +3,8 @@
 .desktop a { display: inline-flex; align-items: center; min-height: 44px; color: #617176; font-size: 12px; white-space: nowrap; text-underline-offset: 7px; }
 .desktop a[aria-current] { color: #102f3e; text-decoration: underline; text-decoration-color: #a88a5c; }
 .actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.homeLanguage, .navLanguage { display: flex; align-items: center; }
+.navLanguage { display: flex; align-items: center; }
 .dialogLanguage { display: none; justify-content: flex-end; margin: -8px 0 18px; }
-.homeCtaShort { display: none; }
 .menuButton, .close { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; padding: 0; border: 1px solid var(--home-line, #dcded7); border-radius: 50%; color: #102f3e; background: transparent; touch-action: manipulation; transition: transform 140ms var(--ease-out); }
 .menuButton:active, .close:active { transform: scale(.97); }
 .menuButton:focus-visible:active, .close:focus-visible:active { transform: none; }
@@ -21,7 +20,7 @@
 .mobile a[aria-current] { font-weight: 600; text-decoration: underline; text-decoration-color: #a88a5c; text-underline-offset: 7px; }
 .dialog .menuCta { width: 100%; margin-top: 28px; }
 @media (max-width: 1149px) { .desktop { display: none; } .navLanguage { display: none; } .dialogLanguage { display: flex; } .menuButton { display: grid; } }
-@media (max-width: 760px) { .actions { gap: 8px; } .dialog { padding: 25px; border-radius: 28px; } .homeCtaFull { display: none; } .homeCtaShort { display: inline; } }
+@media (max-width: 760px) { .actions { gap: 8px; } .dialog { padding: 25px; border-radius: 28px; } }
 @media (hover: hover) and (pointer: fine) { .desktop a:hover { color: #102f3e; text-decoration: underline; } .menuButton:hover, .close:hover { background: #e8e4db; } }
 @media (prefers-reduced-transparency: reduce) { .dialog::backdrop { backdrop-filter: none; background: #102f3ecc; } }
 @media (prefers-reduced-motion: reduce) { .dialog[open] { animation: none; } .menuButton, .close { transition: none; } .menuButton:active, .close:active { transform: none; } }

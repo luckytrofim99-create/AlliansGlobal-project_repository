@@ -4,9 +4,9 @@ import "@fontsource/manrope/latin-700.css";
 import HomeJourney from "@/components/home/HomeJourney";
 
 export const metadata: Metadata = {
-  title: "Учёба за рубежом — визы и переезд",
+  title: "Иммиграция и юридическая поддержка",
   description:
-    "Образование за рубежом, визовые вопросы и подготовка к переезду. Разберём учебные планы и документы для вас и семьи.",
+    "Визы, ВНЖ, ПМЖ и гражданство. Юридическая помощь за рубежом для вас, семьи и бизнеса. Сроки нашей работы закрепляем в договоре.",
 };
 
 export default function Home() {

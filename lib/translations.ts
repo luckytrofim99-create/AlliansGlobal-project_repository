@@ -457,7 +457,15 @@ export const englishCopy: Record<string, string> = {
   "Университетский кампус": "University campus",
   "Выпускники университета на фоне города": "University graduates with the city skyline",
   "Официальные источники": "Official sources",
-  "Скачать исходный материал": "Download the original article"
+  "Скачать исходный материал": "Download the original article",
+  "Ваше будущее —": "Your future —",
+  "без границ": "without borders",
+  "Визы, ВНЖ, ПМЖ и гражданство. Юридическая помощь за рубежом для вас, семьи и бизнеса.": "Visas, residence and citizenship. Legal support abroad for you, your family and your business.",
+  "Обсудить мою задачу": "Discuss my plans",
+  "Наши услуги": "Our services",
+  "Юридическая гарантия соблюдения сроков": "Contractual guarantee of meeting deadlines",
+  "Сроки нашей работы закрепляем в договоре.": "We set the deadlines for our work in the contract.",
+  "Вид на Рим через светлую каменную арку": "View of Rome through a light stone arch"
 };
 
 export function translate(locale: "ru" | "en", text: string) {
