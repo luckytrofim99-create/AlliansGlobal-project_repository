@@ -27,6 +27,7 @@ import {
 import QuickConsultation from "./QuickConsultation";
 import HeroArchitecture from "./HeroArchitecture";
 import HomeInterlude from "./HomeInterlude";
+import SectionConnector from "@/components/SectionConnector";
 import { AccentLine, ChangingCopy, RevealWords, useJourneyMotion } from "./JourneyMotion";
 import styles from "./HomeJourney.module.css";
 import theme from "./HomeTheme.module.css";
@@ -583,8 +584,11 @@ export default function HomeJourney() {
         <Hero />
         <HomeInterlude />
         <ServiceScene />
+        <SectionConnector from="Документы" to="Выбрать страну" href="#destinations" />
         <Destinations />
+        <SectionConnector from="Направление" to="Выбрать цель" href="#purpose-title" />
         <Purpose />
+        <SectionConnector from="Ваша цель" to="Описать задачу" href="#consultation" />
         <QuickConsultation />
       </div>
     </MotionConfig>

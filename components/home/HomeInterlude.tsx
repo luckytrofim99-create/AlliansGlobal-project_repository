@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { ArrowRight, Building2, BriefcaseBusiness, CalendarClock, FileCheck2, GraduationCap, Laptop, Route, Trophy, UsersRound } from "lucide-react";
 import { ActionLink } from "@/components/actions/Action";
 import { LocalizedTree } from "@/components/alliance/AllianceLocale";
@@ -36,7 +37,7 @@ export default function HomeInterlude() {
         </Link>)}
       </div>
     </div>
-    <div className={styles.ticker}>
+    <div className={styles.ticker} style={{ "--ticker-count": topics.length } as CSSProperties}>
       <ul className={styles.srOnly} aria-label="Задачи для сопровождения">{topics.map(topic => <li key={topic.label}>{topic.label}</li>)}</ul>
       <div className={styles.tickerWindow} aria-hidden="true">
         <div className={styles.track}>

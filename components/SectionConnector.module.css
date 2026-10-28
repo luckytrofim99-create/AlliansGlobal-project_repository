@@ -1,0 +1,10 @@
+.bridge { background: var(--ivory); color: var(--ink); }
+.row { display: flex; align-items: center; gap: 14px; width: min(1300px, calc(100% - 2 * var(--pad, clamp(22px, 5vw, 88px)))); min-height: 44px; margin-inline: auto; font: 400 13px/1.45 var(--sans); }
+.from { min-width: 0; max-width: 15ch; color: var(--home-muted, #617176); }
+.line { min-width: 16px; height: 1px; flex: 1; background: var(--line); }
+.link { display: inline-flex; align-items: center; gap: 9px; min-width: 0; min-height: 44px; padding-block: 8px; color: var(--navy); text-decoration: none; }
+.link > span { min-width: 0; }
+.link svg { flex-shrink: 0; color: var(--gold); }
+.link:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+@media (hover: hover) and (pointer: fine) { .link:hover { text-decoration: underline; text-underline-offset: 4px; } }
+@media (max-width: 760px) { .row { gap: 10px; } .from { max-width: 12ch; } .link { gap: 6px; max-width: 65%; } }

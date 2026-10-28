@@ -654,7 +654,16 @@ export const englishCopy: Record<string, string> = {
   "Вы согласуете порядок действий, ограничения и объём сопровождения.": "You agree the steps, limitations and scope of support.",
   "Вы получаете перечень документов и согласуете задачи каждой стороны.": "You receive a document list and agree each party’s tasks.",
   "Готовность документов проверяется в рамках согласованного объёма работы.": "Documents are checked within the agreed scope of work.",
-  "Вы обсуждаете полученное решение и дальнейшие действия в рамках согласованной помощи.": "You discuss the decision and next steps within the agreed support."
+  "Вы обсуждаете полученное решение и дальнейшие действия в рамках согласованной помощи.": "You discuss the decision and next steps within the agreed support.",
+  "Направление": "Destination",
+  "Выбрать страну": "Choose a country",
+  "Выбрать цель": "Choose a goal",
+  "Описать задачу": "Describe my plans",
+  "Цель переезда": "Relocation goal",
+  "Выбрать программу": "Choose a programme",
+  "Программа": "Programme",
+  "Что подготовить": "What to prepare",
+  "6 целей переезда": "6 relocation goals"
 };
 
 export function translate(locale: "ru" | "en", text: string) {

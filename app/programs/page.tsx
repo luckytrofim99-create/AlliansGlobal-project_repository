@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageCard, PageClosing, PageColumns, PageHero, PageLink, PageReading, PageSection, PageShell } from "@/components/pages/PageKit";
-import EducationIntro from "@/components/pages/EducationIntro";
+import SectionConnector from "@/components/SectionConnector";
 import { programs } from "@/lib/content";
 import styles from "@/components/pages/EditorialLayouts.module.css";
 
@@ -32,25 +32,26 @@ export default function ProgramsPage() {
         <PageLink href="#explore" quiet>Другие цели переезда</PageLink>
       </PageHero>
 
-      <EducationIntro />
+      <SectionConnector from="Цель переезда" to="Выбрать программу" href="#explore" />
 
-      <PageSection id="explore" title="Ещё 5 целей переезда">
+      <PageSection id="explore" title="6 целей переезда">
         <div className={styles.pair}>
-          {programs.filter(program => program.slug !== "education").map((program) => (
+          {programs.map((program) => (
             <div className={styles.anchorCard} id={program.slug} key={program.slug}>
               <PageCard
                 title={program.title}
                 body={program.description}
                 image={images[program.slug]}
-                href="/consultation"
-                action="Разобрать мою ситуацию"
+                href={program.slug === "education" ? "/consultation?goal=education" : "/consultation"}
+                action={program.slug === "education" ? "Разобрать планы учёбы" : "Разобрать мою ситуацию"}
               />
             </div>
           ))}
         </div>
       </PageSection>
 
-      <PageSection title="Документы семьи">
+      <SectionConnector from="Программа" to="Документы семьи" href="#family-preparation" />
+      <PageSection id="family-preparation" title="Документы семьи">
         <PageReading>
           <p data-reveal>Работа, учёба и бизнес могут затрагивать нескольких членов семьи.</p>
           <p data-reveal>Укажите участников переезда, их цели и имеющиеся приглашения. Это поможет определить вопросы к документам и основаниям.</p>
@@ -59,7 +60,8 @@ export default function ProgramsPage() {
         </PageReading>
       </PageSection>
 
-      <PageSection title="Что нужно для разбора">
+      <SectionConnector from="Планы семьи" to="Что подготовить" href="#request-preparation" />
+      <PageSection id="request-preparation" title="Что нужно для разбора">
         <PageColumns>
           <PageCard title="Какова цель переезда?" body="Укажите работу, учёбу, бизнес или семейную причину переезда." />
           <PageCard title="Какие условия обязательны?" body="Определите требования к работе, образованию и совместному проживанию семьи." />

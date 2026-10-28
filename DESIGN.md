@@ -79,11 +79,14 @@ PageKit preserves each page's structure and applies serif hierarchy, restrained
 text cards, rounded photographic crops and navy closing panels. Catalogue
 search and region filters, FAQ disclosure states and selected controls stay visible.
 
-Education is the first content section of /programs#education. The campus
-photograph and three study/visa/family rows use an H2, 48px photograph corners
-(28px on mobile), shared reveal motion and a consultation link prefilled for
-education. The quiet link opens the student-visa article. The header has no
-separate education item. Legacy /education and /#education links redirect here.
+The programmes catalogue presents all six goals in the same compact card grid.
+The former large campus/study block is removed. Education remains the first
+card at /programs#education and keeps its prefilled consultation link. The
+header has no separate education item. Legacy education URLs still work.
+
+Thin 44px connector rows link adjacent sections on the homepage and programmes
+page. Icon ribbon copies use explicit grid tracks and a shared step, so their
+width is always the number of icons multiplied by that step.
 
 Standalone panels, text cards, callouts and closing CTAs use a shared panel
 radius of 32px, reduced to 24px on mobile. Full-width separator bands retain

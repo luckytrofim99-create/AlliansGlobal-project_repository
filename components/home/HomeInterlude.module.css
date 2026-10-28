@@ -19,11 +19,11 @@
 .featured .cardArrow { top: 18px; bottom: auto; }
 .check:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .check:active { transform: scale(.99); }
-.ticker { width: 100%; padding: 24px var(--pad); border-block: 1px solid var(--line); background: var(--paper); }
+.ticker { --ticker-step: 180px; width: 100%; padding: 24px var(--pad); border-block: 1px solid var(--line); background: var(--paper); }
 .tickerWindow { width: min(1440px, 100%); margin-inline: auto; overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 30px, #000 calc(100% - 30px), transparent); }
 .track { display: flex; width: max-content; animation: drift 42s linear infinite; }
-.group { display: flex; flex-shrink: 0; align-items: center; }
-.topic { display: flex; flex: 0 0 180px; justify-content: center; align-items: center; height: 76px; color: #627075; }
+.group { display: grid; grid-template-columns: repeat(var(--ticker-count), var(--ticker-step)); width: calc(var(--ticker-count) * var(--ticker-step)); flex: none; align-items: center; }
+.topic { display: flex; width: var(--ticker-step); flex: none; justify-content: center; align-items: center; height: 76px; color: #627075; }
 .topic svg { display: block; width: 64px; height: 64px; }
 .srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @keyframes drift { to { transform: translateX(-33.333333%); } }
@@ -46,8 +46,8 @@
   .featured { min-height: 192px; }
   .featured .cardCopy { padding-inline: 12px; }
   .featured .detail { max-width: none; }
-  .ticker { padding-block: 18px; }
-  .topic { flex-basis: 116px; height: 60px; }
+  .ticker { --ticker-step: 116px; padding-block: 18px; }
+  .topic { height: 60px; }
   .topic svg { width: 52px; height: 52px; }
 }
 @media (hover: hover) and (pointer: fine) {
@@ -57,7 +57,7 @@
 @media (prefers-reduced-motion: reduce) {
   .track { animation: none; width: auto; display: block; transform: none; }
   .tickerWindow { mask-image: none; }
-  .group { flex-wrap: wrap; justify-content: center; }
+  .group { display: flex; width: 100%; flex-wrap: wrap; justify-content: center; }
   .group:not(:first-child) { display: none; }
   .check, .cardArrow svg { transition: none; }
   .check:active, .check:hover .cardArrow svg { transform: none; }
