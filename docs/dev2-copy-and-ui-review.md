@@ -8,7 +8,7 @@ Next action: describe the situation and prepare a consultation request. The prot
 ## Editorial decisions
 
 - Home: «Визы и переезд с планом действий»; the supporting sentence names grounds, documents and client goals. Primary link: «Разобрать мою ситуацию».
-- Services: «Документы для визы и переезда» and «5 задач перед переездом»; show what each service helps the visitor prepare.
+- Services: «Документы для визы и переезда»; show what each service helps the visitor prepare.
 - Programmes: «Документы для учёбы и переезда»; embed the study section before five other goals. Remove the separate education page and navigation item; redirect old URLs to /programs#education.
 - About: «Условия переезда в договоре»; explain scope, deadlines and family considerations.
 - Approach: «6 этапов вашего обращения»; make responsibilities and limits visible.

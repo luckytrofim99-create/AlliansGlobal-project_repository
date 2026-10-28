@@ -36,7 +36,7 @@ export default function ServicesPage() {
       <PageLink href="/consultation" quiet>Разобрать мою ситуацию</PageLink>
     </PageHero>
 
-    <PageSection id="explore" title="5 задач перед переездом">
+    <PageSection id="explore">
       <OverviewCards items={services} layout="services" />
     </PageSection>
 

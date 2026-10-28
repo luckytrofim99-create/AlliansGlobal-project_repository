@@ -1,22 +1,12 @@
 import type { Metadata } from "next";
 import { PageCard, PageClosing, PageColumns, PageHero, PageLink, PageReading, PageSection, PageShell } from "@/components/pages/PageKit";
 import SectionConnector from "@/components/SectionConnector";
-import { programs } from "@/lib/content";
-import styles from "@/components/pages/EditorialLayouts.module.css";
+import ProgramCards from "@/components/pages/ProgramCards";
 
 export const metadata: Metadata = {
   title: "Образование и переезд",
   description:
     "Подготовка к учёбе за рубежом и переезду для работы, спорта, бизнеса и семьи.",
-};
-
-const images: Record<string, string> = {
-  sport: "/images/university-campus.jpg",
-  work: "/images/office-interior.jpg",
-  education: "/images/education-campus.jpg",
-  business: "/images/usa-new-york.jpg",
-  family: "/images/home-figma/travelers.jpg",
-  "digital-nomad": "/images/new-zealand-queenstown.jpg",
 };
 
 export default function ProgramsPage() {
@@ -34,20 +24,8 @@ export default function ProgramsPage() {
 
       <SectionConnector from="Цель переезда" to="Выбрать программу" href="#explore" />
 
-      <PageSection id="explore" title="6 целей переезда">
-        <div className={styles.pair}>
-          {programs.map((program) => (
-            <div className={styles.anchorCard} id={program.slug} key={program.slug}>
-              <PageCard
-                title={program.title}
-                body={program.description}
-                image={images[program.slug]}
-                href={program.slug === "education" ? "/consultation?goal=education" : "/consultation"}
-                action={program.slug === "education" ? "Разобрать планы учёбы" : "Разобрать мою ситуацию"}
-              />
-            </div>
-          ))}
-        </div>
+      <PageSection id="explore">
+        <ProgramCards />
       </PageSection>
 
       <SectionConnector from="Программа" to="Документы семьи" href="#family-preparation" />

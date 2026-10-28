@@ -79,7 +79,11 @@ PageKit preserves each page's structure and applies serif hierarchy, restrained
 text cards, rounded photographic crops and navy closing panels. Catalogue
 search and region filters, FAQ disclosure states and selected controls stay visible.
 
-The programmes catalogue presents all six goals in the same compact card grid.
+The programmes catalogue presents all six goals in a compact disclosure grid.
+Each photographic card opens in place to show its description, three preparation
+tips and a consultation link. Native details support keyboard use and work without
+JavaScript; the opening motion respects reduced-motion preferences. Redundant
+count headings above the programmes and services catalogues are removed.
 The former large campus/study block is removed. Education remains the first
 card at /programs#education and keeps its prefilled consultation link. The
 header has no separate education item. Legacy education URLs still work.
