@@ -26,6 +26,7 @@ import {
 } from "motion/react";
 import QuickConsultation from "./QuickConsultation";
 import HeroArchitecture from "./HeroArchitecture";
+import Globe from "@/components/Globe";
 import { useHeroEntrance } from "./useHeroEntrance";
 import HomeInterlude from "./HomeInterlude";
 import SectionConnector from "@/components/SectionConnector";
@@ -405,6 +406,7 @@ function Destinations() {
           </button>
         ))}
       </div>
+      <div className={styles.countryLayout}>
       <div
         className={styles.countrySurface}
         id="country-detail"
@@ -432,7 +434,7 @@ function Destinations() {
                 src={item.image}
                 alt={item.name}
                 fill
-                sizes="(max-width: 760px) 90vw, 80vw"
+                sizes="(max-width: 900px) 90vw, 44vw"
               />
               </div>
             </motion.div>
@@ -447,6 +449,8 @@ function Destinations() {
             Документы для поездки
           </PillLink>
         </div>
+      </div>
+      <div className={styles.countryGlobe} data-reveal><Globe /></div>
       </div>
       <div className={styles.countryQuestion}>
         <p>Страна ещё не выбрана?</p>

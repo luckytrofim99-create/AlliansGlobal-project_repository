@@ -72,7 +72,12 @@ FAQ, country controls and the single shared consultation form.
    The scene follows its content height; manual selection and swipe remain.
    Services no longer change automatically while the visitor scrolls.
 4. Destinations: the existing seven-country selector and detail link, presented
-   on a navy ground. Gold identifies the selected country.
+   on a navy ground. Gold identifies the selected country. The original animated
+   SVG globe from main (f9887a5) is restored beside the country photo and details.
+   Its source is unchanged: slow rotation, moving routes, pointer response,
+   offscreen/tab pause and a static reduced-motion state. On narrow screens the
+   country details precede the globe so selection feedback stays close to the pills.
+   The globe is outside the live region and uses no external service or dependency.
 5. Purpose: the existing six goals, default education selection and program link.
 6. Quick consultation: the same task/country/contact/comment/consent flow, with a
    centred heading above a centred form of at most 820px.
