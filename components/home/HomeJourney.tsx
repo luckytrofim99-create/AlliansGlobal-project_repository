@@ -26,6 +26,7 @@ import {
 } from "motion/react";
 import QuickConsultation from "./QuickConsultation";
 import HeroArchitecture from "./HeroArchitecture";
+import { useHeroEntrance } from "./useHeroEntrance";
 import HomeInterlude from "./HomeInterlude";
 import SectionConnector from "@/components/SectionConnector";
 import { AccentLine, ChangingCopy, RevealWords, useJourneyMotion } from "./JourneyMotion";
@@ -189,6 +190,7 @@ function useStableReducedMotion() {
 }
 function Hero() {
   const ref = useRef<HTMLElement>(null);
+  useHeroEntrance(ref);
   const reduce = useStableReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -203,20 +205,20 @@ function Hero() {
   return (
     <LocalizedTree><section className={styles.hero} ref={ref} aria-labelledby="home-title">
       <div className={styles.heroCopy}>
-        <h1 id="home-title" data-reveal="title">
+        <h1 id="home-title" data-hero-enter="title">
           <RevealWords>Ваше будущее —</RevealWords>{" "}
           <br />
           <RevealWords>без границ</RevealWords>
         </h1>
-        <p className={styles.lead} data-reveal="copy" data-motion-delay="80">
+        <p className={styles.lead} data-hero-enter="description">
           Узнайте основания для визы, ВНЖ или гражданства и перечень документов для учёбы, работы и переезда с семьёй.
         </p>
-        <div className={styles.heroGuarantee} data-reveal="copy">
+        <div className={styles.heroGuarantee} data-hero-enter="guarantee">
           <p><strong>Юридическая гарантия соблюдения сроков</strong></p>
           <p>Сроки подготовки закреплены в вашем договоре.</p>
         </div>
-        <div className={styles.heroActions} data-reveal="copy" data-motion-delay="140">
-          <PillLink href="#consultation">Разобрать мою ситуацию</PillLink>
+        <div className={styles.heroActions}>
+          <ActionLink href="#consultation" className={styles.pill} data-hero-enter="action">Разобрать мою ситуацию</ActionLink>
           <ActionLink href="#services" variant="quiet" className={styles.quietLink}>
             Документы и услуги
           </ActionLink>

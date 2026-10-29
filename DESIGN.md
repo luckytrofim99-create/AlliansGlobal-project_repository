@@ -54,6 +54,14 @@ FAQ, country controls and the single shared consultation form.
    The main CTA opens consultation and the quieter link opens services. The Roman
    photograph keeps its arch and rounded lower corners. Its outline follows the same
    geometry with an even 10px gap (8px on mobile).
+   A scoped GSAP entrance runs once on mount: title fades up 20px over 0.7s,
+   description and guarantee follow with a short stagger, then the primary CTA
+   fades in without moving its clickable area. Mobile uses shorter delays.
+   Focus or a press on a hero action immediately completes the entrance. Reduced
+   motion skips it entirely; changing the preference to reduce finishes it.
+   These targets no longer use the shared browser entrance. Other sections and
+   the existing arch/photo motion retain their current behavior. There is no route
+   ring in the active hero.
 2. Country finder: three light rounded cards follow the supplied reference in a
    1:2:1 desktop composition. The wide centre contains a real country search above
    its heading; it opens the catalogue with the query already applied. Smaller
