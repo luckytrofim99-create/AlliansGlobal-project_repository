@@ -31,3 +31,6 @@ id_ed25519*
 .pypirc
 *credentials*.json
 service-account*.json
+
+# Netlify local state and build artifacts
+.netlify/
