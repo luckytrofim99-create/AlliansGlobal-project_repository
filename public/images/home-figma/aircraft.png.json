@@ -1,0 +1,21 @@
+{
+  "prompt": "User-supplied edited Figma design asset. Downloaded original bytes from Figma MCP source; no AI image generation or redrawing.",
+  "kind": "Figma design asset provenance",
+  "file": "aircraft.png",
+  "publicPath": "/images/home-figma/aircraft.png",
+  "label": "Aircraft cutout",
+  "sourceUrl": "https://www.figma.com/api/mcp/asset/1d61dbe7-57c9-4483-bb84-92c3a9f77754.png",
+  "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+  "sourceNodeId": "309:828",
+  "bytes": 193848,
+  "sha256": "a396919540189820aa590825e3ccf90b74ce1a102dcbe01b2cd9387b5d810127",
+  "format": "png",
+  "intrinsicWidth": 640,
+  "intrinsicHeight": 427,
+  "hasAlpha": true,
+  "designSlot": {
+    "width": 198.89,
+    "height": 132.59
+  },
+  "originalBytesUnchanged": true
+}

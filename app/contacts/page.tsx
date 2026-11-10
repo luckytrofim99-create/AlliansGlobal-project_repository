@@ -1,54 +1,59 @@
 import type { Metadata } from "next";
-import { Globe2 } from "lucide-react";
-import { ButtonLink, Eyebrow, PageHero } from "@/components/ui";
-export const metadata: Metadata = { title: "Контакты" };
+import {
+  PageColumns,
+  PageHero,
+  PageLink,
+  PageList,
+  PageReading,
+  PageSection,
+  PageShell,
+} from "@/components/pages/PageKit";
+import styles from "./Contacts.module.css";
+
+export const metadata: Metadata = {
+  title: "Контакты",
+  description:
+    "Начните знакомство с Alliance Global: расскажите о вашей цели и подготовьте обращение.",
+};
+
 export default function ContactsPage() {
   return (
-    <>
+    <PageShell>
       <PageHero
-        eyebrow="Контакты"
-        title="В любой точке мира."
-        accent="В диалоге с вами."
-        description="Важные решения начинаются с простого знакомства. Расскажите, о чём вы думаете и с чем нужна помощь."
-      />
-      <section className="section container split-section" id="explore">
-        <div className="prose">
-          <Eyebrow>Первый контакт</Eyebrow>
-          <h2>
-            У каждого запроса
-            <br />
-            <em>есть своя история.</em>
-          </h2>
-          <p>
-            Если вы рассматриваете поездку, обучение, работу или переезд,
-            начните с нескольких слов о вашей цели. Укажите направление и
-            вопросы, которые хочется обсудить.
-          </p>
-          <p>
-            Для первого знакомства не нужны готовая стратегия или полный
-            комплект документов.
-          </p>
-          <ButtonLink>Подготовить мой запрос</ButtonLink>
-        </div>
-        <div className="contact-panel">
-          <Eyebrow light>Alliance Global</Eyebrow>
-          <h2>
-            Ближе к вашей
-            <br />
-            <em>следующей главе.</em>
-          </h2>
-          <p>
-            Выберите задачу, расскажите о планах и подготовьте обращение в
-            удобном формате.
-          </p>
-          <ButtonLink variant="light">Начать знакомство</ButtonLink>
-          <p className="form-note">
-            Контактные каналы компании будут добавлены после согласования.
-            Сейчас доступна подготовка локального черновика обращения.
-          </p>
-          <Globe2 aria-hidden="true" />
-        </div>
-      </section>
-    </>
+        title="Запрос на разбор переезда"
+        intro="Укажите цель поездки или переезда и вопросы для консультации."
+        compact
+      >
+        <PageLink href="/consultation">Разобрать мою ситуацию</PageLink>
+      </PageHero>
+      <PageSection title="3 пункта для первого обращения">
+        <PageColumns className={styles.columns}>
+          <PageReading>
+            <p>
+              Для подготовки обращения укажите:
+            </p>
+            <PageList
+              items={[
+                "Цель поездки или переезда и выбранную страну.",
+                "Участников поездки или переезда.",
+                "Вопросы для консультации.",
+              ]}
+            />
+          </PageReading>
+          <aside className={styles.status} aria-labelledby="contacts-status">
+            <h3 id="contacts-status">Отправка не подключена</h3>
+            <p>
+              Контакты компании будут добавлены после согласования. Сейчас можно заполнить форму и скачать черновик.
+            </p>
+            <p className={styles.note}>
+              Данные остаются на странице до её перезагрузки.
+            </p>
+            <PageLink href="/consultation" secondary>
+              Подготовить запрос
+            </PageLink>
+          </aside>
+        </PageColumns>
+      </PageSection>
+    </PageShell>
   );
 }

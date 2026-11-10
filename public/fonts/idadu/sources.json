@@ -1,0 +1,58 @@
+{
+  "source": "https://www.idadu.dev/",
+  "accessed": "2026-10-20",
+  "purpose": "User-requested prototype reference fonts",
+  "records": [
+    {
+      "name": "work-sans-latin-variable.woff2",
+      "family": "Work Sans",
+      "scope": "Latin; normal weights400–900 per source CSS",
+      "source": "https://www.idadu.dev/_next/static/immutable/media/7ddd198311ba7843-s.p.31l30c9jv8unx.woff2",
+      "type": "font/woff2",
+      "bytes": 50524,
+      "sha256": "72cd8f67849cc714f3364eeeb378df9a49f4aff00e6a3640fad36c9c93a9b197"
+    },
+    {
+      "name": "anton-latin-400.woff2",
+      "family": "Anton",
+      "scope": "Latin normal400",
+      "source": "https://www.idadu.dev/_next/static/immutable/media/9e9f04e3c37952ab-s.p.002ht2t_o636a.woff2",
+      "type": "font/woff2",
+      "bytes": 12004,
+      "sha256": "23aab0b2692a0c89eb7997d3c7cf5bda41276d6cd4ab6cc0edc3edfcece32b09"
+    },
+    {
+      "name": "ibm-plex-mono-latin-400.woff2",
+      "family": "IBM Plex Mono",
+      "scope": "Latin normal400",
+      "source": "https://www.idadu.dev/_next/static/immutable/media/99e609270109b47d-s.p.1dgcou5jor5q_.woff2",
+      "type": "font/woff2",
+      "bytes": 10052,
+      "sha256": "c36f509c0a8f9f85f29cb44bc8701d8a9e0b14c499e77a884f789ead7093a7ac"
+    },
+    {
+      "name": "ibm-plex-mono-cyrillic-400.woff2",
+      "family": "IBM Plex Mono",
+      "scope": "Cyrillic normal400",
+      "source": "https://www.idadu.dev/_next/static/immutable/media/59b15b4bcd7b1eb5-s.3nkuoiize4urq.woff2",
+      "type": "font/woff2",
+      "bytes": 5476,
+      "sha256": "7b59d6bf7f8b8408ac28f27d01dca9a890abeae77045d343b1d8ccb089a92e54"
+    }
+  ],
+  "licenses": [
+    {
+      "family": "worksans",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/worksans/OFL.txt"
+    },
+    {
+      "family": "anton",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/anton/OFL.txt"
+    },
+    {
+      "family": "ibmplexmono",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexmono/OFL.txt"
+    }
+  ],
+  "limits": "Source CSS identifies family and subset. Family licenses retrieved from official Google Fonts repository; no separate license is declared by the reference website. Work Sans and Anton site subsets do not cover Cyrillic."
+}

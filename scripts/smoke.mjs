@@ -5,10 +5,12 @@ const routes = [
   "/",
   "/about",
   "/approach",
+  "/education",
   "/consultation",
   "/consultation?country=canada",
   "/contacts",
   "/countries",
+  "/countries?q=canada",
   "/programs",
   "/services",
   "/journal",
@@ -26,12 +28,23 @@ const routes = [
     "south-korea",
   ].map((s) => `/countries/${s}`),
   ...[
+    "uk-student-visa",
+    "us-b1-b2-visa",
+    "canada-express-entry",
+    "schengen-visa",
+    "australia-skilled-visas",
+    "new-zealand-aewv",
+    "south-korea-k-eta",
+    "eu-blue-card-germany",
     "where-to-start",
     "first-consultation",
     "moving-with-family",
     "clear-scope",
   ].map((s) => `/journal/${s}`),
 ];
+const educationRedirect = await fetch(new URL("/education", base), { redirect: "manual" });
+assert.equal(educationRedirect.status, 307, "Legacy education route redirects");
+assert.equal(educationRedirect.headers.get("location"), "/programs#education", "Education lives in programmes");
 const assets = new Set();
 const stylesheets = new Set();
 for (let i = 0; i < routes.length; i += 5) {
@@ -55,12 +68,17 @@ for (let i = 0; i < routes.length; i += 5) {
         const url = new URL(match[1].replaceAll("&amp;", "&"), base);
         if (url.origin === new URL(base).origin) {
           if (
-            /\.(?:jpg|png|svg|woff2)$/.test(url.pathname) ||
+            /\.(?:jpg|png|svg|woff2|docx)$/.test(url.pathname) ||
             url.pathname === "/_next/image"
           )
             assets.add(url.href);
           if (url.pathname.endsWith(".css")) stylesheets.add(url.href);
         }
+      }
+      if (route === "/countries?q=canada") {
+        assert.equal((html.match(/<article[ >]/g) || []).length, 1, "Country search renders only the matching destination");
+        assert.match(html, /<input[^>]*value="canada"/, "Country query prefills the catalogue search");
+        assert.match(html, /href="\/countries\/canada"/, "Country search retains its detail link");
       }
       if (route === "/consultation?country=canada")
         assert.ok(

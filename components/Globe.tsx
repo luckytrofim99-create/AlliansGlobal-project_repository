@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef } from "react";
+import { useAllianceLocale, tx } from "./alliance/AllianceLocale";
 
 type Coordinate = readonly [longitude: number, latitude: number];
 type Projected = { x: number; y: number; depth: number };
@@ -503,6 +504,7 @@ export function Globe({
   className?: string;
   interactive?: boolean;
 }) {
+  const { locale } = useAllianceLocale();
   const root = useRef<SVGSVGElement>(null);
   const uniqueId = useId().replace(/:/g, "");
 
@@ -632,7 +634,7 @@ export function Globe({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="Глобус Alliance Global: международные направления и маршруты"
+      aria-label={tx(locale, "Глобус Alliance Global: международные направления и маршруты")}
       style={{ width: "100%", height: "100%", overflow: "visible" }}
     >
       <defs>

@@ -1,0 +1,27 @@
+{
+  "prompt": "User-supplied edited Figma design asset. Downloaded original bytes from Figma MCP source; no AI image generation or redrawing.",
+  "kind": "Figma design asset provenance",
+  "file": "tape.png",
+  "publicPath": "/images/home-figma/tape.png",
+  "label": "Adhesive tape",
+  "sourceUrl": "https://www.figma.com/api/mcp/asset/393b32e1-4fed-4316-9526-01f383265e50.png",
+  "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+  "sourceNodeId": "309:1044",
+  "bytes": 7114,
+  "sha256": "b36d7f6e33b2c2f682eb3e05214e69349be7ea2707f851ef9a81b5e89eef667b",
+  "format": "png",
+  "intrinsicWidth": 128,
+  "intrinsicHeight": 46,
+  "hasAlpha": true,
+  "designSlot": {
+    "relativeTo": "309:1041",
+    "inset": {
+      "top": "-10.69%",
+      "right": "12.53%",
+      "bottom": "99.6%",
+      "left": "67.12%"
+    },
+    "rotation": -3
+  },
+  "originalBytesUnchanged": true
+}

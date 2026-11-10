@@ -1,108 +1,49 @@
 import type { Metadata } from "next";
+import { Compass, Globe2, House, BookUser, Route } from "lucide-react";
 import FAQ from "@/components/FAQ";
-import { ButtonLink, CTA, Eyebrow, PageHero, TextLink } from "@/components/ui";
-import { faq, services } from "@/lib/content";
+import { PageClosing, PageHero, PageLink, PageSection, PageShell } from "@/components/pages/PageKit";
+import { OverviewCards } from "@/components/pages/OverviewCards";
+import styles from "@/components/pages/OverviewPages.module.css";
 
 export const metadata: Metadata = {
   title: "Услуги",
-  description:
-    "Визы, проживание, гражданство и иммиграционный консалтинг. От отдельного вопроса к последовательному плану действий.",
+  description: "Документы для визы, проживания и гражданства. Выбор страны и дальнейшие действия после отказа.",
 };
 
+const services = [
+  { id: "visas", title: "Визы", text: "Документы и порядок подачи для вашей поездки.", icon: BookUser, href: "/services/visas" },
+  { id: "residence", title: "ВНЖ и ПМЖ", text: "Основание для проживания и план переезда.", icon: House, href: "/services/residence" },
+  { id: "citizenship", title: "Гражданство", text: "Основания и документы для вашего обращения.", icon: Globe2, href: "/services/citizenship" },
+  { id: "consulting", title: "Выбор страны", text: "Сравните направления под ваши цели и бюджет.", icon: Compass, href: "/services/consulting" },
+  { id: "complex-cases", title: "Отказ или смена статуса", text: "Проверьте причины и возможные дальнейшие действия.", icon: Route, href: "/services/complex-cases" },
+];
+
+const questions = [
+  { question: "Что подготовить к консультации?", answer: "Цель поездки, страну и имеющиеся документы." },
+  { question: "Как узнать сроки и стоимость?", answer: "Объём помощи и сроки согласуются до начала работы. Сборы и сторонние услуги учитываются отдельно." },
+  { question: "Кто принимает решение по визе?", answer: "Уполномоченное ведомство. Сроки работы агентства закрепляются в договоре." },
+];
+
 export default function ServicesPage() {
-  return (
-    <>
-      <PageHero
-        eyebrow="Услуги"
-        title="От отдельного вопроса"
-        accent="к целому маршруту."
-        description="Иногда нужен конкретный документ. Иногда — целая стратегия. Сначала определяем вашу задачу, затем согласуем объём сопровождения."
-      />
+  return <PageShell className={styles.page}>
+    <PageHero
+      title="Документы для визы и переезда"
+      intro="Узнайте, какие документы нужны для визы, проживания или гражданства."
+      image="/images/office-interior.jpg"
+      imageAlt="Светлый интерьер для обсуждения планов переезда"
+    >
+      <PageLink href="#explore">Выбрать услугу</PageLink>
+      <PageLink href="/consultation" quiet>Разобрать мою ситуацию</PageLink>
+    </PageHero>
 
-      <section className="section container" id="explore">
-        <div className="section-head" data-reveal>
-          <Eyebrow>С чем мы помогаем</Eyebrow>
-          <h2>
-            Большие планы.
-            <br />
-            <em>Понятные задачи.</em>
-          </h2>
-          <p>
-            Выберите вопрос, с которого хотите начать. Если ваша ситуация
-            затрагивает несколько направлений, рассмотрим их вместе.
-          </p>
-        </div>
+    <PageSection id="explore">
+      <OverviewCards items={services} layout="services" />
+    </PageSection>
 
-        <div className="service-list">
-          {services.map((service) => (
-            <article
-              className="service-row"
-              id={service.slug}
-              key={service.slug}
-              data-reveal
-            >
-              <span aria-hidden="true">{service.number}</span>
-              <div>
-                <h2>{service.title}</h2>
-                <p>{service.description}</p>
-                <TextLink href={`/services/${service.slug}`}>
-                  Подробнее о сопровождении
-                </TextLink>
-              </div>
-              <ul className="numbered-list">
-                {service.includes.map((item, index) => (
-                  <li key={item}>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <p>{item}</p>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
+    <PageSection title="Документы и стоимость">
+      <div className={styles.faq} data-reveal><FAQ items={questions} /></div>
+    </PageSection>
 
-      <section className="section container">
-        <div className="split-section" data-reveal>
-          <div>
-            <Eyebrow>До начала работы</Eyebrow>
-            <h2>
-              Ясность —<br />
-              <em>часть сопровождения.</em>
-            </h2>
-          </div>
-          <div className="prose">
-            <p>
-              У любой задачи есть границы. До начала работы важно понимать, что
-              делает команда, какие действия остаются за вами и какие вопросы
-              потребуют отдельного участия специалистов.
-            </p>
-            <p>
-              Объём помощи, условия и возможные внешние расходы обсуждаются
-              применительно к вашей ситуации. Предварительная оценка маршрута не
-              означает гарантии решения по заявлению.
-            </p>
-            <ButtonLink href="/approach" variant="outline">
-              Как устроена работа
-            </ButtonLink>
-          </div>
-        </div>
-      </section>
-
-      <section className="section container">
-        <div className="section-head" data-reveal>
-          <Eyebrow>Перед обращением</Eyebrow>
-          <h2>
-            Вопросы,
-            <br />
-            <em>с которых стоит начать.</em>
-          </h2>
-        </div>
-        <div data-reveal>
-          <FAQ items={faq} />
-        </div>
-      </section>
-      <CTA />
-    </>
-  );
+    <PageClosing title="Узнайте список документов" text="Начните с цели поездки и страны. Перечень зависит от ваших обстоятельств." action="Разобрать мою ситуацию" />
+  </PageShell>;
 }

@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import { socialDescription, socialImage, socialOpenGraph, socialTitle } from "@/lib/social";
 import "@fontsource/manrope/cyrillic-400.css";
 import "@fontsource/manrope/latin-400.css";
 import "@fontsource/manrope/cyrillic-500.css";
 import "@fontsource/manrope/latin-500.css";
 import "@fontsource/manrope/cyrillic-600.css";
 import "@fontsource/manrope/latin-600.css";
+import "@fontsource/manrope/cyrillic-700.css";
+import "@fontsource/manrope/latin-700.css";
 import "@fontsource/cormorant-garamond/cyrillic-400.css";
 import "@fontsource/cormorant-garamond/latin-400.css";
 import "@fontsource/cormorant-garamond/cyrillic-500.css";
@@ -14,18 +17,25 @@ import "@fontsource/cormorant-garamond/latin-400-italic.css";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import MotionScene from "@/components/MotionScene";
+import { AllianceLocaleProvider } from "@/components/alliance/AllianceLocale";
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://allianceglobal.online",
   ),
   title: {
-    default: "Alliance Global — Ваше будущее без границ",
+    default: "Alliance Global — Визы и переезд",
     template: "%s · Alliance Global",
   },
   description:
-    "Визы, переезд и иммиграционная стратегия. Начните следующий этап с понятного плана — Alliance Global.",
+    "Подготовка к визе и переезду: основания, документы и порядок подачи. Alliance Global.",
   robots: { index: false, follow: false },
+  openGraph: socialOpenGraph,
+  twitter: {
+    card: "summary_large_image",
+    title: socialTitle,
+    description: socialDescription,
+    images: [socialImage],
+  },
 };
 export default function RootLayout({
   children,
@@ -35,13 +45,11 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body>
-        <a className="skip-link" href="#main">
-          К содержанию
-        </a>
-        <SiteHeader />
-        <main id="main">{children}</main>
-        <SiteFooter />
-        <MotionScene />
+        <AllianceLocaleProvider>
+          <SiteHeader />
+          <main id="main">{children}</main>
+          <SiteFooter />
+        </AllianceLocaleProvider>
       </body>
     </html>
   );

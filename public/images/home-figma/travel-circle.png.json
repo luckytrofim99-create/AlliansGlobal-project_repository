@@ -1,0 +1,23 @@
+{
+  "prompt": "User-supplied edited Figma design asset. Downloaded original bytes from Figma MCP source; no AI image generation or redrawing.",
+  "kind": "Figma design asset provenance",
+  "file": "travel-circle.png",
+  "publicPath": "/images/home-figma/travel-circle.png",
+  "label": "Travel circle cutout",
+  "sourceUrl": "https://www.figma.com/api/mcp/asset/81bef5c1-75e0-45df-9e3f-be2064e044bb.png",
+  "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+  "sourceNodeId": "310:1053",
+  "bytes": 729493,
+  "sha256": "e2792440f0b625806993441e2466831013d2e6c33fe1ca300a9db36c1b3bff19",
+  "format": "png",
+  "intrinsicWidth": 640,
+  "intrinsicHeight": 625,
+  "hasAlpha": true,
+  "designSlot": {
+    "left": 23,
+    "top": 6.42,
+    "width": 179.16,
+    "height": 174.95
+  },
+  "originalBytesUnchanged": true
+}

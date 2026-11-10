@@ -2,111 +2,64 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Logo } from "./ui";
+import home from "./home/HomeHeader.module.css";
+import styles from "./pages/InnerHeader.module.css";
+import { useAllianceLocale, tx } from "./alliance/AllianceLocale";
+import { LanguageSwitcher } from "./alliance/LanguageSwitcher";
+import { ActionLink } from "./actions/Action";
 
 const links = [
-  { href: "/about", label: "Компания" },
+  { href: "/countries", label: "Страны" },
+  { href: "/programs", label: "Программы" },
   { href: "/services", label: "Услуги" },
-  { href: "/countries", label: "Направления" },
-  { href: "/approach", label: "Наш подход" },
+  { href: "/about", label: "О компании" },
+  { href: "/approach", label: "Как работаем" },
   { href: "/journal", label: "Журнал" },
 ];
+
 export default function SiteHeader() {
+  const { locale } = useAllianceLocale();
   const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [instant, setInstant] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const outsideDown = useRef(false);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  useEffect(() => { dialog.current?.close(); }, [pathname]);
   useEffect(() => {
-    dialog.current?.close();
-  }, [pathname]);
-  return (
-    <>
-      <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
-        <div className="header-inner">
-          <Logo />
-          <nav className="desktop-nav" aria-label="Основная навигация">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={
-                  pathname.startsWith(link.href) ? "page" : undefined
-                }
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="header-actions">
-            <span className="language-label" aria-label="Язык сайта — русский">
-              RU
-            </span>
-            <Link href="/consultation" className="header-consult">
-              Консультация
-              <ArrowUpRight size={17} />
-            </Link>
-            <button
-              className="menu-toggle"
-              onClick={() => dialog.current?.showModal()}
-              aria-label="Открыть меню"
-            >
-              <Menu size={24} />
-            </button>
-          </div>
+    const desktop = matchMedia("(min-width: 1150px)");
+    const close = () => { if (desktop.matches) dialog.current?.close(); };
+    desktop.addEventListener("change", close);
+    return () => desktop.removeEventListener("change", close);
+  }, []);
+  const close = () => dialog.current?.close();
+  return <>
+    <header className={`${home.header}${isHome ? ` ${home.homeHeader}` : ` ${home.innerHeader}`}${scrolled ? ` ${home.scrolled}` : ""}`}>
+      <div className={`${home.inner} ${styles.inner}`}>
+        <Logo />
+        <nav className={styles.desktop} aria-label={tx(locale, "Основная навигация")} lang={locale}>{links.map((link) => <Link href={link.href} key={link.href} aria-current={pathname === link.href ? "page" : pathname.startsWith(`${link.href}/`) ? "location" : undefined}>{tx(locale, link.label)}</Link>)}</nav>
+        <div className={styles.actions}>
+          <div className={styles.navLanguage}><LanguageSwitcher /></div>
+          <ActionLink href={isHome ? "#consultation" : "/consultation"} size="compact" className={home.action}>{tx(locale, "Консультация")}</ActionLink>
+          <button ref={trigger} type="button" className={styles.menuButton} aria-label={tx(locale, "Открыть меню")} aria-haspopup="dialog" aria-controls="site-menu" aria-expanded={open} onClick={(event) => { setInstant(event.detail === 0); dialog.current?.showModal(); setOpen(true); }}><Menu size={21} strokeWidth={1.5} aria-hidden="true" /></button>
         </div>
-      </header>
-      <dialog
-        ref={dialog}
-        className="mobile-menu"
-        onClick={(event) => {
-          if (event.target === event.currentTarget) dialog.current?.close();
-        }}
-      >
-        <div className="mobile-menu-inner">
-          <div className="mobile-menu-top">
-            <Logo />
-            <button
-              className="icon-button"
-              onClick={() => dialog.current?.close()}
-              aria-label="Закрыть меню"
-            >
-              <X />
-            </button>
-          </div>
-          <span className="micro-label">ВАШ МИР. ВАШ МАРШРУТ.</span>
-          <nav aria-label="Мобильная навигация">
-            {links.map((link, i) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => dialog.current?.close()}
-              >
-                <span>0{i + 1}</span>
-                {link.label}
-                <ArrowUpRight />
-              </Link>
-            ))}
-            <Link href="/programs" onClick={() => dialog.current?.close()}>
-              <span>06</span>Ваши задачи
-              <ArrowUpRight />
-            </Link>
-          </nav>
-          <Link
-            href="/consultation"
-            className="button button-navy"
-            onClick={() => dialog.current?.close()}
-          >
-            Обсудить мою задачу
-            <ArrowUpRight size={18} />
-          </Link>
-        </div>
-      </dialog>
-    </>
-  );
+      </div>
+    </header>
+    <dialog ref={dialog} id="site-menu" className={styles.dialog} data-instant={instant} aria-labelledby="site-menu-title" onClose={() => { setOpen(false); if (trigger.current && getComputedStyle(trigger.current).display !== "none") trigger.current.focus({ preventScroll: true }); }} onPointerDown={(event) => { const r = event.currentTarget.getBoundingClientRect(); outsideDown.current = event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom; }} onPointerUp={(event) => { const r = event.currentTarget.getBoundingClientRect(); if (outsideDown.current && (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom)) close(); outsideDown.current = false; }}>
+      <div className={styles.menuTop}><h2 id="site-menu-title">{tx(locale, "Меню")}</h2><button type="button" className={styles.close} onClick={close} aria-label={tx(locale, "Закрыть меню")} autoFocus><X size={22} strokeWidth={1.5} aria-hidden="true" /></button></div>
+      <div className={styles.dialogLanguage}><LanguageSwitcher /></div>
+      <nav className={styles.mobile} aria-label={tx(locale, "Разделы сайта")} lang={locale}>{[{ href: "/", label: "Главная" }, ...links, { href: "/contacts", label: "Контакты" }].map((link) => <Link key={link.href} href={link.href} onClick={close} aria-current={pathname === link.href ? "page" : undefined}>{tx(locale, link.label)}</Link>)}</nav>
+      <ActionLink href="/consultation" className={styles.menuCta} onClick={close}>{tx(locale, "Разобрать мою ситуацию")}</ActionLink>
+    </dialog>
+  </>;
 }

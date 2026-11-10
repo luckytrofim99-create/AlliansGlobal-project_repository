@@ -1,0 +1,23 @@
+{
+  "prompt": "User-supplied edited Figma design asset. Downloaded original bytes from Figma MCP source; no AI image generation or redrawing.",
+  "kind": "Figma design asset provenance",
+  "file": "travelers.jpg",
+  "publicPath": "/images/home-figma/travelers.jpg",
+  "label": "Black and white travelers photograph",
+  "sourceUrl": "https://www.figma.com/api/mcp/asset/978645a3-0392-4166-8b65-9d624181c766.png",
+  "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+  "sourceNodeId": "309:828",
+  "bytes": 44213,
+  "sha256": "93b0fed37f35170bca7609f0230d16ebce3ae670b3a487aa100487503261dd0a",
+  "format": "jpeg",
+  "intrinsicWidth": 612,
+  "intrinsicHeight": 608,
+  "hasAlpha": false,
+  "designSlot": {
+    "width": 128.903,
+    "height": 128.06,
+    "rotation": 4.3
+  },
+  "originalBytesUnchanged": true,
+  "extensionNote": "Temporary Figma URL ends in .png but HTTP asset bytes are JPEG; saved as .jpg without transformation."
+}

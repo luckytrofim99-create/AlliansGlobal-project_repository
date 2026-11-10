@@ -1,0 +1,7 @@
+.context { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
+.preparation { border-radius: var(--panel-radius); padding: clamp(25px, 3vw, 40px); border-top: 1px solid var(--home-gold); background: var(--home-surface, #fffefa); }
+.preparation > p { margin: 24px 0 12px; }
+.questions > h3 { margin: 0 0 25px; }
+.sectionAction { display: flex; justify-content: center; margin-top: 28px; }
+.location { flex-basis: 100%; text-align: left; }
+@media (max-width: 760px) { .context { grid-template-columns: 1fr; gap: 30px; } .preparation { border-radius: var(--panel-radius, 24px); } .sectionAction { justify-content: flex-start; } }

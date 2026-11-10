@@ -1,0 +1,41 @@
+.stage {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+  --frame-gap: 10px;
+  --arch-crown: 50cqw;
+  container-type: inline-size;
+  padding: var(--frame-gap);
+}
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid #a88a5c55;
+  border-radius: calc(var(--arch-crown) + var(--frame-gap)) calc(var(--arch-crown) + var(--frame-gap)) calc(var(--photo-radius) + var(--frame-gap)) calc(var(--photo-radius) + var(--frame-gap));
+  pointer-events: none;
+}
+.arch {
+  width: 100%;
+  border-radius: var(--arch-crown) var(--arch-crown) var(--photo-radius) var(--photo-radius);
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 4 / 5;
+  max-height: 520px;
+  overflow: hidden;
+  background: #d7cab5;
+}
+.photo { position: absolute; inset: 0 0 -40px; }
+.photo img { object-fit: cover; object-position: center; }
+.shade {
+  position: absolute;
+  inset: 60% 0 0;
+  background: linear-gradient(transparent, #102f3e30);
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  .stage { max-width: 480px; --frame-gap: 8px; }
+  .arch { aspect-ratio: 4 / 4.3; height: 260px; max-height: 260px; }
+}
+@media (prefers-reduced-motion: reduce) { .photo { transform: none !important; } }

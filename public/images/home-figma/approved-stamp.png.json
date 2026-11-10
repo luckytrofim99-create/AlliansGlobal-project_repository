@@ -1,0 +1,21 @@
+{
+  "prompt": "User-supplied edited Figma design asset. Downloaded original bytes from Figma MCP source; no AI image generation or redrawing.",
+  "kind": "Figma design asset provenance",
+  "file": "approved-stamp.png",
+  "publicPath": "/images/home-figma/approved-stamp.png",
+  "label": "Approved stamp",
+  "sourceUrl": "https://www.figma.com/api/mcp/asset/541a05cb-5202-4b7d-a547-4ef4609967eb.png",
+  "sourceFileKey": "DddkQBLCzqQjNA94AqbsFQ",
+  "sourceNodeId": "309:828",
+  "bytes": 68198,
+  "sha256": "e47873576944264202e0df7f20c84263182840796c5e916d62dee5fb5aad64cd",
+  "format": "png",
+  "intrinsicWidth": 256,
+  "intrinsicHeight": 234,
+  "hasAlpha": true,
+  "designSlot": {
+    "width": 59.72,
+    "height": 54.58
+  },
+  "originalBytesUnchanged": true
+}

@@ -1,0 +1,47 @@
+.switcher {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0;
+  min-height: 44px;
+  padding: 0;
+  border: 1px solid var(--line, #dcded7);
+  border-radius: 999px;
+  background: #eee9df;
+}
+
+.option {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 999px;
+  color: #617176;
+  background: transparent;
+  font: 600 10px/1 var(--home-sans, "Manrope", sans-serif);
+  letter-spacing: .04em;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform 140ms var(--ease-out);
+}
+
+.option[aria-pressed="true"] {
+  color: var(--paper, #fffefa);
+  background: var(--navy, #102f3e);
+}
+
+.option:focus-visible { outline: 2px solid var(--gold, #a88a5c); outline-offset: 2px; }
+.option:active { background: rgb(168 138 92 / 12%); transform: scale(.97); }
+.option:focus-visible:active { transform: none; }
+.option[aria-pressed="true"]:active { background: #174353; }
+
+@media (hover: hover) and (pointer: fine) {
+  .option:not([aria-pressed="true"]):hover { color: var(--navy, #102f3e); background: var(--ivory, #f8f6f0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option { transition: none; }
+  .option:active { transform: none; }
+}

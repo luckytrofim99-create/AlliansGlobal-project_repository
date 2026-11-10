@@ -1,0 +1,40 @@
+{
+  "sourceDate": "2026-10-20",
+  "articles": 8,
+  "paragraphs": 146,
+  "sourceFiles": [
+    {
+      "file": "01-USA.docx",
+      "sha256": "5dc40bc52da196a0b6fa875a3e53f945f762c5af215bef8372d7de2dd47e8198"
+    },
+    {
+      "file": "02-Canada.docx",
+      "sha256": "292e06985e7f3e6d5518d7f8110371f0dfc5bb5e1cb788b38733fd40b65e06e0"
+    },
+    {
+      "file": "03-European-Union.docx",
+      "sha256": "afc5514f96be4243b4bf8db295ee452f6585e3f013334ec75ae3ec4c2da425de"
+    },
+    {
+      "file": "04-United-Kingdom.docx",
+      "sha256": "219eaa79f7da242c4e5d9c745af3740b6d891cf9992b8979a9bcd1222c663533"
+    },
+    {
+      "file": "05-Australia.docx",
+      "sha256": "eb135f9dc19402b0c4a3cb44f55b5c99184167572b1ecbcb0eb19b97eddd167e"
+    },
+    {
+      "file": "06-New-Zealand.docx",
+      "sha256": "098a2a14d9e204fb27502e06b4daddc6c0266a0a01809d0a594bde716164edd1"
+    },
+    {
+      "file": "07-South-Korea.docx",
+      "sha256": "f34b91002dcc5da5e3320e26c22caa071350caba264ec7bfecdec7e43434515e"
+    },
+    {
+      "file": "08-EU-Blue-Card.docx",
+      "sha256": "11b37023e48c242da23d79595a1119db16eedf545fddbfaecdfb3b4e50689547"
+    }
+  ],
+  "research": "docs/research/SEO-Research-2026-10-20.md"
+}

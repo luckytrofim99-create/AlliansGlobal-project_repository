@@ -1,11 +1,30 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import FAQ from "@/components/FAQ";
-import TravelDossier from "@/components/TravelDossier";
-import { ButtonLink, CTA, Eyebrow, PageHero, TextLink } from "@/components/ui";
+import ServiceVisaStory from "@/components/pages/ServiceVisaStory";
+import {
+  PageCard,
+  PageClosing,
+  PageColumns,
+  PageHero,
+  PageLink,
+  PageList,
+  PageReading,
+  PageSection,
+  PageShell,
+} from "@/components/pages/PageKit";
+import styles from "@/components/pages/ServicePages.module.css";
 import { faq, processSteps, services } from "@/lib/content";
 
 type Props = { params: Promise<{ slug: string }> };
+
+const PHOTOGRAPHS: Record<string, { image: string; alt: string }> = {
+  visas: { image: "/images/hero-rome.jpg", alt: "Рим, Италия" },
+  residence: { image: "/images/canada-toronto.jpg", alt: "Торонто, Канада" },
+  citizenship: { image: "/images/europe-paris.jpg", alt: "Париж, Франция" },
+  consulting: { image: "/images/office-interior.jpg", alt: "Светлый интерьер" },
+  "complex-cases": { image: "/images/uk-london.jpg", alt: "Лондон, Великобритания" },
+};
 
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -22,115 +41,61 @@ export default async function ServicePage({ params }: Props) {
   const { slug } = await params;
   const service = services.find((item) => item.slug === slug);
   if (!service) notFound();
+  const photograph = PHOTOGRAPHS[slug];
 
   return (
-    <>
+    <PageShell>
       <PageHero
-        eyebrow={service.title}
-        title={service.title}
-        accent="В контексте вашей жизни."
-        description={service.description}
+        title={slug === "residence" ? "Вид на жительство" : service.title}
+        intro={service.description}
+        image={photograph.image}
+        imageAlt={photograph.alt}
       >
-        <ButtonLink>Обсудить мою ситуацию</ButtonLink>
+        <PageLink href="/consultation">Разобрать мою ситуацию</PageLink>
+        <PageLink href="/services" quiet>Все услуги</PageLink>
       </PageHero>
 
-      {slug === "visas" && <TravelDossier />}
+      {slug === "visas" && <ServiceVisaStory />}
 
-      <section className="section container" id="explore">
-        <div className="split-section">
-          <div data-reveal>
-            <Eyebrow>Направление {service.number}</Eyebrow>
-            <h2>{service.short}</h2>
-          </div>
-          <div data-reveal>
-            <Eyebrow>Что рассматриваем</Eyebrow>
-            <ul className="numbered-list">
-              {service.includes.map((item, index) => (
-                <li key={item}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <p>{item}</p>
-                </li>
-              ))}
-            </ul>
-            <div className="prose">
-              <p>
-                Конкретный перечень действий определяется после анализа запроса.
-                Если обстоятельства меняются, следующие шаги и объём помощи
-                необходимо согласовать заново.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section container">
-        <div className="section-head" data-reveal>
-          <Eyebrow>Последовательность</Eyebrow>
-          <h2>
-            Видеть маршрут.
-            <br />
-            <em>Понимать каждый шаг.</em>
-          </h2>
+      <PageSection id="explore" title={service.short}>
+        <PageReading>
+          <h3>Что входит в разбор</h3>
+          <PageList items={service.includes} />
           <p>
-            Общая логика помогает сориентироваться. Содержание каждого этапа
-            зависит от страны, основания и вашей личной ситуации.
+            План составляется по вашим документам. Если обстоятельства изменятся, порядок действий и объём помощи пересматриваются.
           </p>
-        </div>
-        <div className="approach-timeline">
-          {processSteps.map((step) => (
-            <article className="approach-step" key={step.number} data-reveal>
-              <span>{step.number}</span>
-              <div>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+        </PageReading>
+      </PageSection>
 
-      <section className="section container">
-        <div className="section-head" data-reveal>
-          <Eyebrow>Важные детали</Eyebrow>
-          <h2>
-            До первого
-            <br />
-            <em>решения.</em>
-          </h2>
-        </div>
-        <div data-reveal>
-          <FAQ items={[faq[3], faq[4], faq[5]]} />
-        </div>
-      </section>
+      <PageSection
+        title="6 этапов вашего обращения"
+        intro="Этапы и объём работы согласуем по стране, основанию и вашим документам."
+      >
+        <ol className={styles.steps}>
+          {processSteps.map((step) => <li key={step.number} data-reveal>
+            <span className={styles.stepNumber} aria-hidden="true">{step.number}</span>
+            <div><h3>{step.title}</h3><p>{step.description}</p></div>
+          </li>)}
+        </ol>
+        <div className={styles.sectionAction}><PageLink href="/approach" quiet>Как устроена работа</PageLink></div>
+      </PageSection>
 
-      <section className="section container">
-        <div className="section-head" data-reveal>
-          <Eyebrow>Другие задачи</Eyebrow>
-          <h2>
-            Посмотреть
-            <br />
-            <em>на ситуацию шире.</em>
-          </h2>
-        </div>
-        <div className="service-list">
-          {services
-            .filter((item) => item.slug !== slug)
-            .slice(0, 3)
-            .map((item) => (
-              <article className="service-row" key={item.slug} data-reveal>
-                <span>{item.number}</span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.short}</p>
-                </div>
-                <TextLink href={`/services/${item.slug}`}>
-                  Изучить направление
-                </TextLink>
-              </article>
-            ))}
-        </div>
-      </section>
-      <CTA text="Опишите вашу задачу и текущие обстоятельства. Начнём с вопросов, от которых зависит следующий шаг." />
-    </>
+      <PageSection title="Объём помощи и расходы">
+        <PageReading><FAQ items={[faq[3], faq[4], faq[5]]} /></PageReading>
+      </PageSection>
+
+      <PageSection title="Выберите другую услугу">
+        <PageColumns>
+          {services.filter((item) => item.slug !== slug).slice(0, 3).map((item) => <PageCard
+            key={item.slug}
+            title={item.title}
+            body={item.short}
+            href={`/services/${item.slug}`}
+            action="Подробнее об услуге"
+          />)}
+        </PageColumns>
+      </PageSection>
+      <PageClosing text="Укажите задачу и имеющиеся документы для предварительного разбора." />
+    </PageShell>
   );
 }

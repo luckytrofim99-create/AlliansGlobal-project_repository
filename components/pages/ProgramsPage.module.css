@@ -1,0 +1,4 @@
+.centeredSection > div { text-align: center; }
+.reading { text-align: center; }
+.preparation article > div { align-items: center; text-align: center; }
+.closing > section { flex-direction: column; align-items: center; gap: 24px; text-align: center; }
