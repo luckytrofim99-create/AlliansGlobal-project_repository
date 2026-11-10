@@ -38,7 +38,6 @@ export default function HomeFooter() {
         <div className={styles.brand}>
           <Logo />
           <p>Международный консалтинг</p>
-          <Link href="/about">Связь с Alliance Sport Group</Link>
         </div>
         <nav className={styles.links} aria-label="Разделы сайта">
           {groups.map((group) => (
@@ -56,6 +55,7 @@ export default function HomeFooter() {
       <div className={styles.bottom}>
         <span>© {new Date().getFullYear()} Alliance Global</span>
         <Link href="/privacy">Информация о конфиденциальности</Link>
+        <a href="https://goldy.company/">разработка сайта и продвижение бренда</a>
       </div>
     </footer>
     </LocalizedTree>

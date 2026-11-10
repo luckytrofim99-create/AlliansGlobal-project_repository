@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowDown } from "lucide-react";
 import { ActionLink } from "./actions/Action";
 import type { ReactNode } from "react";
+import { LocalizedTree } from "./alliance/AllianceLocale";
 
 export function Eyebrow({
   children,
@@ -51,6 +52,7 @@ export function TextLink({
 }
 export function Logo({ light = false }: { light?: boolean }) {
   return (
+    <LocalizedTree>
     <Link
       href="/"
       className={`logo${light ? " light" : ""}`}
@@ -90,6 +92,7 @@ export function Logo({ light = false }: { light?: boolean }) {
         ALLIANCE<span>G L O B A L</span>
       </span>
     </Link>
+    </LocalizedTree>
   );
 }
 export function PageHero({

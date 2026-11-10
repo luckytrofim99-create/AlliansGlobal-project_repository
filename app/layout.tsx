@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialDescription, socialImage, socialOpenGraph, socialTitle } from "@/lib/social";
 import "@fontsource/manrope/cyrillic-400.css";
 import "@fontsource/manrope/latin-400.css";
 import "@fontsource/manrope/cyrillic-500.css";
@@ -19,7 +20,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { AllianceLocaleProvider } from "@/components/alliance/AllianceLocale";
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://allianceglobal.online",
   ),
   title: {
     default: "Alliance Global — Визы и переезд",
@@ -28,6 +29,13 @@ export const metadata: Metadata = {
   description:
     "Подготовка к визе и переезду: основания, документы и порядок подачи. Alliance Global.",
   robots: { index: false, follow: false },
+  openGraph: socialOpenGraph,
+  twitter: {
+    card: "summary_large_image",
+    title: socialTitle,
+    description: socialDescription,
+    images: [socialImage],
+  },
 };
 export default function RootLayout({
   children,

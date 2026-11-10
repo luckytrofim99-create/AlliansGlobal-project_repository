@@ -105,7 +105,7 @@ export default function QuickConsultation({
       countries.find((item) => item.slug === country)?.name ?? "Ещё не выбрана",
     );
     const text = [
-      "ALLIANCE GLOBAL — черновик обращения",
+      locale === "ru" ? "ALLIANCE GLOBAL — черновик обращения" : "ALLIANCE GLOBAL — enquiry draft",
       "",
       `${locale === "ru" ? "Задача" : "Goal"}: ${task}`,
       `${locale === "ru" ? "Страна" : "Destination"}: ${destination}`,

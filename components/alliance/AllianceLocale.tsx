@@ -1,12 +1,14 @@
 "use client";
 
 import {
+  Children,
   cloneElement,
   createContext,
   useContext,
   useEffect,
   isValidElement,
   useMemo,
+  useRef,
   useSyncExternalStore,
   type ReactNode,
 } from "react";
@@ -58,9 +60,27 @@ const LocaleContext = createContext<{
 export function AllianceLocaleProvider({ children }: { children: ReactNode }) {
   const locale = useSyncExternalStore(subscribe, readLocale, serverLocale);
   const value = useMemo(() => ({ locale, setLocale: updateLocale }), [locale]);
+  const metadata = useRef(new WeakMap<Element, { source: string; applied: string }>());
 
   useEffect(() => {
     document.documentElement.lang = locale;
+    const updateMetadata = () => {
+      document.head.querySelectorAll('title, meta[name="description"], meta[property="og:title"], meta[property="og:description"], meta[property="og:image:alt"], meta[name="twitter:title"], meta[name="twitter:description"]').forEach((element) => {
+        const current = element.tagName === "TITLE" ? element.textContent ?? "" : element.getAttribute("content") ?? "";
+        const previous = metadata.current.get(element);
+        const source = previous && current === previous.applied ? previous.source : current;
+        const applied = translate(locale, source);
+        metadata.current.set(element, { source, applied });
+        if (applied !== current) {
+          if (element.tagName === "TITLE") element.textContent = applied;
+          else element.setAttribute("content", applied);
+        }
+      });
+    };
+    updateMetadata();
+    const observer = new MutationObserver(updateMetadata);
+    observer.observe(document.head, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ["content"] });
+    return () => observer.disconnect();
   }, [locale]);
 
   return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
@@ -78,36 +98,31 @@ export function tx(locale: AllianceLocale, text: string) {
 
 function translateNode(node: ReactNode, locale: AllianceLocale): ReactNode {
   if (typeof node === "string") return translate(locale, node);
-  if (Array.isArray(node)) {
-    return node.map((child, index) => {
-      const translated = translateNode(child, locale);
-      if (isValidElement(translated) && translated.key === null) {
-        return cloneElement(translated, { key: `localized-${index}` });
+  // React.Children also resolves lazy server-rendered children from the RSC
+  // stream. A manual array walk leaves those subtrees untranslated.
+  return Children.map(node, (child) => {
+    if (typeof child === "string") return translate(locale, child);
+    if (isValidElement<{ children?: ReactNode }>(child)) {
+      const translatedProps: Record<string, unknown> = {};
+      for (const [key, value] of Object.entries(child.props)) {
+        if (key !== "children" && copyProps.has(key) && typeof value === "string") {
+          translatedProps[key] = translate(locale, value);
+        }
       }
-      return translated;
-    });
-  }
-  if (isValidElement<{ children?: ReactNode }>(node)) {
-    const translatedProps: Record<string, unknown> = {};
-    // Page components often receive copy as props (title, intro, card body),
-    // while native elements expose the same copy as text/accessible labels.
-    const copyProps = new Set([
-      "title", "intro", "body", "text", "label", "action", "name",
-      "description", "placeholder", "alt", "question", "answer",
-      "aria-label", "aria-description", "summary",
-    ]);
-    for (const [key, value] of Object.entries(node.props)) {
-      if (key !== "children" && copyProps.has(key) && typeof value === "string") {
-        translatedProps[key] = translate(locale, value);
+      if (child.props.children !== undefined) {
+        translatedProps.children = translateNode(child.props.children, locale);
       }
+      return cloneElement(child, translatedProps);
     }
-    if (node.props.children !== undefined) {
-      translatedProps.children = translateNode(node.props.children, locale);
-    }
-    return cloneElement(node, translatedProps);
-  }
-  return node;
+    return child;
+  });
 }
+
+const copyProps = new Set([
+  "title", "intro", "body", "text", "label", "action", "name",
+  "description", "placeholder", "alt", "question", "answer",
+  "aria-label", "aria-description", "summary",
+]);
 
 /** Localizes authored text while preserving the existing server-rendered page tree. */
 export function LocalizedTree({ children }: { children: ReactNode }) {

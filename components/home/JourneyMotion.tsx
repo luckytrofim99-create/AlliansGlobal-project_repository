@@ -2,13 +2,15 @@
 
 import { Fragment, useLayoutEffect, type ReactNode, type RefObject } from "react";
 import styles from "./JourneyMotion.module.css";
+import { tx, useAllianceLocale } from "@/components/alliance/AllianceLocale";
 
 const entrance = "cubic-bezier(0.2, 0.72, 0.22, 1)";
 
 /** Words remain real, selectable, accessible text; layout and line wrapping are
  * native. No duplicate heading or measured character-by-character DOM. */
 export function RevealWords({ children }: { children: string }) {
-  return children.split(" ").map((word, index) => (
+  const { locale } = useAllianceLocale();
+  return tx(locale, children).split(" ").map((word, index) => (
     <Fragment key={`${index}-${word}`}>
       {index > 0 ? " " : null}
       <span className={styles.wordMask}><span data-motion-word>{word}</span></span>

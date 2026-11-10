@@ -1,10 +1,16 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { useAllianceLocale, type AllianceLocale } from "./AllianceLocale";
 import styles from "./LanguageSwitcher.module.css";
 
+const subscribeToHydration = () => () => {};
+const clientReady = () => true;
+const serverReady = () => false;
+
 export function LanguageSwitcher() {
   const { locale, setLocale } = useAllianceLocale();
+  const ready = useSyncExternalStore(subscribeToHydration, clientReady, serverReady);
   return (
     <div
       className={styles.switcher}
@@ -16,8 +22,9 @@ export function LanguageSwitcher() {
           key={language}
           className={styles.option}
           type="button"
+          disabled={!ready}
           lang={language}
-          aria-label={language === "ru" ? "Русский" : "English"}
+          aria-label={language === "ru" ? (locale === "en" ? "Russian" : "Русский") : "English"}
           aria-pressed={locale === language}
           onClick={() => setLocale(language)}
         >

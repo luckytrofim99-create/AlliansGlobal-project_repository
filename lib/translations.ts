@@ -1,3 +1,5 @@
+import { additionalEnglishCopy } from "./translations-extra";
+
 export const englishCopy: Record<string, string> = {
   "Страны": "Destinations",
   "Программы": "Programs",
@@ -386,7 +388,7 @@ export const englishCopy: Record<string, string> = {
   "Подготовьте вопросы по своему обращению": "Prepare questions about your application",
   "Укажите цель и вопросы для консультации.": "State your goal and questions for a consultation.",
   "Материал посвящён подготовке. Требования к программам и документам проверяются по стране и вашей ситуации.": "This guide covers preparation. Program and document requirements must be checked for the country and your situation.",
-  "Связь с Alliance Sport Group": "Connection with Alliance Sport Group",
+  "разработка сайта и продвижение бренда": "website development and brand promotion",
   "от выбора до подачи": "from planning to applying",
   "Визы и переезд от выбора до подачи": "Visas and relocation from planning to applying",
   "Поможем определить основание, подготовить документы и составить план подачи.": "We help review eligibility, prepare documents and plan your application.",
@@ -685,13 +687,28 @@ export const englishCopy: Record<string, string> = {
   "Соберите сведения об имеющихся статусах и семейных документах.": "Gather information about current residence statuses and family documents.",
   "Опишите формат работы: трудовой договор, фриланс или собственный бизнес.": "Describe how you work: employment, freelance work or your own business.",
   "Укажите страну работодателя или заказчиков и предполагаемое место проживания.": "Specify your employer’s or clients’ country and where you intend to live.",
-  "Подготовьте сведения о занятости и доходе для проверки условий выбранной страны.": "Have employment and income information ready to check against the destination’s conditions."
+  "Подготовьте сведения о занятости и доходе для проверки условий выбранной страны.": "Have employment and income information ready to check against the destination’s conditions.",
+  ...additionalEnglishCopy,
 };
 
-export function translate(locale: "ru" | "en", text: string) {
+const normalizedCopy = Object.fromEntries(
+  Object.entries(englishCopy).map(([key, value]) => [key.replace(/\s+/g, " ").trim(), value]),
+);
+
+export function translate(locale: "ru" | "en", text: string): string {
   if (locale === "ru") return text;
   const leading = text.match(/^\s*/)?.[0] ?? "";
   const trailing = text.match(/\s*$/)?.[0] ?? "";
   const key = text.trim();
-  return `${leading}${englishCopy[key] ?? key}${trailing}`;
+  const normalized = key.replace(/\s+/g, " ");
+  const translated = englishCopy[key] ?? normalizedCopy[normalized];
+  if (translated) return `${leading}${translated}${trailing}`;
+  const brandSuffix = " · Alliance Global";
+  if (key.endsWith(brandSuffix)) {
+    return `${leading}${translate(locale, key.slice(0, -brandSuffix.length))}${brandSuffix}${trailing}`;
+  }
+  if (key.startsWith("Визы и переезд: ")) {
+    return `${leading}Visas and relocation: ${translate(locale, key.slice("Визы и переезд: ".length))}${trailing}`;
+  }
+  return `${leading}${key}${trailing}`;
 }
